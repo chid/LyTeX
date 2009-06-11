@@ -279,6 +279,40 @@ lytex,然后就可以通过双击根目录下的lyx.exe来启动可视化编辑�
 
 \begin_layout Enumerate
 单击“文件”菜单，选择“从模版新建文件”,然后选择双击templates根目录下的任何一个模版文件或者单击菜单新建空白文档
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pics/new cjk tex step1.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+从模板新建文件
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
