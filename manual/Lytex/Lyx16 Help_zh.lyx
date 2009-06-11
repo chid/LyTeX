@@ -1,0 +1,461 @@
+#LyX 1.6.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+%xetex CJK 设置
+\usepackage[CJKtextspaces,CJKnumber]{xeCJK}
+\usepackage[figure]{hypcap}
+\usepackage{lipsum,framed,color}
+                                 
+\setCJKmainfont[BoldFont=SimHei]{SimSun}%设置中文主字体
+\setCJKsansfont{SimHei}         
+\setCJKmonofont{NSimSun}  
+
+\usepackage{indentfirst}  	% 首行缩进宏包
+\newlength{\boxwidth}
+\definecolor{shadecolor}{gray}{0.85}  
+
+
+%设置中文字体
+\setCJKfamilyfont{song}{SimSun}
+\setCJKfamilyfont{hei}{SimHei}
+  
+
+%grayBox,needs shadecolor, \boxwidth and the framed package
+\newenvironment{grayBox}{
+\def\FrameCommand{\fboxsep=\FrameSep \fboxrule=\FrameRule \fcolorbox{white}{shadecolor}}
+\MakeFramed {\setlength{\boxwidth}{\textwidth}
+\addtolength{\boxwidth}{-2\FrameSep}
+\addtolength{\boxwidth}{-2\FrameRule}
+\setlength{\hsize}{\boxwidth} \FrameRestore}}
+{\endMakeFramed}
+
+%设置行距
+\renewcommand{\baselinestretch}{1.2} 
+
+%把目录表格等的标题修改为中文，如果不需要可以注释掉
+\renewcommand\arraystretch{1.5}
+\renewcommand{\contentsname}{目录}
+\renewcommand{\listfigurename}{插图目录}
+\renewcommand{\listtablename}{表格目录}
+\renewcommand{\refname}{参考文献}
+\renewcommand{\abstractname}{摘要}
+\renewcommand{\indexname}{索引}
+\renewcommand{\tablename}{表}
+\renewcommand{\figurename}{图}
+\end_preamble
+\use_default_options false
+\language chinese-simplified
+\inputencoding utf8-plain
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_title "Lytex "
+\pdf_author "LyteX teamgroup"
+\pdf_keywords "Lytex,lyx,help"
+\pdf_bookmarks true
+\pdf_bookmarksnumbered true
+\pdf_bookmarksopen true
+\pdf_bookmarksopenlevel 2
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "unicode=false"
+\papersize default
+\use_geometry false
+\use_amsmath 0
+\use_esint 0
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Title
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+注意：此文档必须要用xetex编译
+\end_layout
+
+\end_inset
+
+LyteX中文帮助文档
+\end_layout
+
+\begin_layout Author
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+任何对此文档有贡献的人名将会出现在这里
+\end_layout
+
+\end_inset
+
+Jaeluh@aol.com
+\end_layout
+
+\begin_layout Standard
+\align center
+Draft Version:1.0
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+什么是LyTeX
+\end_layout
+
+\begin_layout Standard
+LyteX是一个结合了LyX而且配置了其他组件的一个移动Tex套件，最新版本的LyteX由以下组件构成:
+\end_layout
+
+\begin_layout Itemize
+LaTeX
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+详细介绍请见:http://zh.wikipedia.org/wiki/Latex
+\end_layout
+
+\end_inset
+
+：
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+LateX的介绍
+\end_layout
+
+\end_inset
+
+LaTeX（LATEX）是一种基于TeX的排版系统，由美国计算机学家LeslieLamport在20世纪80年代初期开发，利用这种格式，即使使用者没有排版和程序
+设计的知识也可以充分发挥由TeX所提供的强大功能，能在几天，甚至几小时内生成很多具有书籍质量的印刷品。对于生成复杂表格和数学公式，这一点表现得尤为突出。因此它非
+常适用于生成高印刷质量的科技和数学类文档。这个系统同样适用于生成从简单的信件到完整书籍的所有其他种类的文档。
+\end_layout
+
+\begin_layout Itemize
+XeTeX
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+详细介绍请见:http://en.wikipedia.org/wiki/Xetex（英文）
+\end_layout
+
+\end_inset
+
+（版本0.999.7）:
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+XeteX的介绍
+\end_layout
+
+\end_inset
+
+XeTeX使用Unicode和支持像OpenType或Apple Advanced Typography现代字体技术的TeX排版引擎它由Jonathan
+ Kew开发和维护，并以X11自由软件许可发布。
+\end_layout
+
+\begin_layout Itemize
+TeXworks（版本r303）：
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+LateX的介绍
+\end_layout
+
+\end_inset
+
+是一个小巧的语法高亮tex文件编辑器。
+\end_layout
+
+\begin_layout Itemize
+LyX
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+详细介绍请见:http://zh.wikipedia.org/wiki/LyX
+\end_layout
+
+\end_inset
+
+（版本1.63）：
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+LateX的介绍
+\end_layout
+
+\end_inset
+
+Lyx是一个强大的所见即所得的tex编辑器，可以在windows以及linux平台上运行。LyX为用户提供了一个类似于Microsoft word
+ 所见即所得的文件编辑环境,因此不需要记忆和查找大量的tex排版指令了,特别是对于复杂的数学公式的输入,用户只需要把精神集中在输入的内容上，而不是版式上，LyX
+不仅可以输出流行的pdf文档，而且也支持dvi文件,xml文件，html文件,pdf文件和专业的ps文件。
+\end_layout
+
+\begin_layout Section
+安装LyTeX
+\end_layout
+
+\begin_layout Standard
+下载后的LyTeX一般是一个自解压缩包，双击后选择要解压缩的目录，比如D:
+\backslash
+lytex,然后就可以通过双击根目录下的lyx.exe来启动可视化编辑环境。
+\end_layout
+
+\begin_layout Section
+使用LyTeX
+\end_layout
+
+\begin_layout Subsection
+撰写英文文档
+\end_layout
+
+\begin_layout Standard
+步骤如下:
+\end_layout
+
+\begin_layout Enumerate
+打开Lyx可视化编辑环境
+\end_layout
+
+\begin_layout Enumerate
+单击“文件”菜单，选择“从模版新建文件”,然后选择双击templates根目录下的任何一个模版文件或者单击菜单新建空白文档
+\end_layout
+
+\begin_layout Standard
+如果还有其他任何问题，可以点击“帮助”菜单，然后选择任何一个你想查看的帮助文档(由于Lyx自带的帮助文档是英文，中文翻译以后会加进去)，由于LyX默认的新建文档
+是英文，所以这里不再赘述有关创建英文文档。
+\end_layout
+
+\begin_layout Subsection
+撰写简体中文文档
+\end_layout
+
+\begin_layout Standard
+由于LyX对中文支持并不令人满意，所以这里将详细讲解如何创建中文文档，步骤如下:
+\end_layout
+
+\begin_layout Enumerate
+与创建英文类似，首先要打开Lyx可视化编辑环境
+\end_layout
+
+\begin_layout Enumerate
+单击“文件”菜单，选择“从模版新建文件”，然后再打开子文件夹“ChineseSimp
+\begin_inset Quotes erd
+\end_inset
+
+，选择你所需要的中文模版
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+每一个模版打开后都会有一些建议和提示，根据所需要求来选择不同的中文模版
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement tbph
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pics/choose zh simp template.png
+	scale 45
+	rotateOrigin center
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+选择中文模版
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+如果对中文字体有特别需求，可以在文档的导言中设置，例如：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+setCJKfamilyfont{song}{SimSun}	%设置宋体
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+setCJKfamilyfont{hei}{SimHei}	 %设置黑体
+\end_layout
+
+\begin_layout Standard
+...
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+......更多内容
+\end_layout
+
+\begin_layout Subsection
+撰写中英文混合文档
+\end_layout
+
+\begin_layout Standard
+内容......
+\end_layout
+
+\begin_layout Section
+Lyx排版
+\end_layout
+
+\begin_layout Subsection
+英文排版
+\end_layout
+
+\begin_layout Standard
+内容......
+\end_layout
+
+\begin_layout Subsection
+中文排版
+\end_layout
+
+\begin_layout Standard
+内容......
+\end_layout
+
+\begin_layout Subsection
+数学公式排版
+\end_layout
+
+\begin_layout Standard
+内容......
+\end_layout
+
+\begin_layout Subsection
+图片和表格排版
+\end_layout
+
+\begin_layout Standard
+内容......
+\end_layout
+
+\begin_layout Subsection
+其他排版技巧
+\end_layout
+
+\end_body
+\end_document
