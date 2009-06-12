@@ -8,12 +8,13 @@
 \usepackage[CJKtextspaces,CJKnumber]{xeCJK}
 \usepackage[figure]{hypcap}
 \usepackage{lipsum,framed,color}
+\usepackage{indentfirst}
                                  
 \setCJKmainfont[BoldFont=SimHei]{SimSun}%设置中文主字体
 \setCJKsansfont{SimHei}         
 \setCJKmonofont{NSimSun}  
 
-\usepackage{indentfirst}  	% 首行缩进宏包
+
 \newlength{\boxwidth}
 \definecolor{shadecolor}{gray}{0.85}  
 
@@ -35,6 +36,7 @@
 %设置行距
 \renewcommand{\baselinestretch}{1.2} 
 
+
 %把目录表格等的标题修改为中文，如果不需要可以注释掉
 \renewcommand\arraystretch{1.5}
 \renewcommand{\contentsname}{目录}
@@ -45,6 +47,16 @@
 \renewcommand{\indexname}{索引}
 \renewcommand{\tablename}{表}
 \renewcommand{\figurename}{图}
+
+%使子标题对齐
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
+                                     {-3.25ex\@plus -1ex \@minus -.2ex}%
+                                     {0.0001pt \@plus .2ex}%
+                                     {\normalfont\normalsize\bfseries}}
+\renewcommand\subparagraph{\@startsection{subparagraph}{5}{\z@}%
+                                     {-3.25ex\@plus -1ex \@minus -.2ex}%
+                                     {0.0001pt \@plus .2ex}%
+                                     {\normalfont\normalsize\bfseries}}
 \end_preamble
 \use_default_options false
 \language chinese-simplified
@@ -59,7 +71,8 @@
 \font_tt_scale 100
 
 \graphics default
-\paperfontsize default
+\float_placement tbph
+\paperfontsize 12
 \spacing single
 \use_hyperref true
 \pdf_title "Lytex "
@@ -75,21 +88,25 @@
 \pdf_backref false
 \pdf_pdfusetitle true
 \pdf_quoted_options "unicode=false"
-\papersize default
-\use_geometry false
+\papersize a4paper
+\use_geometry true
 \use_amsmath 0
 \use_esint 0
 \cite_engine basic
 \use_bibtopic false
 \paperorientation portrait
-\secnumdepth 3
+\leftmargin 2.5cm
+\topmargin 3cm
+\rightmargin 2.5cm
+\bottommargin 2.5cm
+\secnumdepth 5
 \tocdepth 3
 \paragraph_separation indent
 \defskip medskip
 \quotes_language english
 \papercolumns 1
 \papersides 1
-\paperpagestyle default
+\paperpagestyle fancy
 \tracking_changes false
 \output_changes false
 \author "" 
@@ -248,7 +265,7 @@ LateX的介绍
 
 Lyx是一个强大的所见即所得的tex编辑器，可以在windows以及linux平台上运行。LyX为用户提供了一个类似于Microsoft word
  所见即所得的文件编辑环境,因此不需要记忆和查找大量的tex排版指令了,特别是对于复杂的数学公式的输入,用户只需要把精神集中在输入的内容上，而不是版式上，LyX
-不仅可以输出流行的pdf文档，而且也支持dvi文件,xml文件，html文件,pdf文件和专业的ps文件。
+不仅可以输出流行的pdf文档，而且也支持dvi文件，xml文件，html文件，pdf文件和专业的ps文件。
 \end_layout
 
 \begin_layout Section
@@ -279,7 +296,17 @@ lytex,然后就可以通过双击根目录下的lyx.exe来启动可视化编辑�
 
 \begin_layout Enumerate
 单击“文件”菜单，选择“从模版新建文件”,然后选择双击templates根目录下的任何一个模版文件或者单击菜单新建空白文档
+\end_layout
+
+\begin_layout Standard
+如果还有其他任何问题，可以点击“帮助”菜单，然后选择任何一个你想查看的帮助文档(由于Lyx自带的帮助文档是英文，中文翻译以后会加进去)，由于LyX默认的新建文档
+是英文，所以这里不再赘述有关创建英文文档。
+\end_layout
+
+\begin_layout Standard
+\align center
 \begin_inset Float figure
+placement tbph
 wide false
 sideways false
 status open
@@ -287,7 +314,9 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename pics/new cjk tex step1.png
+	filename pics/choose en template.png
+	scale 70
+	rotateOrigin center
 
 \end_inset
 
@@ -298,7 +327,7 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
-从模板新建文件
+选择英文模版
 \end_layout
 
 \end_inset
@@ -315,17 +344,34 @@ status open
 
 \end_layout
 
-\begin_layout Standard
-如果还有其他任何问题，可以点击“帮助”菜单，然后选择任何一个你想查看的帮助文档(由于Lyx自带的帮助文档是英文，中文翻译以后会加进去)，由于LyX默认的新建文档
-是英文，所以这里不再赘述有关创建英文文档。
-\end_layout
-
 \begin_layout Subsection
 撰写简体中文文档
 \end_layout
 
 \begin_layout Standard
-由于LyX对中文支持并不令人满意，所以这里将详细讲解如何创建中文文档，步骤如下:
+由于LyX对中文支持并不令人满意，所以此部分将花更多的篇幅详细讲解在LyX中撰写中文文档，再加上LyX是一个类似于word的可视化编辑器，因此这里不会详述如何在
+LyX中编写TeX代码，本部分着重介绍如何在LyX中创建文档，定制模版以及一些基本的LyX操作技巧,如果你想比较系统的学习TeX,可以去阅读一些在线TeX电子书
+籍，比如
+\bar under
+
+\begin_inset CommandInset href
+LatexCommand href
+name "LaTeX for Complete Novices"
+target "http://theoval.cmp.uea.ac.uk/~nlct/latex/novices/"
+
+\end_inset
+
+
+\bar default
+（英文）。
+\end_layout
+
+\begin_layout Subsubsection
+创建空白中文文档
+\end_layout
+
+\begin_layout Standard
+从现有的中文模版中创建这种方法，也就是最简单的方法，直接从LyX的模版中选择：
 \end_layout
 
 \begin_layout Enumerate
@@ -337,7 +383,7 @@ status open
 \begin_inset Quotes erd
 \end_inset
 
-，选择你所需要的中文模版
+，选择你所需要的简体中文模版
 \begin_inset Foot
 status collapsed
 
@@ -351,6 +397,7 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
+\align center
 \begin_inset Float figure
 placement tbph
 wide false
@@ -361,7 +408,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename pics/choose zh simp template.png
-	scale 45
+	scale 70
 	rotateOrigin center
 
 \end_inset
@@ -373,7 +420,7 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
-选择中文模版
+从中文模版新建文档
 \end_layout
 
 \end_inset
@@ -390,8 +437,22 @@ status open
 
 \end_layout
 
+\begin_layout Subsubsection
+定制自己的中文模版
+\end_layout
+
 \begin_layout Standard
-如果对中文字体有特别需求，可以在文档的导言中设置，例如：
+如果你认为LyTeX自带的中文模版过于简单，那么你可以修改已有的中文模版，在其导言中进行各种TeX命令的编写。由于每个人有不同的文档要求，这里会介绍一些如何定制
+自己的模版的方法，以提高使用LyX的效率,由于XeTeX对中文支持比较完善，特别是不需要指定字体，它可以自动从系统字体库中提取，因此我们这里以XeCJK-UTF
+8编码的文档为例来展示如何定制自己的模版。
+\end_layout
+
+\begin_layout Paragraph
+中文宏包设置
+\end_layout
+
+\begin_layout Standard
+撰写中文文档的首要任务就是要引入中文宏包，我们可以在LateX序中（点击文档-->首选项-->LateX序）制定：
 \end_layout
 
 \begin_layout Standard
@@ -413,17 +474,96 @@ begin{grayBox}
 \begin_layout Standard
 
 \backslash
-setCJKfamilyfont{song}{SimSun}	%设置宋体
+usepackage[CJKtextspaces,CJKnumber]{xeCJK} 
+\end_layout
+
+\begin_layout Standard
+%xetex CJK 宏包设置
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+字体设置
+\end_layout
+
+\begin_layout Standard
+对于很多人来讲，从模版新建的中文文档的方法似乎过于简单，比如对中文字体种类也许不够，那么我们可以把如下代码复制到文档的导言中，例如：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{grayBox}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 
 \backslash
-setCJKfamilyfont{hei}{SimHei}	 %设置黑体
+setCJKfamilyfont{song}{SimSun}
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hspace{10mm}
+\end_layout
+
+\end_inset
+
+%设置宋体
 \end_layout
 
 \begin_layout Standard
-...
+
+\backslash
+setCJKfamilyfont{hei}{SimHei}
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hspace{10mm}
+\end_layout
+
+\end_inset
+
+%设置黑体
+\end_layout
+
+\begin_layout Standard
+......%你可以设置更多的中文字体
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -440,7 +580,683 @@ end{grayBox}
 \end_layout
 
 \begin_layout Standard
-......更多内容
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+noindent
+\end_layout
+
+\end_inset
+
+
+\series bold
+注意:如果你不知道中文字体的英文名称，可以通过使用fc-list命令得到系统所支持的所有字体信息，比如在Microsoft windows下，运行cmd
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+windows下命令行窗口，点击开始-->运行，键入cmd，然后回车
+\end_layout
+
+\end_inset
+
+，输入命令fc-list ->c:
+\backslash
+fonts.txt（“->”是windows管道输出命令），这样你可以把系统所有的字体信息输出并保存在一个文本中，这里即C盘目录下的fonts.txt文本，然后就可
+以查找你所需要的字体信息了，如果没有的话，可以去网上搜索并下载。
+\end_layout
+
+\begin_layout Standard
+紧接着就可以在文档主体中使用这两种字体，如下代码所示:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+documentclass{article} 
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+usepackage[CJKtextspaces,CJKnumber]{xeCJK} 
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+begin{document}
+\end_layout
+
+\begin_layout Standard
+......
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+CJKfamilyfont{song}我是宋体
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hspace{10mm}
+\end_layout
+
+\end_inset
+
+%将显示宋体
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+CJKfamilyfont{hei}我是黑体
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hspace{10mm}
+\end_layout
+
+\end_inset
+
+%将显示黑体
+\end_layout
+
+\begin_layout Standard
+......
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+end{document}
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+当然对于字体大小的设置，可以不需要在LateX序中添加代码，直接点击“文档”-->“首选项”-->“字体”，设置字体大小。由于lyx1.6版本对中文支持并不完善，
+所以对一般的LyX文档，“字体”中CJK选项不可用，除非是特定LyxCJK文档，才能够编辑。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pics/font setting!.png
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+指定模版的默认主字体大小为12号
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+行距和段落设置
+\end_layout
+
+\begin_layout Standard
+在文档的导言中可以直接设定中文的基本行距和段落之间的距离：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+renewcommand{
+\backslash
+baselinestretch}{1.2} 
+\end_layout
+
+\begin_layout Standard
+%设置行距,1.2=字体大小(高度)/垂直距离上两相邻字之间的间隙长度
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+setlength{
+\backslash
+parskip}{0.5
+\backslash
+baselineskip}
+\end_layout
+
+\begin_layout Standard
+%设置段落之间距离
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+如果要想精确调整这些参数，建议使用geometry包;对行或者段落缩进可以使用indentfirst宏包,只需在lateX序言中加入它们:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+usepackage{geometry}
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hspace{10mm}
+\end_layout
+
+\end_inset
+
+%调整行或段落间距
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+usepackage{indentfirst}
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hspace{10mm}
+\end_layout
+
+\end_inset
+
+%调整行或段落缩进
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+一般情况下，你不需要自己在LateX序言中调整这些参数，因为在LyX中，仅仅通过鼠标就可以调整这些参数了，关于如何操作，文档后面将会详解。
+\end_layout
+
+\begin_layout Paragraph
+浮动图像，表格，目录等的标题中文显示
+\end_layout
+
+\begin_layout Standard
+为了使TeX中固定的英文术语转成中文，例如要显示“图 1-1”而不是“figure 1-1”，要显示“目录”而不是“content table”等，我们需要在L
+ateX序中加入以下代码:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+renewcommand
+\backslash
+arraystretch{1.2}
+\end_layout
+
+\begin_layout Standard
+%1.2表示表格中行间距的缩放比例因子(缺省的标准值为1),中文需要更多的间距
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+renewcommand{
+\backslash
+contentsname}{目录}
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+renewcommand{
+\backslash
+listfigurename}{插图目录}
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+renewcommand{
+\backslash
+listtablename}{表格目录}
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+renewcommand{
+\backslash
+refname}{参考文献}
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+renewcommand{
+\backslash
+abstractname}{摘要} 
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+renewcommand{
+\backslash
+indexname}{索引} 
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+renewcommand{
+\backslash
+tablename}{表}
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+renewcommand{
+\backslash
+figurename}{图}
+\end_layout
+
+\begin_layout Standard
+...
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+这样生成后的pdf中，类似table 1.1就会自动变成表 1.1。
+\end_layout
+
+\begin_layout Paragraph
+浮动项的设置
+\end_layout
+
+\begin_layout Standard
+为了使图片能够被正确显示在文档中，经常需要调整浮动项的位置，一般的做法是在LateX序言中添加TeX代码，而这里在LyX中，只需要使用鼠标就可以轻松完成。比如我
+们想使插入的浮动图片优先被考虑，那么我们可以采取如下步骤:点击”文档“-->
+\begin_inset Quotes erd
+\end_inset
+
+首选项”-->“浮动项放置方式”，在“高级放置设定”选项里，分别把“页上”，“页底”，以及“浮动项页”和“此处优先”这四项打钩,这样每次被插入的浮动项就不需要再
+此设置了。
+\end_layout
+
+\begin_layout Standard
+那么这么做会有什么效果呢，根据选项有四种效果:
+\end_layout
+
+\begin_layout Enumerate
+浮动项页:此图不会被文字环绕
+\end_layout
+
+\begin_layout Enumerate
+页上：如果此图靠近页面上方，而且因为大小位置原因在所在页不能够被放置，则首先考虑把此图放在上页，如果上页仍没有位置，则把此图继续往上挪，直到能够放下此图为止(例
+如相邻的上页是空白页或者有很少文字，那么此图将放在此页)
+\end_layout
+
+\begin_layout Enumerate
+页底:同理，如果图片靠近页面底部，而没有空间放置此图，则会被往下挪动，如果往下没有空白页或者足够空间的页面，则会把此图片放置在一个新的空白页面(注意，可能会产生
+一个新的单独页面来放置此图)
+\end_layout
+
+\begin_layout Enumerate
+如果此图恰好能够被放置在它所在页面中，也就是说它所在的页面能够容纳下，这种效果就是“所见即所得”的效果了。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pics/float item settings.png
+	scale 60
+	rotateOrigin center
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+浮动项设置:页上，页底，浮动项页和此处优先
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+注意：如果要想保证你的一个浮动项在pdf中的效果与在LyX中编辑的效果一样，有时候你可以点击右键浮动项选择选择“首选项”-->打钩“此处”，这样的话，版面中所此
+图的上方所有的项目可能整体会被往上移动或者此图下方的项目整体往下移动来腾出空间(包括分页)。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename pics/chooose folat_item_option action.png
+	scale 70
+	rotateOrigin center
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+右键点击浮动项
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename pics/float setting only here.png
+	scale 60
+	rotateOrigin center
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+打钩“此处”选项
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+浮动项“所见即所得”设置
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+文档类设置
+\end_layout
+
+\begin_layout Standard
+一个中文模版不是对所有文章有效的，因此必须制定此模版的文档类型，比如article（文章或者论文），或者book(书籍类)，我们可以从文档-->首选项-->文档
+class来选择不同的文档类型，在LyX中，已经有很多文档类型供选择，如果不特定地设置文档类型，则默认文档类型一般为article。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pics/document_class_setting.png
+	scale 70
+	rotateOrigin center
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+文档类型设置
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
