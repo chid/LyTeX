@@ -1,4 +1,4 @@
-#LyX 1.6.3 created this file. For more info see http://www.lyx.org/
+#LyX 1.6.2 created this file. For more info see http://www.lyx.org/
 \lyxformat 345
 \begin_document
 \begin_header
@@ -100,7 +100,7 @@
 \rightmargin 2.5cm
 \bottommargin 2.5cm
 \secnumdepth 5
-\tocdepth 3
+\tocdepth 5
 \paragraph_separation indent
 \defskip medskip
 \quotes_language english
@@ -402,7 +402,7 @@ status collapsed
 placement tbph
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -726,7 +726,7 @@ end{grayBox}
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -901,7 +901,8 @@ end{grayBox}
 \end_layout
 
 \begin_layout Standard
-一般情况下，你不需要自己在LateX序言中调整这些参数，因为在LyX中，仅仅通过鼠标就可以调整这些参数了，关于如何操作，文档后面将会详解。
+除非你要极其精确地控制文本和段落的样式，一般情况下，你不需要自己在LateX序言中添加这些TeX代码来调整这些参数，因为在LyX中，仅仅通过鼠标就可以调整这些参
+数了，点击”文档“-->”首选项“设置TextLayout（文本样式）。
 \end_layout
 
 \begin_layout Paragraph
@@ -1243,6 +1244,394 @@ status collapsed
 
 \begin_layout Plain Layout
 文档类型设置
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+给模版添加环境(Environment Modules)
+\end_layout
+
+\begin_layout Standard
+在LyX中，还有一个很重要的特性，就是可以给模版添加很多TeX格式环境，比如想添加对数学各种定义，猜想，定理，证明等环境格式支持，可以在“文档
+\begin_inset Quotes erd
+\end_inset
+
+-->“首选项”中的Modules进行设置，由于LyX中自带了很多标准的环境库，你可以选择所需要的环境模块。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pics/Modules setting.png
+	scale 70
+	rotateOrigin center
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+添加AMS数学环境
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+这样，从此模版新建的文档就可以选择很多数学环境，比如定理，引理，猜想，问题等，当然在没有模版的情况，这样做也是极其有用的。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename pics/AMS math environment choices!.png
+	scale 70
+	rotateOrigin center
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+不同的数学环境格式选项
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename pics/choose lemma.png
+	scale 70
+	rotateOrigin center
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+选择“定理”格式环境
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+添加AMS数学环境例子
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+比较遗憾的是当前LyX1.6版本中还不支持在Modules中添加自定义环境，估计后续版本会考虑的，如果要添加自己的环境怎么办呢？老办法，在LateX序中添加自己定
+义的环境，比如这个帮助文档就使用了一个自定义的背景为灰色的环境，以便插入tex代码，使之突出显示。
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+%使用此grayBox环境的先决条件，需要导入framed和color宏包
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+newlength{
+\backslash
+boxwidth} 
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+definecolor{shadecolor}{gray}{0.85} 
+\end_layout
+
+\begin_layout Standard
+%环境定义如下
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+newenvironment{grayBox}{
+\backslash
+def
+\backslash
+FrameCommand{
+\backslash
+fboxsep=
+\backslash
+FrameSep
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+fboxrule=
+\backslash
+FrameRule
+\backslash
+fcolorbox{white}{shadecolor}}
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+MakeFramed {
+\backslash
+setlength{
+\backslash
+boxwidth}{
+\backslash
+textwidth}
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+addtolength{
+\backslash
+boxwidth}{-2
+\backslash
+FrameSep}
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+addtolength{
+\backslash
+boxwidth}{-2
+\backslash
+FrameRule}
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+setlength{
+\backslash
+hsize}{
+\backslash
+boxwidth} 
+\backslash
+FrameRestore}}
+\end_layout
+
+\begin_layout Standard
+{
+\backslash
+endMakeFramed}
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+页面设置
+\end_layout
+
+\begin_layout Standard
+在LyX中，页面的设置也是相当的容易，比如要设置纸张的大小为A4,可以点击“文档”-->“首选项”在“页面布局”中设置格式为A4，同时还可以设置纸张的方向；如果
+要精确控制页边距，可以在“页边距”选项中精确设置，实际上LyX会根据这些参数自动调用geometry宏包进行设置。(注意：页边距选项中的前七个参数选项分别对应下
+图所示的七个参数)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pics/geometry parameters.png
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+geometry宏包的页面设置参数
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+目录和编号
+\end_layout
+
+\begin_layout Standard
+如果要想控制目录或者编号的级数，可以在文档首选项中“Numbering & TOC”中设定，使用鼠标拖动进度条来控制级别，其中编号的最大级别为5级，但是，我们不
+推荐使用过深的编号，因为这会降低文章的可读性。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pics/TocAndNumbering_setting.png
+	scale 70
+	rotateOrigin center
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+编号级别和目录显示
 \end_layout
 
 \end_inset
