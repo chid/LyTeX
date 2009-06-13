@@ -1,4 +1,4 @@
-#LyX 1.6.2 created this file. For more info see http://www.lyx.org/
+#LyX 1.6.3 created this file. For more info see http://www.lyx.org/
 \lyxformat 345
 \begin_document
 \begin_header
@@ -95,6 +95,10 @@
 \cite_engine basic
 \use_bibtopic false
 \paperorientation portrait
+\branch Test111
+\selected 0
+\color #5555ff
+\end_branch
 \leftmargin 2.5cm
 \topmargin 3cm
 \rightmargin 2.5cm
@@ -1103,6 +1107,7 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
+\noindent
 
 \series bold
 注意：如果要想保证你的一个浮动项在pdf中的效果与在LyX中编辑的效果一样，有时候你可以点击右键浮动项选择选择“首选项”-->打钩“此处”，这样的话，版面中所此
@@ -1632,6 +1637,516 @@ status collapsed
 
 \begin_layout Plain Layout
 编号级别和目录显示
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+文献
+\end_layout
+
+\begin_layout Standard
+文献是论文中很重要的一个部分，在LyX中可以选择不同的文献引用格式，点击“文档”-->“首选项”在“参考书目”选项中选择引用的格式,LyX提供两种主流的文献引用
+格式：
+\end_layout
+
+\begin_layout Itemize
+Natbib
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+关于更加详细Natbib的样式，请查看http://merkel.zoneo.net/Latex/natbib.php
+\end_layout
+
+\end_inset
+
+:是一个标准的LaTeX命令
+\backslash
+cite的实现宏包，它和其他比如harvard, apalike, chicago, astron, authordate等宏包也相兼容，它提供两种最基本的命令
+，
+\backslash
+citet和
+\backslash
+citep（
+\backslash
+citet*和
+\backslash
+citep*用于打印完整引用）
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="9" columns="2">
+<features>
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+命令
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+效果预览
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\backslash
+citet{jon90} 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Jones et al.
+ (1990)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\backslash
+citet[chap.
+ 2]{jon90}
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Jones et al.
+ (1990, chap.
+ 2)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\backslash
+citep{jon90}
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+(Jones et al., 1990)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\backslash
+citep[chap.
+ 2]{jon90}
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+(Jones et al., 1990, chap.
+ 2)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\backslash
+citep[see][]{jon90} 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+(see Jones et al., 1990)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\backslash
+citep[see][chap.
+ 2]{jon90}
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+(see Jones et al., 1990, chap.
+ 2)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+
+\backslash
+citet*{jon90}
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Jones, Baker, and Williams (1990)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+
+\backslash
+citep*{jon90} 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+(Jones, Baker, and Williams, 1990)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Natbib样式示例
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Jurabib
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+关于Jurabib的详细用法，可以下载
+\begin_inset CommandInset href
+LatexCommand href
+name "Jurabib的使用手册(英文)"
+target "http://dante.ctan.org/CTAN/macros/latex/contrib/jurabib/docs/english/jbendoc.pdf"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+：此包是德国人Jens Berger创建一个主要用于法律和人文科学的文献宏包。特别是对于学习人文科学的人来讲，此包是相当有用的。
+\end_layout
+
+\begin_layout Paragraph
+数学宏包的使用
+\end_layout
+
+\begin_layout Standard
+如果要使模版自动对数学公式的支持，就必须要在文档首选项中的“Math Options”(数学选项)打钩“使用AMS数学包”或者
+\begin_inset Quotes erd
+\end_inset
+
+使用esint包
+\begin_inset Quotes erd
+\end_inset
+
+，或者两者都打勾，请注意，如果打钩“自动使用AMS数学包”或者“自动使用esint包”仅仅在LyX下插入数学环境时有效(LyX会依次自动添加AMS和esint宏
+包)，如果在文档中插入TeX代码并且使用了两者宏包之一的代码，这时候就必须打钩“使用AMS数学包”或“使用esint包”，因为LyX并不能智能识别所插入的数学T
+eX代码而自动引入AMS和esint包，在要编辑数学有关模版(或者文档)的时候，强烈建议把“使用AMS数学包”和“使用esint包”都打钩，否则可能出现编译出错
+的情况。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pics/import math packages.png
+	scale 70
+	rotateOrigin center
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+打钩导入AMS和esint宏包
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+输出pdf的设置
+\end_layout
+
+\begin_layout Standard
+我们可以在文档首选项中的“PDF properties”指定是否使用hyperref包来使输出的pdf更加具有可读性，比如pdf目录层次的现实，以及文档链接颜色
+的高亮等，当你使用撰写中文时，必须要在“Addtional option”（附加参数）中指定参数unicode为false，否则pdf的目录会出现乱码。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pics/pdf output properites!.png
+	scale 80
+	rotateOrigin center
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+设置pdf输出选项
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+列表符号的设置
+\end_layout
+
+\begin_layout Standard
+如果对文档的列表符号有特殊要求，可以在文档首选项里的“bullets”中设定列表的符号形状，由于LyX中内置了大量不同种类的符号，因此我们不需要在LateX序言
+中设定，这样能够节省不少时间。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pics/setting_of_listings_bullets.png
+	scale 50
+	rotateOrigin center
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+设置列表符号形状
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+使用分支
+\end_layout
+
+\begin_layout Standard
+在LyX里，分支是一个非常有特色的选项，简单来说，分支就相当于一个环境或者说一个可编译或不编译的LyX文档片段，我们可以设定被某一个分支所包含的内容在最终的输出
+中是否应该被编译(激活分支编译)，例如你可以使用LyX中撰写一份试卷，其中包括问题和答案，对于学生而言，可以不编译答案分支（不激活分支编译），在考试结果出来之后
+，然后设置答案在pdf输出中应该被编译，这样就很方便使用一份文档来管理问题和答案。我们可以通过在文档首选项中的“分支”中添加分支以及设定分支的颜色以示区别，然后
+就可以很简单在文档中插入所需要分支了。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pics/branch setting.png
+	scale 70
+	rotateOrigin center
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+添加自定义的分支
 \end_layout
 
 \end_inset
