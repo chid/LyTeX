@@ -23,6 +23,10 @@
 \setCJKfamilyfont{song}{SimSun}
 \setCJKfamilyfont{hei}{SimHei}
   
+%define self-defined subequation environment for demostration
+\newenvironment{mysubeq}
+{\begin{subequations}\renewcommand{\theequation}{\theparentequation\#\arabic{equation}}}
+{\end{subequations}}
 
 %grayBox,needs shadecolor, \boxwidth and the framed package
 \newenvironment{grayBox}{
@@ -57,6 +61,9 @@
                                      {-3.25ex\@plus -1ex \@minus -.2ex}%
                                      {0.0001pt \@plus .2ex}%
                                      {\normalfont\normalsize\bfseries}}
+
+%
+%\def\tagform@#1{\maketag@@@{<#1>}}
 \end_preamble
 \use_default_options false
 \language chinese-simplified
@@ -81,7 +88,7 @@
 \pdf_bookmarks true
 \pdf_bookmarksnumbered true
 \pdf_bookmarksopen true
-\pdf_bookmarksopenlevel 2
+\pdf_bookmarksopenlevel 3
 \pdf_breaklinks false
 \pdf_pdfborder true
 \pdf_colorlinks true
@@ -90,14 +97,14 @@
 \pdf_quoted_options "unicode=false"
 \papersize a4paper
 \use_geometry true
-\use_amsmath 0
+\use_amsmath 2
 \use_esint 0
 \cite_engine basic
 \use_bibtopic false
 \paperorientation portrait
-\branch Test111
-\selected 0
-\color #5555ff
+\branch pics
+\selected 1
+\color #ff007f
 \end_branch
 \leftmargin 2.5cm
 \topmargin 3cm
@@ -112,7 +119,7 @@
 \papersides 1
 \paperpagestyle fancy
 \tracking_changes false
-\output_changes false
+\output_changes true
 \author "" 
 \author "" 
 \end_header
@@ -303,8 +310,21 @@ lytex,然后就可以通过双击根目录下的lyx.exe来启动可视化编辑�
 \end_layout
 
 \begin_layout Standard
-如果还有其他任何问题，可以点击“帮助”菜单，然后选择任何一个你想查看的帮助文档(由于Lyx自带的帮助文档是英文，中文翻译以后会加进去)，由于LyX默认的新建文档
-是英文，所以这里不再赘述有关创建英文文档。
+如果还有其他任何问题，可以点击“
+\series bold
+帮助
+\series default
+”菜单，然后选择任何一个你想查看的帮助文档(由于Lyx自带的帮助文档是英文，中文翻译以后会加进去)，由于LyX默认的新建文档是英文，所以这里不再赘述有关创建英文
+文档，关于英文文档撰写和排版的详细介绍，请点击“
+\series bold
+帮助
+\series default
+”\SpecialChar \menuseparator
+“
+\series bold
+用户手册
+\series default
+”。
 \end_layout
 
 \begin_layout Standard
@@ -313,7 +333,7 @@ lytex,然后就可以通过双击根目录下的lyx.exe来启动可视化编辑�
 placement tbph
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -383,7 +403,19 @@ target "http://theoval.cmp.uea.ac.uk/~nlct/latex/novices/"
 \end_layout
 
 \begin_layout Enumerate
-单击“文件”菜单，选择“从模版新建文件”，然后再打开子文件夹“ChineseSimp
+单击“
+\series bold
+文件
+\series default
+”菜单，选择“
+\series bold
+从模版新建文件
+\series default
+”，然后再打开子文件夹“
+\series bold
+ChineseSimp
+\series default
+
 \begin_inset Quotes erd
 \end_inset
 
@@ -456,7 +488,21 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-撰写中文文档的首要任务就是要引入中文宏包，我们可以在LateX序中（点击文档-->首选项-->LateX序）制定：
+撰写中文文档的首要任务就是要引入中文宏包，我们可以在LateX序中（点击“
+\series bold
+文档
+\series default
+”\SpecialChar \menuseparator
+“
+\series bold
+首选项
+\series default
+”\SpecialChar \menuseparator
+“
+\series bold
+LateX序
+\series default
+”）制定：
 \end_layout
 
 \begin_layout Standard
@@ -721,8 +767,21 @@ end{grayBox}
 \end_layout
 
 \begin_layout Standard
-当然对于字体大小的设置，可以不需要在LateX序中添加代码，直接点击“文档”-->“首选项”-->“字体”，设置字体大小。由于lyx1.6版本对中文支持并不完善，
-所以对一般的LyX文档，“字体”中CJK选项不可用，除非是特定LyxCJK文档，才能够编辑。
+当然对于字体大小的设置，可以不需要在LateX序中添加代码，直接点击“
+\series bold
+文档
+\series default
+”\SpecialChar \menuseparator
+“
+\series bold
+首选项
+\series default
+”\SpecialChar \menuseparator
+“
+\series bold
+字体
+\series default
+”，设置字体大小。由于lyx1.6版本对中文支持并不完善，所以对一般的LyX文档，“字体”中CJK选项不可用，除非是特定LyxCJK文档，才能够编辑。
 \end_layout
 
 \begin_layout Standard
@@ -906,7 +965,8 @@ end{grayBox}
 
 \begin_layout Standard
 除非你要极其精确地控制文本和段落的样式，一般情况下，你不需要自己在LateX序言中添加这些TeX代码来调整这些参数，因为在LyX中，仅仅通过鼠标就可以调整这些参
-数了，点击”文档“-->”首选项“设置TextLayout（文本样式）。
+数了，点击”文档“\SpecialChar \menuseparator
+”首选项“设置TextLayout（文本样式）。
 \end_layout
 
 \begin_layout Paragraph
@@ -1040,12 +1100,29 @@ end{grayBox}
 
 \begin_layout Standard
 为了使图片能够被正确显示在文档中，经常需要调整浮动项的位置，一般的做法是在LateX序言中添加TeX代码，而这里在LyX中，只需要使用鼠标就可以轻松完成。比如我
-们想使插入的浮动图片优先被考虑，那么我们可以采取如下步骤:点击”文档“-->
+们想使插入的浮动图片优先被考虑，那么我们可以采取如下步骤:点击”
+\series bold
+文档
+\series default
+“\SpecialChar \menuseparator
+
 \begin_inset Quotes erd
 \end_inset
 
-首选项”-->“浮动项放置方式”，在“高级放置设定”选项里，分别把“页上”，“页底”，以及“浮动项页”和“此处优先”这四项打钩,这样每次被插入的浮动项就不需要再
-此设置了。
+
+\series bold
+首选项
+\series default
+”\SpecialChar \menuseparator
+“
+\series bold
+浮动项放置方式
+\series default
+”，在“
+\series bold
+高级放置设定
+\series default
+”选项里，分别把“页上”，“页底”，以及“浮动项页”和“此处优先”这四项打钩,这样每次被插入的浮动项就不需要再此设置了。
 \end_layout
 
 \begin_layout Standard
@@ -1110,8 +1187,12 @@ status collapsed
 \noindent
 
 \series bold
-注意：如果要想保证你的一个浮动项在pdf中的效果与在LyX中编辑的效果一样，有时候你可以点击右键浮动项选择选择“首选项”-->打钩“此处”，这样的话，版面中所此
-图的上方所有的项目可能整体会被往上移动或者此图下方的项目整体往下移动来腾出空间(包括分页)。
+注意：如果要想保证你的一个浮动项在pdf中的效果与在LyX中编辑的效果一样，有时候你可以点击右键浮动项选择选择“首选项”
+\series default
+\SpecialChar \menuseparator
+
+\series bold
+打钩“此处”，这样的话，版面中所此图的上方所有的项目可能整体会被往上移动或者此图下方的项目整体往下移动来腾出空间(包括分页)。
 \end_layout
 
 \begin_layout Standard
@@ -1221,8 +1302,21 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-一个中文模版不是对所有文章有效的，因此必须制定此模版的文档类型，比如article（文章或者论文），或者book(书籍类)，我们可以从文档-->首选项-->文档
-class来选择不同的文档类型，在LyX中，已经有很多文档类型供选择，如果不特定地设置文档类型，则默认文档类型一般为article。
+一个中文模版不是对所有文章有效的，因此必须制定此模版的文档类型，比如article（文章或者论文），或者book(书籍类)，我们可以从“
+\series bold
+文档
+\series default
+”\SpecialChar \menuseparator
+“
+\series bold
+首选项
+\series default
+”\SpecialChar \menuseparator
+“
+\series bold
+文档class
+\series default
+”来选择不同的文档类型，在LyX中，已经有很多文档类型供选择，如果不特定地设置文档类型，则默认文档类型一般为article。
 \end_layout
 
 \begin_layout Standard
@@ -1270,11 +1364,20 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-在LyX中，还有一个很重要的特性，就是可以给模版添加很多TeX格式环境，比如想添加对数学各种定义，猜想，定理，证明等环境格式支持，可以在“文档
+在LyX中，还有一个很重要的特性，就是可以给模版添加很多TeX格式环境，比如想添加对数学各种定义，猜想，定理，证明等环境格式支持，可以在“
+\series bold
+文档
+\series default
+
 \begin_inset Quotes erd
 \end_inset
 
--->“首选项”中的Modules进行设置，由于LyX中自带了很多标准的环境库，你可以选择所需要的环境模块。
+\SpecialChar \menuseparator
+“
+\series bold
+首选项
+\series default
+”中的Modules进行设置，由于LyX中自带了很多标准的环境库，你可以选择所需要的环境模块。
 \end_layout
 
 \begin_layout Standard
@@ -1561,9 +1664,21 @@ end{grayBox}
 \end_layout
 
 \begin_layout Standard
-在LyX中，页面的设置也是相当的容易，比如要设置纸张的大小为A4,可以点击“文档”-->“首选项”在“页面布局”中设置格式为A4，同时还可以设置纸张的方向；如果
-要精确控制页边距，可以在“页边距”选项中精确设置，实际上LyX会根据这些参数自动调用geometry宏包进行设置。(注意：页边距选项中的前七个参数选项分别对应下
-图所示的七个参数)
+在LyX中，页面的设置也是相当的容易，比如要设置纸张的大小为A4,可以点击“
+\series bold
+文档
+\series default
+”\SpecialChar \menuseparator
+“
+\series bold
+首选项
+\series default
+”在“
+\series bold
+页面布局
+\series default
+”中设置格式为A4，同时还可以设置纸张的方向；如果要精确控制页边距，可以在“页边距”选项中精确设置，实际上LyX会根据这些参数自动调用geometry宏包进行设
+置。(注意：页边距选项中的前七个参数选项分别对应下图所示的七个参数)
 \end_layout
 
 \begin_layout Standard
@@ -1658,8 +1773,8 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-文献是论文中很重要的一个部分，在LyX中可以选择不同的文献引用格式，点击“文档”-->“首选项”在“参考书目”选项中选择引用的格式,LyX提供两种主流的文献引用
-格式：
+文献是论文中很重要的一个部分，在LyX中可以选择不同的文献引用格式，点击“文档”\SpecialChar \menuseparator
+“首选项”在“参考书目”选项中选择引用的格式,LyX提供两种主流的文献引用格式：
 \end_layout
 
 \begin_layout Itemize
@@ -2021,7 +2136,7 @@ status collapsed
 
 \begin_layout Standard
 我们可以在文档首选项中的“PDF properties”指定是否使用hyperref包来使输出的pdf更加具有可读性，比如pdf目录层次的现实，以及文档链接颜色
-的高亮等，当你使用撰写中文时，必须要在“Addtional option”（附加参数）中指定参数unicode为false，否则pdf的目录会出现乱码。
+的高亮等，当你撰写中文文档时，必须要在“Addtional option”（附加参数）中指定参数unicode为false，否则pdf的目录会出现乱码。
 \end_layout
 
 \begin_layout Standard
@@ -2119,8 +2234,8 @@ status collapsed
 
 \begin_layout Standard
 在LyX里，分支是一个非常有特色的选项，简单来说，分支就相当于一个环境或者说一个可编译或不编译的LyX文档片段，我们可以设定被某一个分支所包含的内容在最终的输出
-中是否应该被编译(激活分支编译)，例如你可以使用LyX中撰写一份试卷，其中包括问题和答案，对于学生而言，可以不编译答案分支（不激活分支编译），在考试结果出来之后
-，然后设置答案在pdf输出中应该被编译，这样就很方便使用一份文档来管理问题和答案。我们可以通过在文档首选项中的“分支”中添加分支以及设定分支的颜色以示区别，然后
+中是否应该被编译，例如你可以使用LyX中撰写一份试卷，其中包括问题和答案，对于学生而言，可以不编译答案分支（不激活分支编译），在考试结果出来之后，然后设置答案在
+pdf输出中应该被编译(激活分支编译)，这样就很方便使用一份文档来管理问题和答案。我们可以通过在文档首选项中的“分支”中添加分支以及设定分支的颜色以示区别，然后
 就可以很简单在文档中插入所需要分支了。
 \end_layout
 
@@ -2154,6 +2269,456 @@ status open
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Lyx排版
+\end_layout
+
+\begin_layout Standard
+这部分主要介绍一些常用的编辑和排版技巧，以便提高使用LyX的效率。如果要查看详尽的使用手册可以通过点击“
+\series bold
+帮助
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+\SpecialChar \menuseparator
+“
+\series bold
+入门教程
+\series default
+”或者“
+\series bold
+用户手册
+\series default
+”。
+\end_layout
+
+\begin_layout Subsection
+快捷键
+\end_layout
+
+\begin_layout Standard
+想要在LyX中高效排版，首先必须要了解几个非常重要的默认快捷键。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="10" columns="3">
+<features>
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+快捷键
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+说明
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+使用频率
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ctrl+B
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+使文本变成粗体
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+中
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ctrl+E
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+使文本变成斜体(强调)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+中
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ctrl+L
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+快速插入LaTeX代码
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+高
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ctrl+M
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+快速插入数学输入环境
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+高
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ctrl+P
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+查看Xetex编译的pdf文件
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+高
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ctrl+S
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+快速保存正在编辑(激活)的文档
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+高
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ctrl+U
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+给文本添加下划线
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+中
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ctrl+Z
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+撤销上一次操作
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+高
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ctrl+return
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+换行(在数学环境下也可用)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+高
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+重要的常用快捷键
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+说明:
+\end_layout
+
+\begin_layout Itemize
+“Ctrl+L”可以插入TeX代码，例如
+\backslash
+begin{grayBox}插入已自定义的环境。
+\end_layout
+
+\begin_layout Itemize
+使用快捷键“Ctl+M
+\begin_inset Quotes erd
+\end_inset
+
+就可以立刻打开数学输入支持环境,“Ctrl+Enter
+\begin_inset Quotes erd
+\end_inset
+
+可以在数学环境中插入新行，特别适合在插入了AMS对齐的环境下，可以使用此快捷键来换行输入公式化简等。
+\end_layout
+
+\begin_layout Itemize
+使用“Ctrl+P”可以直接预览Xetex生成后的pdf文件，非常方便(注意，“Ctrl+P”并不是LyX官方网站所发行的LyX中所默认的快捷键，而是LyTeX
+套件重新编译后说加入的，因为官方版本默认并不支持Xetex编译)
+\end_layout
+
+\begin_layout Subsection
+文本样式排版
+\end_layout
+
+\begin_layout Standard
+如果想要加粗(快捷键“Ctrl+B”)或者强调(快捷键“Ctrl+E”)或者给文本加下划线(快捷键“Ctrl+U”),可以直接使用他们的快捷键，或者你想一步实现
+所有的设置，可以“
+\series bold
+右键单击选择的文本或者段落
+\series default
+”\SpecialChar \menuseparator
+“
+\series bold
+文本样式
+\series default
+”\SpecialChar \menuseparator
+“
+\series bold
+自定义
+\series default
+”中对文本的各种样式参数进行设置。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pics/text_style_setting.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+文本样式设置
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Plain Layout
 
 \end_layout
@@ -2164,39 +2729,1394 @@ status open
 \end_layout
 
 \begin_layout Subsection
-撰写中英文混合文档
+文章段落排版
 \end_layout
 
 \begin_layout Standard
-内容......
-\end_layout
-
-\begin_layout Section
-Lyx排版
-\end_layout
-
-\begin_layout Subsection
-英文排版
+在对文章的段落进行排版时，可以很容易的对段落进行
+\series bold
+首行缩进
+\series default
+，
+\series bold
+行间距离
+\series default
+以及
+\series bold
+段落对齐方式
+\series default
+设置，只需通过“
+\series bold
+右键单击所要设置的段落
+\series default
+”\SpecialChar \menuseparator
+“
+\series bold
+段落设置
+\series default
+”即可。
 \end_layout
 
 \begin_layout Standard
-内容......
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pics/paragraph setting!.png
+
+\end_inset
+
+
 \end_layout
 
-\begin_layout Subsection
-中文排版
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+设置段落
 \end_layout
 
-\begin_layout Standard
-内容......
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
 数学公式排版
 \end_layout
 
+\begin_layout Subsubsection
+使用数学工具条
+\end_layout
+
 \begin_layout Standard
-内容......
+在进行数学输入之前，强烈建议在LyX中打开数学工具条视图以方便的选择所需要的数学符号和模版，通过点击“
+\series bold
+视图
+\series default
+”\SpecialChar \menuseparator
+“
+\series bold
+工具条
+\series default
+”\SpecialChar \menuseparator
+“数
+\series bold
+学工具条(自动)
+\series default
+”和“
+\series bold
+数学（自动）
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+来打开数学面板。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pics/show_math_toolbar.png
+
+\end_inset
+
+
+\begin_inset space \qquad{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename pics/choose_Math_toolbar2.png
+	rotateOrigin center
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+选择显示数学工具条
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pics/Math_toolbar.png
+	scale 80
+	rotateOrigin center
+
+\end_inset
+
+
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pics/Math_toobar2.png
+	scale 80
+	rotateOrigin center
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+数学工具条(可以拖动)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+插入行内或者显示公式
+\end_layout
+
+\begin_layout Standard
+当插入公式时，可以选择插入“
+\series bold
+行内公式
+\series default
+”或者“
+\series bold
+单独显示公式
+\series default
+”，在定理以及引理中，最好使用单独显示公式便于显示和编号，在段落中引用到数学函数或者公式时，可以使用“
+\series bold
+行内公式
+\series default
+”。建议使用打印pdf来查看数学公式的最终效果，然后再决定使用哪一种显示方式最适合你的论文。
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $\sum_{i=1}^{N}2^{i}=......\text{这是一个行内公式}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+\sum_{i=1}^{N}2^{i}=......\text{这是一个单独显示公式}\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+公式编号
+\end_layout
+
+\begin_layout Standard
+给数学公式编号，一般有两种方法：
+\end_layout
+
+\begin_layout Enumerate
+通过单击“
+\series bold
+插入
+\series default
+”\SpecialChar \menuseparator
+“
+\series bold
+公式
+\series default
+”\SpecialChar \menuseparator
+“
+\series bold
+编号公式
+\series default
+”(快捷键Ctrl+Alt+N),来直接插入带有编号的公式，比如：
+\begin_inset Formula \begin{equation}
+z^{2}=x^{2}+y^{2}\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+通过右键单击公式，然后选择“Toggel Labeling/Numbering”就可以给公式编号了，也可以选择“
+\series bold
+编辑
+\series default
+”\SpecialChar \menuseparator
+“
+\series bold
+数学
+\series default
+”\SpecialChar \menuseparator
+“
+\series bold
+Number this line
+\series default
+”(给此行进行编号)或者“
+\series bold
+Number whole formula
+\series default
+（对整个公式进行编号）”。
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pics/equation_numbering_1.png
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+方法一
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pics/equation_numbering_2.png
+	scale 80
+	rotateOrigin center
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+方法二
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+公式编号
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+公式编号样式
+\end_layout
+
+\begin_layout Standard
+如果要想改变对数学公式编号的样式，比如改成罗马数字编号或者字母编号，可以在LateX序言中加入或者插入如下代码:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+renewcommand{
+\backslash
+theequation}{
+\backslash
+roman{equation}}
+\end_layout
+
+\begin_layout Standard
+%罗马数字小写编号
+\end_layout
+
+\begin_layout Standard
+%效果
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+theequation}{
+\backslash
+roman{equation}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{equation}
+z^{2}=x^{2}+y^{2}\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+renewcommand{
+\backslash
+theequation}{
+\backslash
+Roman{equation}}
+\end_layout
+
+\begin_layout Standard
+%罗马数字大写编号
+\end_layout
+
+\begin_layout Standard
+%效果如下:
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+theequation}{
+\backslash
+Roman{equation}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{equation}
+z^{2}=x^{2}+y^{2}\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+renewcommand{
+\backslash
+theequation}{
+\backslash
+alph{equation}}
+\end_layout
+
+\begin_layout Standard
+%拉丁语小写编号
+\end_layout
+
+\begin_layout Standard
+%效果如下:
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+theequation}{
+\backslash
+alph{equation}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{equation}
+z^{2}=x^{2}+y^{2}\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+renewcommand{
+\backslash
+theequation}{
+\backslash
+Alph{equation}}
+\end_layout
+
+\begin_layout Standard
+%拉丁语大写编号
+\end_layout
+
+\begin_layout Standard
+%效果如下:
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+theequation}{
+\backslash
+Alph{equation}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{equation}
+z^{2}=x^{2}+y^{2}\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+如果想要返回默认的格式（阿拉伯数字编号），只需在后面插入如下代码：
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+renewcommand{
+\backslash
+theequation}{
+\backslash
+arabic{equation}} 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{grayBox}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+theequation}{
+\backslash
+arabic{equation}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+按章节对公式进行编号
+\end_layout
+
+\begin_layout Standard
+\align block
+对于如果想数学公式按照所在的章节进行编号，可以使用AMS宏包中的“
+\backslash
+numberwithin”命令，如果你把此代码加入文档的LateX序中，则所有的公式将按照章节进行编号，如果你只想应用在某一公式上，可以在公式前插入TeX代码，
+例如：
+\end_layout
+
+\begin_layout Standard
+\align block
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{grayBox}
+\end_layout
+
+\end_inset
+
+
+\backslash
+numberwithin{equation}{section}
+\end_layout
+
+\begin_layout Standard
+(公式输入)......
+\end_layout
+
+\begin_layout Standard
+显示效果如下:
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numberwithin{equation}{section}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula \begin{equation}
+z^{2}=x^{2}+y^{2}\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+如果要使用原来默认的编号，则可以使用重置命令：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+renewcommand{
+\backslash
+theequation}{
+\backslash
+arabic{equation}}
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{grayBox}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+theequation}{
+\backslash
+arabic{equation}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+对子公式编号
+\end_layout
+
+\begin_layout Standard
+有时候，我们有一个母公式，然后要对由此母公式所导出的子公式进行编号，我们可以使用AMS的“
+\backslash
+subequations”环境，例如以下例子
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+此例子摘自LyX的数学英文帮助文档19.3部分
+\end_layout
+
+\end_inset
+
+：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{equation}
+A=C-B\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addtocounter{equation}{-1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{subequations}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{equation}
+B=C-A\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{equation}
+C=A-B\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{subequations}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+注意：先要输入此类公式分三步：
+\end_layout
+
+\begin_layout Enumerate
+先输入编号的母公式，然后紧接着插入代码“
+\backslash
+addtocounter{equation}{-1}”和“
+\backslash
+begin{subequations}”(可以LyX快捷键“Ctrl+L”来快速插入代码)
+\end_layout
+
+\begin_layout Enumerate
+然后输入编号的子公式
+\end_layout
+
+\begin_layout Enumerate
+输入子公式环境结束代码“
+\backslash
+end{subequations}”
+\end_layout
+
+\begin_layout Standard
+注意，上面子公式的编号的都是以“
+\series bold
+数字-英文字母
+\series default
+”格式的，如果子编号的式子数目超过了26，就可能不符合要求了，因此我们还可以重新定义子编号的格式为“
+\series bold
+数字#数字
+\series default
+”的形式的，我们可以在LateX序言中自定义一个子公式输入环境，添加如下代码:
+\end_layout
+
+\begin_layout Standard
+\align block
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+newenvironment{mysubeq}
+\end_layout
+
+\begin_layout Standard
+{
+\backslash
+begin{subequations}
+\backslash
+renewcommand{
+\backslash
+theequation}
+\end_layout
+
+\begin_layout Standard
+{
+\backslash
+theparentequation
+\backslash
+#
+\backslash
+arabic{equation}}}
+\end_layout
+
+\begin_layout Standard
+{
+\backslash
+end{subequations}}
+\end_layout
+
+\begin_layout Standard
+%示例：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{equation}
+A=C-B\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addtocounter{equation}{-1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{mysubeq}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{equation}
+B=C-A\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{equation}
+C=A-B\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{mysubeq}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align block
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+自定义公式编号
+\end_layout
+
+\begin_layout Standard
+尽管AMS宏包提供了数字，英文，罗马数字等编号，但是如果想给公式提供自己定义的编号该怎么办呢？我们可以简单的使用
+\backslash
+tag命令达到目的,在LyX数学环境中公式的末尾键入
+\backslash
+tag，LyX就会自动显示出一个tag框，然后输入编号的内容即可，但是总体格式仍然是一对括号所包括的编号内容)，如果甚至要修改括号，我们可以在LateX序言中添
+加以下代码
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+参考LyX数学英文帮助的19.4部分
+\end_layout
+
+\end_inset
+
+，比如(#1表示宏命令中编号的参数，表示第一个参数，
+\series bold
+尖括号
+\series default
+可以任意被替换)：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+def
+\backslash
+tagform@#1{
+\backslash
+maketag@@@{
+\series bold
+\color blue
+<
+\series default
+\color inherit
+#1
+\series bold
+\color blue
+>
+\series default
+\color inherit
+}}
+\end_layout
+
+\begin_layout Standard
+%此代码加入LyX序言中,这将会导致所有的方程编号都是在尖括号<...>内而不是默认的圆括号(...)
+\end_layout
+
+\begin_layout Standard
+\align block
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+或者在文档中插入以下代码：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+makeatletter
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+def
+\backslash
+tagform@#1{
+\backslash
+maketag@@@{<#1>}}
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+makeatother
+\end_layout
+
+\begin_layout Standard
+\align block
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+makeatletter
+\backslash
+def
+\backslash
+tagform@#1{
+\backslash
+maketag@@@{<#1>}}
+\backslash
+makeatother
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+为了演示，我们只在文档中插入此代码，于是上一个方程的编号效果就会变成如下（必须要使用
+\backslash
+tag命令）:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{equation}
+A=C-B\tag{我是自定义编号}\label{eq:tag-1}\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+要返回原来的格式，只需要插入如下代码：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+makeatletter
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+@addtoreset{equation}{section}
+\end_layout
+
+\begin_layout Standard
+%或者
+\backslash
+@addtoreset{equation}{part}
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+makeatother
+\end_layout
+
+\begin_layout Standard
+%由于使用
+\backslash
+@内部命令符号，所以必须把使用
+\backslash
+makeatletter和
+\backslash
+makeatother
+\end_layout
+
+\begin_layout Standard
+\align block
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{grayBox}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+makeatletter
+\backslash
+@addtoreset{equation}{section}
+\backslash
+makeatother
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
