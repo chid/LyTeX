@@ -9,6 +9,7 @@
 \usepackage[figure]{hypcap}
 \usepackage{lipsum,framed,color}
 \usepackage{indentfirst}
+\usepackage{calc}
                                  
 \setCJKmainfont[BoldFont=SimHei]{SimSun}%设置中文主字体
 \setCJKsansfont{SimHei}         
@@ -63,6 +64,7 @@
                                      {\normalfont\normalsize\bfseries}}
 
 %
+\usepackage{remreset}
 %\def\tagform@#1{\maketag@@@{<#1>}}
 \end_preamble
 \use_default_options false
@@ -112,7 +114,7 @@
 \bottommargin 2.5cm
 \secnumdepth 5
 \tocdepth 5
-\paragraph_separation indent
+\paragraph_separation skip
 \defskip medskip
 \quotes_language english
 \papercolumns 1
@@ -3161,11 +3163,11 @@ status collapsed
 \end_layout
 
 \begin_layout Paragraph
-公式编号样式
+内置公式编号样式
 \end_layout
 
 \begin_layout Standard
-如果要想改变对数学公式编号的样式，比如改成罗马数字编号或者字母编号，可以在LateX序言中加入或者插入如下代码:
+AMS宏包内置了一些数学公式编号的样式，比如改成罗马数字编号或者字母编号，可以在LateX序言中加入或者插入如下代码:
 \end_layout
 
 \begin_layout Standard
@@ -3437,7 +3439,7 @@ arabic{equation}}
 \end_layout
 
 \begin_layout Paragraph
-按章节对公式进行编号
+按章节或段落对公式进行编号
 \end_layout
 
 \begin_layout Standard
@@ -3468,11 +3470,23 @@ numberwithin{equation}{section}
 \end_layout
 
 \begin_layout Standard
+\align block
+%或者
+\end_layout
+
+\begin_layout Standard
+\align block
+
+\backslash
+numberwithin{equation}{paragraph}
+\end_layout
+
+\begin_layout Standard
 (公式输入)......
 \end_layout
 
 \begin_layout Standard
-显示效果如下:
+按章节进行编号效果:
 \begin_inset ERT
 status open
 
@@ -3486,6 +3500,52 @@ numberwithin{equation}{section}
 \end_inset
 
 
+\begin_inset Formula \begin{equation}
+z^{2}=x^{2}+y^{2}\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+makeatletter
+\backslash
+@removefromreset{equation}{section}
+\backslash
+makeatother
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+按段落进行编号效果:
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numberwithin{equation}{paragraph}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula \begin{equation}
 z^{2}=x^{2}+y^{2}\end{equation}
 
@@ -3528,6 +3588,23 @@ begin{grayBox}
 \end_inset
 
 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+theequation}{
+\backslash
+arabic{equation}}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3538,6 +3615,45 @@ renewcommand{
 theequation}{
 \backslash
 arabic{equation}}
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+makeatletter
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+@removefromreset{equation}{paragraph}
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+makeatother
+\end_layout
+
+\begin_layout Standard
+%由于
+\backslash
+numberwithin自动使用了
+\backslash
+addtoreset命令，因此我们要移除它
+\end_layout
+
+\begin_layout Standard
+%重置后效果:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{equation}
+z^{2}=x^{2}+y^{2}\end{equation}
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3554,6 +3670,9 @@ end{grayBox}
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -3566,6 +3685,26 @@ renewcommand{
 theequation}{
 \backslash
 arabic{equation}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+makeatletter
+\backslash
+@removefromreset{equation}{paragraph}
+\backslash
+makeatother
 \end_layout
 
 \end_inset
@@ -3778,6 +3917,16 @@ addtocounter{equation}{-1}
 \end_inset
 
 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+如果不把上面得方程当成主方程的话，左边的代码可以删除
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3848,7 +3997,7 @@ end{grayBox}
 \end_layout
 
 \begin_layout Paragraph
-自定义公式编号
+自定义公式编号样式
 \end_layout
 
 \begin_layout Standard
@@ -4024,7 +4173,7 @@ tag命令）:
 
 \begin_layout Standard
 \begin_inset Formula \begin{equation}
-A=C-B\tag{我是自定义编号}\label{eq:tag-1}\end{equation}
+A=C-B{\color{cyan}\tag{自定义方程编号}}\label{eq:tag-1}\end{equation}
 
 \end_inset
 
@@ -4032,10 +4181,7 @@ A=C-B\tag{我是自定义编号}\label{eq:tag-1}\end{equation}
 \end_layout
 
 \begin_layout Standard
-要返回原来的格式，只需要插入如下代码：
-\end_layout
-
-\begin_layout Standard
+要返回原来的编号，只需要插入如下代码：
 \begin_inset ERT
 status open
 
@@ -4082,7 +4228,7 @@ makeatother
 \backslash
 makeatletter和
 \backslash
-makeatother
+makeatother,而且还要使用remreset宏包
 \end_layout
 
 \begin_layout Standard
@@ -4117,6 +4263,299 @@ makeatother
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+makeatletter
+\backslash
+def
+\backslash
+tagform@#1{
+\backslash
+maketag@@@{(#1)}}
+\backslash
+makeatother
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+数学公式的对齐方式
+\end_layout
+
+\begin_layout Standard
+在LyX中，有5种内置的AMS公式环境供使用。
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset CommandInset label
+LatexCommand label
+name "par:AMS-align(奇右偶左)"
+
+\end_inset
+
+AMS align环境
+\end_layout
+
+\begin_layout Standard
+当选择了“
+\series bold
+插入
+\series default
+”\SpecialChar \menuseparator
+“
+\series bold
+公式
+\series default
+”\SpecialChar \menuseparator
+“
+\series bold
+AMS align环境
+\series default
+”时，将会显示
+\series bold
+列对齐
+\series default
+方式的公式：
+\series bold
+奇数列向右对齐，偶数列向左对齐
+\series default
+(简称“奇右偶左”)。如果公式较长可以使用快捷键“Ctrl+Enter”添加新行（换行），例如在第一列中我们输入
+\begin_inset Formula $a=b$
+\end_inset
+
+,第二列中我们输入
+\begin_inset Formula $c=d$
+\end_inset
+
+ (因为总共只有一行两列)，显示效果如下：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{align}
+a=b & c=d\label{eq:ams align}\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+效果看起来几乎两列之间没有间距调整。
+\end_layout
+
+\begin_layout Standard
+注意到，插入“
+\series bold
+AMS align环境
+\series default
+”后的默认环境是一行两列，可以通过数学工具栏
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+如果数学工具条未显示，可以点击“视图”\SpecialChar \menuseparator
+“工具条”\SpecialChar \menuseparator
+“数学(自动)”打钩
+\end_layout
+
+\end_inset
+
+上的“添加行”，“添加列”等按钮进行编辑。如果在这个一行两列的默认环境成编辑数学公式所显示出来的效果是比较差的，必须要添加新列来调整，比如我们把上面的公式稍微再
+调整一下，添加一列，也就是说一行三列，依次输入
+\begin_inset Formula $a=b$
+\end_inset
+
+，
+\begin_inset Formula $c$
+\end_inset
+
+，
+\begin_inset Formula $=d$
+\end_inset
+
+，第二列中我们输入,第三列中输入,显示效果如下：
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Formula \begin{align}
+a=b & c & =d\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+根据此环境对齐的规则，
+\begin_inset Formula $bc$
+\end_inset
+
+应该是挨着，因为
+\begin_inset Formula $c$
+\end_inset
+
+在偶数列（向左靠齐），
+\begin_inset Formula $=d$
+\end_inset
+
+在奇数列(向右靠齐)应该在最右边。与方程
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:ams align"
+
+\end_inset
+
+一样，
+\begin_inset Formula $c$
+\end_inset
+
+与
+\begin_inset Formula $=d$
+\end_inset
+
+的间距特别大，似乎被连续的空白给填充了(
+\backslash
+hfill)，我们再继续修改，把第二列留空，在第三列输入
+\begin_inset Formula $c=d$
+\end_inset
+
+,显示效果变成：
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Formula \begin{align}
+a=b &  & c=d\label{eq:effect1}\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+最后我们把
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:ams align"
+
+\end_inset
+
+修改成一行四列，依次输入
+\begin_inset Formula $a,=b,c,=d$
+\end_inset
+
+这是个数学符号，效果如下：
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Formula \begin{align}
+a & =b & c & =d\label{eq:effect2}\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+最后我们发现
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:effect1"
+
+\end_inset
+
+和
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:effect2"
+
+\end_inset
+
+的显示效果几乎一样，因为标准的align环境会默认在每个水平列后自动添加一些空白而使之自动对齐。
+\end_layout
+
+\begin_layout Paragraph
+AMS alignat()环境
+\end_layout
+
+\begin_layout Standard
+此对齐方式与上面的
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "par:AMS-align(奇右偶左)"
+
+\end_inset
+
+类似，只不过可以自己制定列间的距离（使用
+\backslash
+hspace命令
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+点击“插入”\SpecialChar \menuseparator
+“Horizontal space”(水平连续空格距离)来设置
+\end_layout
+
+\end_inset
+
+），比如我们修改
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:effect2"
+
+\end_inset
+
+如下效果(在
+\begin_inset Formula $b$
+\end_inset
+
+的后面键入
+\backslash
+hspace双击会自动显示对话框
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+通过菜单命令插入Horizontal space无效，可能是LyX1.6的一个bug
+\end_layout
+
+\end_inset
+
+，比如我们设置间距为1cm)：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{alignat}{2}
+a & =b & \hspace{1cm}c & =d\end{alignat}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+AMS falign()环境
+\end_layout
+
+\begin_layout Standard
+插入此环境后，可以手动设置行间距。
 \end_layout
 
 \begin_layout Subsection
