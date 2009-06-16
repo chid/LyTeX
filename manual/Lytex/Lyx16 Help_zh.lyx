@@ -100,7 +100,7 @@
 \papersize a4paper
 \use_geometry true
 \use_amsmath 2
-\use_esint 0
+\use_esint 1
 \cite_engine basic
 \use_bibtopic false
 \paperorientation portrait
@@ -151,7 +151,31 @@ status collapsed
 
 \end_inset
 
-Jaeluh@aol.com
+作者:
+\begin_inset Newline newline
+\end_inset
+
+Jay 
+\begin_inset CommandInset href
+LatexCommand href
+target "Jaeluh@aol.com"
+type "mailto:"
+
+\end_inset
+
+,
+\begin_inset Newline newline
+\end_inset
+
+zoho 
+\begin_inset CommandInset href
+LatexCommand href
+target "username@domain"
+type "mailto:"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -193,7 +217,7 @@ LyteX是一个结合了LyX而且配置了其他组件的一个移动Tex套件，
 \begin_layout Itemize
 LaTeX
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 详细介绍请见:http://zh.wikipedia.org/wiki/Latex
@@ -258,7 +282,7 @@ LateX的介绍
 \begin_layout Itemize
 LyX
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 详细介绍请见:http://zh.wikipedia.org/wiki/LyX
@@ -509,7 +533,7 @@ LateX序
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -535,7 +559,7 @@ usepackage[CJKtextspaces,CJKnumber]{xeCJK}
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -559,7 +583,7 @@ end{grayBox}
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -578,7 +602,7 @@ begin{grayBox}
 \backslash
 setCJKfamilyfont{song}{SimSun}
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -597,7 +621,7 @@ hspace{10mm}
 \backslash
 setCJKfamilyfont{hei}{SimHei}
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -617,7 +641,7 @@ hspace{10mm}
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -633,7 +657,7 @@ end{grayBox}
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -668,7 +692,7 @@ fonts.txt（“->”是windows管道输出命令），这样你可以把系统�
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -709,7 +733,7 @@ begin{document}
 \backslash
 CJKfamilyfont{song}我是宋体
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -728,7 +752,7 @@ hspace{10mm}
 \backslash
 CJKfamilyfont{hei}我是黑体
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -754,7 +778,7 @@ end{document}
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -835,7 +859,7 @@ status collapsed
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -877,7 +901,7 @@ baselineskip}
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -897,7 +921,7 @@ end{grayBox}
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -916,7 +940,7 @@ begin{grayBox}
 \backslash
 usepackage{geometry}
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -935,7 +959,7 @@ hspace{10mm}
 \backslash
 usepackage{indentfirst}
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -951,7 +975,7 @@ hspace{10mm}
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -982,7 +1006,7 @@ ateX序中加入以下代码:
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -1078,7 +1102,7 @@ figurename}{图}
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -1098,6 +1122,13 @@ end{grayBox}
 
 \begin_layout Paragraph
 浮动项的设置
+\begin_inset CommandInset label
+LatexCommand label
+name "par:浮动项的设置"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1202,7 +1233,7 @@ status collapsed
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -1535,7 +1566,7 @@ status collapsed
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -1647,7 +1678,7 @@ endMakeFramed}
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -1782,7 +1813,7 @@ status collapsed
 \begin_layout Itemize
 Natbib
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 关于更加详细Natbib的样式，请查看http://merkel.zoneo.net/Latex/natbib.php
@@ -1806,7 +1837,7 @@ citep*用于打印完整引用）
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -2054,7 +2085,7 @@ Natbib样式示例
 \begin_layout Itemize
 Jurabib
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 关于Jurabib的详细用法，可以下载
@@ -2146,7 +2177,7 @@ status collapsed
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -2245,7 +2276,7 @@ pdf输出中应该被编译(激活分支编译)，这样就很方便使用一份
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -2314,7 +2345,7 @@ Lyx排版
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -2958,7 +2989,7 @@ status collapsed
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -2991,7 +3022,7 @@ begin{grayBox}
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -3067,7 +3098,7 @@ status collapsed
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -3172,7 +3203,7 @@ AMS宏包内置了一些数学公式编号的样式，比如改成罗马数字�
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -3203,7 +3234,7 @@ roman{equation}}
 \begin_layout Standard
 %效果
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -3247,7 +3278,7 @@ Roman{equation}}
 \begin_layout Standard
 %效果如下:
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -3291,7 +3322,7 @@ alph{equation}}
 \begin_layout Standard
 %效果如下:
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -3335,7 +3366,7 @@ Alph{equation}}
 \begin_layout Standard
 %效果如下:
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -3364,7 +3395,7 @@ z^{2}=x^{2}+y^{2}\end{equation}
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -3381,7 +3412,7 @@ end{grayBox}
 \begin_layout Standard
 如果想要返回默认的格式（阿拉伯数字编号），只需在后面插入如下代码：
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -3407,7 +3438,7 @@ arabic{equation}}
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -3420,7 +3451,7 @@ end{grayBox}
 
 
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -3453,7 +3484,7 @@ numberwithin”命令，如果你把此代码加入文档的LateX序中，则所
 \begin_layout Standard
 \align block
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -3488,7 +3519,7 @@ numberwithin{equation}{paragraph}
 \begin_layout Standard
 按章节进行编号效果:
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -3510,7 +3541,7 @@ z^{2}=x^{2}+y^{2}\end{equation}
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -3531,7 +3562,7 @@ makeatother
 \begin_layout Standard
 按段落进行编号效果:
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -3556,7 +3587,7 @@ z^{2}=x^{2}+y^{2}\end{equation}
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -3576,7 +3607,7 @@ end{grayBox}
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -3589,7 +3620,7 @@ begin{grayBox}
 
 
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -3658,7 +3689,7 @@ z^{2}=x^{2}+y^{2}\end{equation}
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -3674,7 +3705,7 @@ end{grayBox}
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -3694,7 +3725,7 @@ arabic{equation}}
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -3721,7 +3752,7 @@ makeatother
 \backslash
 subequations”环境，例如以下例子
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 此例子摘自LyX的数学英文帮助文档19.3部分
@@ -3743,7 +3774,7 @@ A=C-B\end{equation}
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -3759,7 +3790,7 @@ addtocounter{equation}{-1}
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -3793,7 +3824,7 @@ C=A-B\end{equation}
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -3844,7 +3875,7 @@ end{subequations}”
 \begin_layout Standard
 \align block
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -3905,7 +3936,7 @@ A=C-B\end{equation}
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -3931,7 +3962,7 @@ status collapsed
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -3965,7 +3996,7 @@ C=A-B\end{equation}
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -3982,7 +4013,7 @@ end{mysubeq}
 \begin_layout Standard
 \align block
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -4025,7 +4056,7 @@ status collapsed
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -4068,7 +4099,7 @@ maketag@@@{
 \begin_layout Standard
 \align block
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -4088,7 +4119,7 @@ end{grayBox}
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -4127,7 +4158,7 @@ makeatother
 \begin_layout Standard
 \align block
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -4143,7 +4174,7 @@ end{grayBox}
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -4183,7 +4214,7 @@ A=C-B{\color{cyan}\tag{自定义方程编号}}\label{eq:tag-1}\end{equation}
 \begin_layout Standard
 要返回原来的编号，只需要插入如下代码：
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -4234,7 +4265,7 @@ makeatother,而且还要使用remreset宏包
 \begin_layout Standard
 \align block
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -4247,7 +4278,7 @@ end{grayBox}
 
 
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -4267,7 +4298,7 @@ makeatother
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -4294,7 +4325,51 @@ makeatother
 \end_layout
 
 \begin_layout Standard
-在LyX中，有5种内置的AMS公式环境供使用。
+在LyX中，有5种内置的AMS公式环境供使用,如果要指定所有数学公式在文档中的缩进可以在导言中插入以下代码：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+%制定数学公式缩进为10mm
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+setlength{
+\backslash
+mathindent}{10mm}
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{grayBox}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Paragraph
@@ -4550,12 +4625,551 @@ a & =b & \hspace{1cm}c & =d\end{alignat}
 
 \end_layout
 
-\begin_layout Paragraph
-AMS falign()环境
+\begin_layout Standard
+对于多行的公式也有效，比如:
 \end_layout
 
 \begin_layout Standard
-插入此环境后，可以手动设置行间距。
+\begin_inset Formula \begin{alignat}{2}
+a & =b & \hspace{1cm}c & =d\\
+e & =f & g & =h\end{alignat}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+AMS alignat环境和标准的AMS align环境一样，也可以给每行进行编号。
+\end_layout
+
+\begin_layout Paragraph
+AMS falign环境
+\end_layout
+
+\begin_layout Standard
+在此环境中，
+\series bold
+前两列会被尽可能的安排在最左边
+\series default
+，
+\series bold
+而最后两列则尽可能的被安排在最右边
+\series default
+，同样，例如下面一个两行四列的falign环境中，列
+\begin_inset Formula $a=b$
+\end_inset
+
+和
+\begin_inset Formula $c=d$
+\end_inset
+
+被放置在左边，而列
+\begin_inset Formula $e=f$
+\end_inset
+
+和
+\begin_inset Formula $g=h$
+\end_inset
+
+被放置在右边：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{flalign}
+a & =b & e & =f\\
+c & =d & g & =h\end{flalign}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+同样，在AMS falign环境中，可以对每行进行编号。
+\end_layout
+
+\begin_layout Paragraph
+AMS gather环境
+\end_layout
+
+\begin_layout Standard
+在此环境中，只有一列，而且被放置在中间(不能够添加新列，只能够添加新行)，例如:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{gather}
+a=b\\
+c=d\\
+z^{2}=x^{2}+y^{2}\end{gather}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+其中，每行都可以被编号。
+\end_layout
+
+\begin_layout Paragraph
+ANS Multiline环境
+\begin_inset CommandInset label
+LatexCommand label
+name "par:ANS-Multiline环境"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+首先确保你在文档选项中打钩导入了esint包。此环境类似于AMS gather环境，也只有一列，只是第一行左置，最后一行右置，其余的行放在中间，比如：
+\begin_inset Formula \begin{multline}
+a^{2}+b^{2}+2ab+x^{2}+2x+1+y^{2}+2y+1+z^{3}\\
++3z+3z^{2}+1+P+Q+R+S\\
+=(a+b)^{2}+(x+1)^{2}+(z+1)^{3}+P+Q+R+S\label{eq:multi_line_eq}\end{multline}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+在此环境下，不能对每行进行编号，只能对整个公式编号；如果为了使公式更加美观，我们可以使用命令
+\backslash
+setlength来改变公式首行与页面左边距的距离，使用命令
+\backslash
+shoveright或者
+\backslash
+shoveleft使公式中间一些行向右或向左靠齐，
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+%控制公式首行缩进
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+setlength{
+\backslash
+multlinegap}{4cm}
+\end_layout
+
+\begin_layout Standard
+%向左靠齐
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+shoveright{内容}
+\end_layout
+
+\begin_layout Standard
+%向右靠齐
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+shoveleft{内容}
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+比如我们改变公式
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:multi_line_eq"
+
+\end_inset
+
+,让首行缩进1cm，并在公式的第二行最左边插入代码
+\backslash
+shoveleft，让第二行向左对齐:
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+setlength{
+\backslash
+multlinegap}{1cm}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula \begin{multline}
+a^{2}+b^{2}+2ab+x^{2}+2x+1+y^{2}+2y+1+z^{3}\\
+\shoveleft+3z+3z^{2}+1+P+Q+R+S\\
+=(a+b)^{2}+(x+1)^{2}+(z+1)^{3}+P+Q+R+S\end{multline}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Eqarray环境
+\end_layout
+
+\begin_layout Standard
+在Eqarray环境，第一输入框的内容会向右靠齐，而最后一个输入框的内容会向左靠齐，中间输入框的内容字体会比左右框的稍微小一些(在LyX编辑环境中不会显示)，而
+且会被自动的安排在中间。在此环境中，只有三列，而且只能添加新行，例如：
+\begin_inset Formula \begin{eqnarray*}
+\frac{a}{b} & \frac{a}{b} & \frac{a}{b}\\
+abc & abc & abc\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+数学长公式输入
+\end_layout
+
+\begin_layout Standard
+对于比较长的数学公式，我们可以使用ANS Multiline环境，见
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "par:ANS-Multiline环境"
+
+\end_inset
+
+,此外，我们也还可以利用Eqarray环境输入长公式，例如:
+\begin_inset Formula \begin{eqnarray}
+f(a,b,x,y,P,Q,R,S) & = & a^{2}+b^{2}+2ab+x^{2}+2x+1+y^{2}+2y+1+z^{3}\nonumber \\
+ &  & {\color{magenta}+3z}+3z^{2}+1+P+Q+R+S\nonumber \\
+ & = & (a+b)^{2}+(x+1)^{2}+(z+1)^{3}+P+Q+R+S\label{eq:longline_eq_in_Eqarray}\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+比较遗憾的是，上面公式的第二行开头的
+\begin_inset Formula $+$
+\end_inset
+
+和
+\begin_inset Formula $3z$
+\end_inset
+
+之间似乎没有空格（几乎挨着），于是我们必须在它们之间手动插入
+\backslash
+hspace，然后设置值为3pt，效果如下:
+\begin_inset Formula \begin{eqnarray}
+f(a,b,x,y,P,Q,R,S) & = & a^{2}+b^{2}+2ab+x^{2}+2x+1+y^{2}+2y+1+z^{3}\nonumber \\
+ &  & +\text{\hspace{3pt}}3z+3z^{2}+1+P+Q+R+S\nonumber \\
+ & = & (a+b)^{2}+(x+1)^{2}+(z+1)^{3}+P+Q+R+S\label{eq:longline_eq_no_lefteqn}\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+如果我们对第二行和第三行的缩进有要求，可以在行首使用
+\backslash
+lefteqn
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+使用快捷键“Ctrl+L”,然后键入
+\backslash
+lefteqn，会出现粉红色的小框，在此框内输入第一行的内容
+\end_layout
+
+\end_inset
+
+命令，此命令会自动缩进后面每行列中延长的公式部分，比如：
+\begin_inset Formula \begin{eqnarray}
+\lefteqn{f(a,b,x,y,P,Q,R,S)=a^{2}+b^{2}+2ab+x^{2}+2x+1+y^{2}+2y+1+z^{3}}\nonumber \\
+ &  & +\text{\hspace{3pt}}3z+3z^{2}+1+P+Q+R+S\nonumber \\
+ &  & =(a+b)^{2}+(x+1)^{2}+(z+1)^{3}+P+Q+R+S\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+结果是后面的延续(第二行和第三行)被自动缩进了(与公式
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:longline_eq_no_lefteqn"
+
+\end_inset
+
+比较)。
+\end_layout
+
+\begin_layout Subsubsection
+长公式中的括号
+\end_layout
+
+\begin_layout Standard
+有时候，比如我们输入以下长公式:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{eqnarray}
+f(n) & = & n^{5}+n^{3}+\left[\sum_{i=1}^{n}i+...\right.\nonumber \\
+ &  & \left....+n+1\right]\label{eq:bracket_long_eq}\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+方程
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:bracket_long_eq"
+
+\end_inset
+
+的第二行右括号与第一行左括号明显不匹配，为了使之匹配，我们在第二行的
+\backslash
+left(在LyX编辑器中显示的是一条竖直的虚线)后添加以下代码:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+vphantom{
+\backslash
+sum_{i=1}^{n}i}
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+其实我们没有必要这样输入，因为比较繁琐，最简单的步骤如下:
+\end_layout
+
+\begin_layout Enumerate
+手动在
+\backslash
+left(虚线)后输入
+\backslash
+vphantom(不用全部输入)然后会自动出现对话框，让你选择
+\backslash
+vphantom命令，之后会出现一个红色下划线的对话框
+\end_layout
+
+\begin_layout Enumerate
+然后我们只需要复制与左括号最匹配的数学式子(这里显然是
+\begin_inset Formula $\sum_{i=1}^{n}i$
+\end_inset
+
+)，然后直接粘贴在第一步中的对话框中即可
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{eqnarray}
+f(n) & = & n^{5}+n^{3}+\left[\sum_{i=1}^{n}i+...\right.\nonumber \\
+ &  & \left.\vphantom{\sum_{i=1}^{n}i}...+n+1\right]\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+数学特殊字符的输入
+\end_layout
+
+\begin_layout Standard
+数学字符可以通过“
+\series bold
+插入
+\series default
+”\SpecialChar \menuseparator
+“
+\series bold
+特殊字符
+\series default
+”\SpecialChar \menuseparator
+...来选择，有任何问题可以参考LyX自带的数学用户手册。
+\end_layout
+
+\begin_layout Subsubsection
+数学脚本的使用
+\end_layout
+
+\begin_layout Standard
+LyX中一个非常强大的数学输入功能就是使用数学输入脚本，当然你可以使用
+\backslash
+newcommand命令来代替，但是使用
+\backslash
+newcommand命令又要撰写大量的TeX代码，很浪费时间，而且对于复杂的公式，很容易混淆参数位置而出错(因为没有直观的图形显示)，比如我们要求解标准一元三次
+方程的根:
+\begin_inset Formula \begin{equation}
+x^{3}=ax^{2}+bx+c\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+那么它的标准解为:
+\begin_inset Formula \begin{eqnarray}
+\lefteqn{x=}\nonumber \\
+ &  & -\hspace{3pt}\frac{b}{3a}+\sqrt[3]{-\frac{27a^{2}-9abc+2b^{3}}{54a^{3}}+\sqrt{\left(\frac{27a^{2}-9abc+2b^{3}}{54a^{3}}\right)^{2}+\left(\frac{3ac-b^{2}}{9a^{2}}\right)^{3}}}\nonumber \\
+ &  & +\hspace{3pt}\sqrt[3]{-\frac{27a^{2}-9abc+2b^{3}}{54a^{3}}-\sqrt{\left(\frac{27a^{2}-9abc+2b^{3}}{54a^{3}}\right)^{2}+\left(\frac{3ac-b^{2}}{9a^{2}}\right)^{3}}}\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+如果文档中有很多地方要求解，需要手动输入这样的公式，要浪费大量的时间，因此我们可以使用LyX的数学脚本来简化我们的输入，通过“
+\series bold
+插入
+\series default
+”\SpecialChar \menuseparator
+“
+\series bold
+公式
+\series default
+”\SpecialChar \menuseparator
+“
+\series bold
+Macro
+\series default
+”来编辑我们的数学脚本(也可以称之为模版,注意不要插入过于长的公式，会导致无法编辑
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+LyX1.6中还不支持复杂数学公式的脚本，比如很长的公式，会无法折行
+\end_layout
+
+\end_inset
+
+)。
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\rootpartOne}[3]{-\hspace{3pt}\frac{#2}{3#1}+\sqrt[3]{-\frac{27#1^{2}-9#1#2#3+2#2^{3}}{54#1^{3}}+\sqrt{\left(\frac{27#1^{2}-9#1#2#3+2#2^{3}}{54#1^{3}}\right)^{2}+\left(\frac{3#1#3-#2^{2}}{9#1^{2}}\right)^{3}}}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\rootpartTwo}[3]{+\hspace{3pt}\sqrt[3]{-\frac{27#1^{2}-9#1#2#3+2#2^{3}}{54#1^{3}}-\sqrt{\left(\frac{27#1^{2}-9#1#2#3+2#2^{3}}{54#1^{3}}\right)^{2}+\left(\frac{3#1#3-#2^{2}}{9#1^{2}}\right)^{3}}}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+然后我们通过在数学环境中直接键入
+\backslash
+rootpartOne和
+\backslash
+rootpartTwo来引用这两个数学脚本(在键入
+\backslash
+rootpart的时候，LyX会自动显示
+\backslash
+rootpartOne和rootpartTwo两个脚本命令，因而我们可以很轻易的选择所需要的脚本模版)，比如我们有另外一个一元三次方程，
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{equation}
+x^{3}=px^{2}+qx+r\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+那么求解过程为：
+\begin_inset Formula \begin{eqnarray}
+\lefteqn{x=}\nonumber \\
+ &  & \rootpartOne pqr\nonumber \\
+ &  & \rootpartTwo pqr\end{eqnarray}
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -4563,7 +5177,14 @@ AMS falign()环境
 \end_layout
 
 \begin_layout Standard
-内容......
+在LyX中插入浮动项的设置已经在前面
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "par:浮动项的设置"
+
+\end_inset
+
+已经说明，这里主要简单介绍对图片和表格操作的一些方法。
 \end_layout
 
 \begin_layout Subsection
