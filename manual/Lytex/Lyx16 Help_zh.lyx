@@ -7,9 +7,11 @@
 %xetex CJK 设置
 \usepackage[CJKtextspaces,CJKnumber]{xeCJK}
 \usepackage[figure]{hypcap}
-\usepackage{lipsum,framed,color}
+\usepackage{lipsum,framed}
 \usepackage{indentfirst}
-\usepackage{calc}
+\@ifundefined{textcolor}
+{\usepackage{color}}{}
+\usepackage[german,english]{babel}
                                  
 \setCJKmainfont[BoldFont=SimHei]{SimSun}%设置中文主字体
 \setCJKsansfont{SimHei}         
@@ -42,16 +44,16 @@
 \renewcommand{\baselinestretch}{1.2} 
 
 
-%把目录表格等的标题修改为中文，如果不需要可以注释掉
-\renewcommand\arraystretch{1.5}
-\renewcommand{\contentsname}{目录}
-\renewcommand{\listfigurename}{插图目录}
-\renewcommand{\listtablename}{表格目录}
-\renewcommand{\refname}{参考文献}
-\renewcommand{\abstractname}{摘要}
-\renewcommand{\indexname}{索引}
-\renewcommand{\tablename}{表}
-\renewcommand{\figurename}{图}
+%把目录表格等的标题修改为中文，如果使用了babel语言包而且使用多种语言，请不要在此序言中使用它们，将他们插入主文档
+%\renewcommand\arraystretch{1.5}
+%\renewcommand{\contentsname}{目录}
+%\renewcommand{\listfigurename}{插图目录}
+%\renewcommand{\listtablename}{表格目录}
+%\renewcommand{\refname}{参考文献}
+%\renewcommand{\abstractname}{摘要}
+%\renewcommand{\indexname}{索引}
+%\renewcommand{\tablename}{表格}
+%\renewcommand{\figurename}{图}
 
 %使子标题对齐
 \renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
@@ -131,6 +133,96 @@
 
 \begin_body
 
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand
+\backslash
+arraystretch{1.5}%
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+contentsname}{目录}%
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+listfigurename}{插图目录}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+listtablename}{表格目录}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+refname}{参考文献}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+abstractname}{摘要}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+indexname}{索引}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+tablename}{表格}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+figurename}{图}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Title
 \begin_inset Note Note
 status open
@@ -194,6 +286,8 @@ Draft Version:1.0
 \end_layout
 
 \begin_layout Standard
+\noindent
+\align center
 \begin_inset CommandInset toc
 LatexCommand tableofcontents
 
@@ -1173,17 +1267,15 @@ name "par:浮动项的设置"
 \end_layout
 
 \begin_layout Enumerate
-浮动项页:此图不会被文字环绕
+浮动项页:此图不会被文字环绕，而且如果此项占据当前页面的50%以上，就会和其他浮动项一起被放置在单独的一页
 \end_layout
 
 \begin_layout Enumerate
-页上：如果此图靠近页面上方，而且因为大小位置原因在所在页不能够被放置，则首先考虑把此图放在上页，如果上页仍没有位置，则把此图继续往上挪，直到能够放下此图为止(例
-如相邻的上页是空白页或者有很少文字，那么此图将放在此页)
+页上：如果此浮动项占当前页面少于70%，就会被放在当前页面的上部
 \end_layout
 
 \begin_layout Enumerate
-页底:同理，如果图片靠近页面底部，而没有空间放置此图，则会被往下挪动，如果往下没有空白页或者足够空间的页面，则会把此图片放置在一个新的空白页面(注意，可能会产生
-一个新的单独页面来放置此图)
+页底:同理，如果此浮动项占当前页面少于30%就会被放置在当前页面的底部
 \end_layout
 
 \begin_layout Enumerate
@@ -1235,7 +1327,19 @@ status collapsed
 \SpecialChar \menuseparator
 
 \series bold
-打钩“此处”，这样的话，版面中所此图的上方所有的项目可能整体会被往上移动或者此图下方的项目整体往下移动来腾出空间(包括分页)。
+打钩“此处”，这样的话，版面中所此图的上方所有的项目可能整体会被往上移动或者此图下方的项目整体往下移动来腾出空间(包括分页)，但是有时候这可能会破坏整个文档的样
+式。
+\end_layout
+
+\begin_layout Standard
+对于如何自定义浮动项的排版，我们会在
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Lyx内容排版"
+
+\end_inset
+
+中讲到。
 \end_layout
 
 \begin_layout Standard
@@ -2181,9 +2285,6 @@ status collapsed
 \begin_layout Standard
 我们可以在文档首选项中的“PDF properties”指定是否使用hyperref包来使输出的pdf更加具有可读性，比如pdf目录层次的现实，以及文档链接颜色
 的高亮等，当你撰写中文文档时，必须要在“Addtional option”（附加参数）中指定参数unicode为false，否则pdf的目录会出现乱码。
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float figure
 placement H
 wide false
@@ -2194,7 +2295,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename pics/pdf output properites!.png
-	scale 80
+	scale 70
 	rotateOrigin center
 
 \end_inset
@@ -2237,7 +2338,7 @@ status open
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -2321,6 +2422,13 @@ status collapsed
 
 \begin_layout Section
 Lyx内容排版
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Lyx内容排版"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2775,6 +2883,13 @@ status collapsed
 
 \begin_layout Subsection
 文章段落排版
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:文章段落排版"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2845,7 +2960,7 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-在LyX中插入浮动项的设置已经在前面
+在LyX中插入浮动项的首选设置已经在前面
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "par:浮动项的设置"
@@ -3227,7 +3342,7 @@ status open
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -3491,6 +3606,121 @@ end{algorithmic}
 \end_layout
 
 \begin_layout Standard
+插入的TeX源代码：
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+begin{algorithmic}[1]
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+IF{current
+\backslash
+_state is a member of closed}
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+RETURN SUCCESS 
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+STATE add current
+\backslash
+_state to closed
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+ENDIF
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+WHILE{current
+\backslash
+_state has unexamined children}
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+STATE Child$:=$next unexamined child
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+IF{child not member of closed and depthsearch(child)=SUCCESS}
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+RETURN SUCCESS 
+\backslash
+ELSE
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+RETURN FAIL
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+ENDIF 
+\backslash
+ENDWHILE
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+end{algorithmic}
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 在上面插入的代码中，注意开始的
 \backslash
 begin{algorithmic}[1]的“
@@ -3498,6 +3728,809 @@ begin{algorithmic}[1]的“
 \end_inset
 
 ”表示每隔一行便显示行号。
+\end_layout
+
+\begin_layout Subsubsection
+插入浮动图片
+\end_layout
+
+\begin_layout Standard
+通过点击“
+\series bold
+插入
+\series default
+”\SpecialChar \menuseparator
+“
+\series bold
+浮动项
+\series default
+”\SpecialChar \menuseparator
+“
+\series bold
+图
+\series default
+”插入浮动项之后，在标题的上一行或者按“Enter”键可以使插入的图片在标题上面显示，反之亦然。插入之后我们可以通过调整段落，见段落排版
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:文章段落排版"
+
+\end_inset
+
+从而设置图片的对齐方式，比如我们经常让图片经常居中显示，则可以打钩“
+\series bold
+center
+\series default
+”选项。
+\end_layout
+
+\begin_layout Standard
+在浮动图内还可以继续插入浮动子图，而且每个浮动子图都会被阿拉伯数字和小写英文自动编号。如果想使用改变浮动图的编号 ，可以在LateX序言中插入以下代码:
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+%按章节编号
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+numberwithin{figure}{section}
+\end_layout
+
+\begin_layout Standard
+%按子章节编号
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+numberwithin{figure}{subsection}
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+由于使用了
+\backslash
+numberwithin命令,所以一定要在LateX序言中要导入AMS数学宏包或者在文档首选项中打钩“
+\series bold
+使用AMS数学包(m)
+\series default
+”
+\end_layout
+
+\begin_layout Subsubsection
+插入浮动表格
+\end_layout
+
+\begin_layout Standard
+插入浮动表格操作与插入浮动图片类似，这里不详述。
+\end_layout
+
+\begin_layout Paragraph
+长表格
+\end_layout
+
+\begin_layout Standard
+对于很长的表格(可能要跨页)，我们可以在“右键单击表格”\SpecialChar \menuseparator
+“首选项”\SpecialChar \menuseparator
+打钩“长表格”来设置表格，其中参数解释如下:
+\end_layout
+
+\begin_layout Enumerate
+页首：当前行被作为标志行，只被显示在每次分页之后的表格首行中
+\end_layout
+
+\begin_layout Enumerate
+第一页首：当前行作为标志行，只被显示在当前页面的表格首行中，在后续页面的表格中不会被显示
+\end_layout
+
+\begin_layout Enumerate
+页脚：当前行作为末行，会被显示在其他所有的延续表格中(除了最后一行，除非自己另外定义了末行)
+\end_layout
+
+\begin_layout Enumerate
+最后页尾：当前行作为末行，只会出现在最后一个延长表格的页面中
+\end_layout
+
+\begin_layout Enumerate
+caption(标题)：
+\end_layout
+
+\begin_layout Standard
+注意:在设置长表格的时候，一定要注意鼠标的光标落在的表格的行（标志行？行首？行尾？），否则可能会出现排版差错。
+\end_layout
+
+\begin_layout Paragraph
+长表格的位置调整
+\end_layout
+
+\begin_layout Standard
+由于长表格默认位置是据中，要改变其位置，我们可以通过在长表格的前面插入以下TeX代码来达到目的：
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+%value为所指定的长度单位值
+\end_layout
+
+\begin_layout Standard
+%设定表格和页面左边的距离
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+setlength{
+\backslash
+LTleft}{value}
+\end_layout
+
+\begin_layout Standard
+%设定表格和页面右边的距离
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+setlength{
+\backslash
+LTright}{value}
+\end_layout
+
+\begin_layout Standard
+%返回默认值
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+setlength{
+\backslash
+LTleft}{
+\backslash
+fill}
+\begin_inset Formula $\quad$
+\end_inset
+
+%如果你修改了
+\backslash
+LTleft，
+\backslash
+fill是默认值
+\end_layout
+
+\begin_layout Standard
+或者
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+setlength{
+\backslash
+LTright}{
+\backslash
+fill}
+\begin_inset Formula $\quad$
+\end_inset
+
+%如果你修改了
+\backslash
+LTright
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+比如我们设置下面表格和页面左边距对齐，也就是说距离为
+\begin_inset Formula $0$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setlength{
+\backslash
+LTleft}{0pt}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="3">
+<features islongtable="true">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+靠齐页面左边距的表格
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setlength{
+\backslash
+LTleft}{
+\backslash
+fill}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+请注意，此调整只对长表格有效！
+\end_layout
+
+\begin_layout Subsection
+Box(盒子)
+\end_layout
+
+\begin_layout Standard
+Box有两种格式属性可供选择：
+\end_layout
+
+\begin_layout Itemize
+MiniPage:有和母版完整功能的迷你型页面
+\end_layout
+
+\begin_layout Itemize
+Parbox：类似于word中的文本框
+\end_layout
+
+\begin_layout Subsubsection
+迷你页面(MiniPage)
+\end_layout
+
+\begin_layout Standard
+迷你页面可以算的上一个拥有母页几乎所有的功能的页面，通过点击
+\series bold
+“插入
+\series default
+”\SpecialChar \menuseparator
+“Box”来操作（插入的Box默认属性是minipage）。通过点击右键可以设置迷你页面的外观属性:
+\end_layout
+
+\begin_layout Enumerate
+Frameless:没有边框效果
+\end_layout
+
+\begin_layout Enumerate
+simple frame：这是LyX中默认的
+\end_layout
+
+\begin_layout Enumerate
+simple frame，page breaks:和2类似，只不过可以换页
+\end_layout
+
+\begin_layout Enumerate
+Oval,thin：圆矩形，有比较薄的边框
+\end_layout
+
+\begin_layout Enumerate
+Oval,thick：圆矩形，有比较厚的边框
+\end_layout
+
+\begin_layout Enumerate
+drop shadow:背景有投影而是实心黑色的盒子
+\end_layout
+
+\begin_layout Enumerate
+shaded background:背景有阴影的，类似于本帮助文档中的grayBox
+\end_layout
+
+\begin_layout Enumerate
+double frame:双层边框
+\end_layout
+
+\begin_layout Standard
+一些外观效果：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status collapsed
+
+\begin_layout Plain Layout
+默认的frameless
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status collapsed
+
+\begin_layout Plain Layout
+simple frame
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box ovalbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status collapsed
+
+\begin_layout Plain Layout
+oval thin
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status collapsed
+
+\begin_layout Plain Layout
+drop shadow
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status collapsed
+
+\begin_layout Plain Layout
+shaded background
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Doublebox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status collapsed
+
+\begin_layout Plain Layout
+double frame
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+以下是两个完整的minipage，左边使用了德语，而右边使用美国英语。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+width "45col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+foreignlanguage{german}
+\end_layout
+
+\end_inset
+
+Die Modelle der SyncMaster 70er Serie beeindrucken mit edlem Design und
+ moderner Technik.
+ Dabei macht das Touch of Color Design in elegantem Schwarz diese Modelle
+ zu einem echten Blickfang.
+ Dank hochwertiger Komponenten konnte der Stromverbrauch reduziert werden.
+ Dies trägt positiv zum Schutze der Umwelt bei und schont das eigene Budget.
+ Das Modell kommt im 16:9-Format daher und bieten Full HD Auflösung (1.920
+ x 1.080 Pixel).
+ Das sehr hohe dynamische Kontrastverhältnis von 50.000:1 und die schnelle
+ Reaktionszeit von nur 2 ms (G/G) sorgen stets für klare und detailreiche
+ Bilder - auch bei schnell bewegten Bildinhalten.
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Das ist Deutsch
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+width "45col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+foreignlanguage{english}
+\end_layout
+
+\end_inset
+
+Intel Technology Intel® QuickPath Interconnect.
+ This Intel-exclusive innovation makes it easier for data to move quickly
+ from the processor to the Intel X58 chipset, delivering better performance
+ and responsiveness with the most demanding applications.
+ Intel® Hyper-Threading Technology.
+ By allowing each of the four processing cores to process two application
+ “threads” simultaneously, Intel Core i7 processors can accomplish more
+ simultaneously—allowing users to run more demanding applications simultaneously
+ while experiencing superior responsiveness.Intel® Turbo Boost Technology.
+ This new technology dynamically increases ...
+ 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+This is english
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+文本框（Parbox）
+\end_layout
+
+\begin_layout Standard
+我们可以通过鼠标右键单击“
+\series bold
+插入的
+\series default
+Box”\SpecialChar \menuseparator
+“
+\series bold
+首选项
+\series default
+”\SpecialChar \menuseparator
+“
+\series bold
+内框
+\series default
+”设置为Parbox，如下图所示：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename pics/Choose_parbox.png
+	scale 80
+	rotateOrigin center
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+设置内框为Parbox
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
