@@ -65,6 +65,9 @@
 
 %
 \usepackage{remreset}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
 %\def\tagform@#1{\maketag@@@{<#1>}}
 \end_preamble
 \use_default_options false
@@ -316,7 +319,7 @@ lytex,然后就可以通过双击根目录下的lyx.exe来启动可视化编辑�
 \end_layout
 
 \begin_layout Section
-使用LyTeX
+开始使用LyTeX
 \end_layout
 
 \begin_layout Subsection
@@ -499,8 +502,15 @@ status collapsed
 
 \end_layout
 
-\begin_layout Subsubsection
-定制自己的中文模版
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+定制中文模版
 \end_layout
 
 \begin_layout Standard
@@ -509,7 +519,7 @@ status collapsed
 8编码的文档为例来展示如何定制自己的模版。
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subsection
 中文宏包设置
 \end_layout
 
@@ -573,7 +583,7 @@ end{grayBox}
 
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subsection
 字体设置
 \end_layout
 
@@ -849,7 +859,7 @@ status collapsed
 
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subsection
 行距和段落设置
 \end_layout
 
@@ -995,7 +1005,7 @@ end{grayBox}
 ”首选项“设置TextLayout（文本样式）。
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subsection
 浮动图像，表格，目录等的标题中文显示
 \end_layout
 
@@ -1120,7 +1130,7 @@ end{grayBox}
 这样生成后的pdf中，类似table 1.1就会自动变成表 1.1。
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subsection
 浮动项的设置
 \begin_inset CommandInset label
 LatexCommand label
@@ -1330,7 +1340,7 @@ status collapsed
 
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subsection
 文档类设置
 \end_layout
 
@@ -1392,7 +1402,7 @@ status collapsed
 
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subsection
 给模版添加环境(Environment Modules)
 \end_layout
 
@@ -1692,7 +1702,7 @@ end{grayBox}
 
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subsection
 页面设置
 \end_layout
 
@@ -1753,7 +1763,7 @@ geometry宏包的页面设置参数
 
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subsection
 目录和编号
 \end_layout
 
@@ -1764,6 +1774,7 @@ geometry宏包的页面设置参数
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status collapsed
@@ -1801,7 +1812,7 @@ status collapsed
 
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subsection
 文献
 \end_layout
 
@@ -2104,7 +2115,7 @@ target "http://dante.ctan.org/CTAN/macros/latex/contrib/jurabib/docs/english/jbe
 ：此包是德国人Jens Berger创建一个主要用于法律和人文科学的文献宏包。特别是对于学习人文科学的人来讲，此包是相当有用的。
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subsection
 数学宏包的使用
 \end_layout
 
@@ -2163,7 +2174,7 @@ status collapsed
 
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subsection
 输出pdf的设置
 \end_layout
 
@@ -2177,7 +2188,7 @@ status collapsed
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -2212,7 +2223,7 @@ status collapsed
 
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subsection
 列表符号的设置
 \end_layout
 
@@ -2261,7 +2272,7 @@ status collapsed
 
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subsection
 使用分支
 \end_layout
 
@@ -2274,6 +2285,7 @@ pdf输出中应该被编译(激活分支编译)，这样就很方便使用一份
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status collapsed
@@ -2308,7 +2320,7 @@ status collapsed
 \end_layout
 
 \begin_layout Section
-Lyx排版
+Lyx内容排版
 \end_layout
 
 \begin_layout Standard
@@ -2829,10 +2841,670 @@ status collapsed
 \end_layout
 
 \begin_layout Subsection
-数学公式排版
+浮动项目排版
+\end_layout
+
+\begin_layout Standard
+在LyX中插入浮动项的设置已经在前面
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "par:浮动项的设置"
+
+\end_inset
+
+已经说明，这里主要简单介绍对算法，图片和表格操作的一些方法和技巧。
 \end_layout
 
 \begin_layout Subsubsection
+插入算法
+\end_layout
+
+\begin_layout Standard
+可以通过点击“
+\series bold
+插入
+\series default
+”\SpecialChar \menuseparator
+“
+\series bold
+浮动项
+\series default
+”\SpecialChar \menuseparator
+“
+\series bold
+算法
+\series default
+”，插入算法伪代码（请尽量不要插入任何其他具体编程语言的算法如C或者Ruby），由于LyX默认提供的算法功能太弱，建议使用algorithms宏包，在序言中加入
+以下代码:
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+%添加算法支持宏包
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+usepackage{algorithms}
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+usepackage{algorithmic}
+\end_layout
+
+\begin_layout Standard
+%下面重新定义命令以支持中文(默认是英文)
+\end_layout
+
+\begin_layout Standard
+%我们不建议这样做，除非是为了做演示，因为任何学习计算机的人都能看懂伪代码
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+renewcommand{
+\backslash
+algorithmicrequire}{
+\backslash
+textbf{需要:}} 
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+renewcommand{
+\backslash
+algorithmicensure}{
+\backslash
+textbf{前提:}} 
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+renewcommand{
+\backslash
+algorithmicend}{
+\backslash
+textbf{算法结束}} 
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+renewcommand{
+\backslash
+algorithmicif}{
+\backslash
+textbf{如果}} 
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+renewcommand{
+\backslash
+algorithmicthen}{
+\backslash
+textbf{那么}} 
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+renewcommand{
+\backslash
+algorithmicelse}{
+\backslash
+textbf{否则}} 
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+renewcommand{
+\backslash
+algorithmicelsif}{
+\backslash
+algorithmicelse
+\backslash
+ 
+\backslash
+algorithmicif} 
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+renewcommand{
+\backslash
+algorithmicendif}{
+\backslash
+algorithmicend
+\backslash
+如果结束 
+\backslash
+algorithmicif} 
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+renewcommand{
+\backslash
+algorithmicfor}{
+\backslash
+textbf{对}} 
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+renewcommand{
+\backslash
+algorithmicforall}{
+\backslash
+textbf{对所有的}} 
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+renewcommand{
+\backslash
+algorithmicdo}{
+\backslash
+textbf{进行如下}} 
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+renewcommand{
+\backslash
+algorithmicendfor}{
+\backslash
+algorithmicend
+\backslash
+ 
+\backslash
+algorithmicfor} 
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+renewcommand{
+\backslash
+algorithmicwhile}{
+\backslash
+textbf{当}} 
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+renewcommand{
+\backslash
+algorithmicendwhile}{
+\backslash
+algorithmicend
+\backslash
+ 
+\backslash
+algorithmicwhile} 
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+renewcommand{
+\backslash
+algorithmicloop}{
+\backslash
+textbf{循环}} 
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+renewcommand{
+\backslash
+algorithmicendloop}{
+\backslash
+algorithmicend
+\backslash
+ 
+\backslash
+algorithmicloop} 
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+renewcommand{
+\backslash
+algorithmicrepeat}{
+\backslash
+textbf{反复做}} 
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+renewcommand{
+\backslash
+algorithmicuntil}{
+\backslash
+textbf{直到}} 
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+renewcommand{
+\backslash
+algorithmicprint}{
+\backslash
+textbf{打印}} 
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+renewcommand{
+\backslash
+algorithmicreturn}{
+\backslash
+textbf{返回}} 
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+renewcommand{
+\backslash
+algorithmictrue}{
+\backslash
+textbf{真值}} 
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+renewcommand{
+\backslash
+algorithmicfalse}{
+\backslash
+textbf{假值}}
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+为了操作更简便，我们可以先在LyX中通过“
+\series bold
+插入
+\series default
+”\SpecialChar \menuseparator
+“
+\series bold
+浮动项
+\series default
+”\SpecialChar \menuseparator
+“
+\series bold
+算法
+\series default
+”来插入算法，然后调整版面，最后在其中插入algorithmic环境代码和算法的具体内容，一个简单的例子如下
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+参考了algorithm宏包(下载地址: 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://ftp.join.uni-muenster.de/pub/software/CTAN/macros/latex/contrib/algorithms.zi
+p
+\end_layout
+
+\end_inset
+
+)中的说明手册
+\end_layout
+
+\end_inset
+
+,
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+算法改编自George F.Luger(美)编写的Artificial Intelligence Structures and Stragtegies
+ for Complex Problem Solving(Fifth Edtion)
+\end_layout
+
+\end_inset
+
+：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{algorithmic}[1]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+IF{
+\end_layout
+
+\end_inset
+
+current_state is a member of closed
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+RETURN
+\end_layout
+
+\end_inset
+
+ SUCCESS 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+STATE
+\end_layout
+
+\end_inset
+
+ add current_state to closed
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ENDIF
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+WHILE{
+\end_layout
+
+\end_inset
+
+current_state has unexamined children
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+STATE
+\end_layout
+
+\end_inset
+
+ Child
+\begin_inset Formula $:=$
+\end_inset
+
+next unexamined child
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+IF{
+\end_layout
+
+\end_inset
+
+child not member of closed and depthsearch(child)=SUCCESS
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+RETURN
+\end_layout
+
+\end_inset
+
+ SUCCESS 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ELSE
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+RETURN
+\end_layout
+
+\end_inset
+
+ FAIL
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ENDIF 
+\backslash
+ENDWHILE
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{algorithmic}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+状态空间中的深度优先递归算法
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+在上面插入的代码中，注意开始的
+\backslash
+begin{algorithmic}[1]的“
+\begin_inset Formula $1$
+\end_inset
+
+”表示每隔一行便显示行号。
+\end_layout
+
+\begin_layout Section
+数学公式排版
+\end_layout
+
+\begin_layout Subsection
 使用数学工具条
 \end_layout
 
@@ -2967,7 +3639,7 @@ status collapsed
 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 插入行内或者显示公式
 \end_layout
 
@@ -3036,7 +3708,7 @@ end{grayBox}
 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 公式编号
 \end_layout
 
@@ -3193,7 +3865,7 @@ status collapsed
 
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subsubsection
 内置公式编号样式
 \end_layout
 
@@ -3469,7 +4141,7 @@ arabic{equation}}
 
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subsubsection
 按章节或段落对公式进行编号
 \end_layout
 
@@ -3743,7 +4415,7 @@ makeatother
 
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subsubsection
 对子公式编号
 \end_layout
 
@@ -4027,7 +4699,7 @@ end{grayBox}
 
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subsubsection
 自定义公式编号样式
 \end_layout
 
@@ -4320,7 +4992,7 @@ makeatother
 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 数学公式的对齐方式
 \end_layout
 
@@ -4372,7 +5044,7 @@ end{grayBox}
 
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subsubsection
 \begin_inset CommandInset label
 LatexCommand label
 name "par:AMS-align(奇右偶左)"
@@ -4565,7 +5237,7 @@ reference "eq:effect2"
 的显示效果几乎一样，因为标准的align环境会默认在每个水平列后自动添加一些空白而使之自动对齐。
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subsubsection
 AMS alignat()环境
 \end_layout
 
@@ -4643,7 +5315,7 @@ e & =f & g & =h\end{alignat}
 AMS alignat环境和标准的AMS align环境一样，也可以给每行进行编号。
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subsubsection
 AMS falign环境
 \end_layout
 
@@ -4689,7 +5361,7 @@ c & =d & g & =h\end{flalign}
 同样，在AMS falign环境中，可以对每行进行编号。
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subsubsection
 AMS gather环境
 \end_layout
 
@@ -4712,7 +5384,7 @@ z^{2}=x^{2}+y^{2}\end{gather}
 其中，每行都可以被编号。
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subsubsection
 ANS Multiline环境
 \begin_inset CommandInset label
 LatexCommand label
@@ -4845,7 +5517,7 @@ a^{2}+b^{2}+2ab+x^{2}+2x+1+y^{2}+2y+1+z^{3}\\
 
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subsubsection
 Eqarray环境
 \end_layout
 
@@ -4861,7 +5533,7 @@ abc & abc & abc\end{eqnarray*}
 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 数学长公式输入
 \end_layout
 
@@ -4943,7 +5615,7 @@ reference "eq:longline_eq_no_lefteqn"
 比较)。
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 长公式中的括号
 \end_layout
 
@@ -5046,7 +5718,7 @@ f(n) & = & n^{5}+n^{3}+\left[\sum_{i=1}^{n}i+...\right.\nonumber \\
 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 数学特殊字符的输入
 \end_layout
 
@@ -5064,7 +5736,7 @@ f(n) & = & n^{5}+n^{3}+\left[\sum_{i=1}^{n}i+...\right.\nonumber \\
 ...来选择，有任何问题可以参考LyX自带的数学用户手册。
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 数学脚本的使用
 \end_layout
 
@@ -5172,22 +5844,7 @@ x^{3}=px^{2}+qx+r\end{equation}
 
 \end_layout
 
-\begin_layout Subsection
-图片和表格排版
-\end_layout
-
-\begin_layout Standard
-在LyX中插入浮动项的设置已经在前面
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "par:浮动项的设置"
-
-\end_inset
-
-已经说明，这里主要简单介绍对图片和表格操作的一些方法。
-\end_layout
-
-\begin_layout Subsection
+\begin_layout Section
 其他排版技巧
 \end_layout
 
