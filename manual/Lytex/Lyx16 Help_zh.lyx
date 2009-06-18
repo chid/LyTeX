@@ -135,7 +135,7 @@
 
 \begin_layout Standard
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -171,6 +171,15 @@ listfigurename}{插图目录}
 renewcommand{
 \backslash
 listtablename}{表格目录}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+listalgorithmname}{算法列表}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2989,8 +2998,8 @@ reference "par:浮动项的设置"
 \series bold
 算法
 \series default
-”，插入算法伪代码（请尽量不要插入任何其他具体编程语言的算法如C或者Ruby），由于LyX默认提供的算法功能太弱，建议使用algorithms宏包，在序言中加入
-以下代码:
+”，插入算法伪代码（请尽量不要插入任何其他具体编程语言的算法如C或者Ruby），由于LyX默认提供的算法功能太弱，建议使用algorithmic宏包，在序言中加
+入以下代码:
 \begin_inset ERT
 status open
 
@@ -3097,11 +3106,7 @@ renewcommand{
 \backslash
 algorithmicelsif}{
 \backslash
-algorithmicelse
-\backslash
- 
-\backslash
-algorithmicif} 
+textbf{否则}} 
 \end_layout
 
 \begin_layout Standard
@@ -3111,11 +3116,7 @@ renewcommand{
 \backslash
 algorithmicendif}{
 \backslash
-algorithmicend
-\backslash
-如果结束 
-\backslash
-algorithmicif} 
+textbf{条件语句结束}} 
 \end_layout
 
 \begin_layout Standard
@@ -3155,11 +3156,7 @@ renewcommand{
 \backslash
 algorithmicendfor}{
 \backslash
-algorithmicend
-\backslash
- 
-\backslash
-algorithmicfor} 
+textbf{for循环体结束} } 
 \end_layout
 
 \begin_layout Standard
@@ -3179,11 +3176,7 @@ renewcommand{
 \backslash
 algorithmicendwhile}{
 \backslash
-algorithmicend
-\backslash
- 
-\backslash
-algorithmicwhile} 
+textbf{while循环体结束 }} 
 \end_layout
 
 \begin_layout Standard
@@ -3193,7 +3186,7 @@ renewcommand{
 \backslash
 algorithmicloop}{
 \backslash
-textbf{循环}} 
+textbf{loop循环开始}} 
 \end_layout
 
 \begin_layout Standard
@@ -3203,11 +3196,7 @@ renewcommand{
 \backslash
 algorithmicendloop}{
 \backslash
-algorithmicend
-\backslash
- 
-\backslash
-algorithmicloop} 
+textbf{loop循环结束}} 
 \end_layout
 
 \begin_layout Standard
@@ -3325,7 +3314,7 @@ p
 
 ,
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 算法改编自George F.Luger(美)编写的Artificial Intelligence Structures and Stragtegies
@@ -3335,6 +3324,22 @@ status open
 \end_inset
 
 ：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+floatname{algorithm}{算法}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3606,7 +3611,7 @@ end{algorithmic}
 \end_layout
 
 \begin_layout Standard
-插入的TeX源代码：
+所插入的相应TeX源代码：
 \begin_inset ERT
 status open
 
@@ -3727,7 +3732,42 @@ begin{algorithmic}[1]的“
 \begin_inset Formula $1$
 \end_inset
 
-”表示每隔一行便显示行号。
+”表示每隔一行便显示行号，为了使标题algorithm显示成中文，在整个算法的前面插入如下代码:
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+floatname{algorithm}{算法}
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{grayBox}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -4163,11 +4203,694 @@ MiniPage:有和母版完整功能的迷你型页面
 \end_layout
 
 \begin_layout Itemize
-Parbox：类似于word中的文本框
+Parbox：类似于word中的文本框不能够有自己的脚注,只是一个LaTeX环境而已
+\end_layout
+
+\begin_layout Standard
+Box中的内容可以选择垂直对齐方式，总共有：
+\end_layout
+
+\begin_layout Description
+上: 例如：
+\begin_inset Box Boxed
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+width "30col%"
+special "none"
+height "2in"
+height_special "totalheight"
+status collapsed
+
+\begin_layout Plain Layout
+this is a test!
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+中间： 例如，
+\begin_inset Box Boxed
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+width "30col%"
+special "none"
+height "2in"
+height_special "totalheight"
+status collapsed
+
+\begin_layout Plain Layout
+this is a test!
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+下： 例如，
+\begin_inset Box Boxed
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "b"
+use_parbox 0
+width "30col%"
+special "none"
+height "2in"
+height_special "totalheight"
+status collapsed
+
+\begin_layout Plain Layout
+this is a test!
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+拉伸： 例如
+\begin_inset Box Boxed
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "s"
+use_parbox 0
+width "30col%"
+special "none"
+height "2in"
+height_special "totalheight"
+status collapsed
+
+\begin_layout Plain Layout
+this is a test!
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+除此之外，盒子本身也可以类似地设置对齐方式，这里不详述了。
+\end_layout
+
+\begin_layout Subsubsection
+自定义box
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:自定义box"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Box的一些常用属性会在下面的
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:迷你页面(MiniPage)"
+
+\end_inset
+
+和
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:文本框（Parbox）"
+
+\end_inset
+
+谈到，这里我们看一看如何使用自己定义的box。
+\end_layout
+
+\begin_layout Paragraph
+设置边框的厚度
+\end_layout
+
+\begin_layout Standard
+我们可以通过以下插入代码来改变box边框的厚度：
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+setlength{
+\backslash
+fboxrule}{value}
+\begin_inset Formula $\qquad$
+\end_inset
+
+%value为边框的厚度
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+要返回默认值，插入以下代码：
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+setlength{
+\backslash
+fboxrule}{0.3pt}
+\begin_inset Formula $\qquad$
+\end_inset
+
+%设置为默认值，0.3pt为边框的默认厚度
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+例如：
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setlength{
+\backslash
+fboxrule}{3pt}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+width "50col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+this is a test!this is a test!this is a test!this is a test!this is a test!this
+ is a test!this is a test!this is a test!this is a test!this is a test!
+ 
+\backslash
+setlength{
+\backslash
+fboxrule}{3pt}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setlength{
+\backslash
+fboxrule}{0.3pt}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+设置边框到内容的距离
+\end_layout
+
+\begin_layout Standard
+可以通过插入以下代码达到目的：
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+setlength{
+\backslash
+fboxsep}{value}
+\begin_inset Formula $\qquad$
+\end_inset
+
+%value为内容到边框的距离
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+要返回默认值，插入以下代码：
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+setlength{
+\backslash
+fboxsep}{3pt}
+\begin_inset Formula $\qquad$
+\end_inset
+
+%设置为默认值，3pt为默认值
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+例如：
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setlength{
+\backslash
+fboxsep}{20pt}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+width "50col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status collapsed
+
+\begin_layout Plain Layout
+this is a test!this is a test!this is a test!this is a test!this is a test!this
+ is a test!this is a test!this is a test!this is a test!this is a test!
+ 
+\backslash
+setlength{
+\backslash
+fboxsep}{20pt}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setlength{
+\backslash
+fboxsep}{3pt}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+设置阴影大小
+\end_layout
+
+\begin_layout Standard
+当box使用阴影外观时，可以插入以下代码控制阴影的厚度或者大小:
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+setlength{
+\backslash
+shadowsize}{value}
+\begin_inset Formula $\qquad$
+\end_inset
+
+%value为说要设置的值,默认值为4pt
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+例如:
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setlength{
+\backslash
+shadowsize}{1.5pt}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+width "50col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status collapsed
+
+\begin_layout Plain Layout
+this is a test!this is a test!this is a test!this is a test!this is a test!this
+ is a test!this is a test!this is a test!this is a test!this is a test!
+ 
+\backslash
+setlength{
+\backslash
+shadowsize}{1.5pt}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setlength{
+\backslash
+shadowsize}{4pt}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+设置背景颜色
+\end_layout
+
+\begin_layout Standard
+如果选择了shaded background，可以通过“
+\series bold
+工具
+\series default
+”\SpecialChar \menuseparator
+“
+\series bold
+首选项
+\series default
+”\SpecialChar \menuseparator
+“
+\series bold
+Look & Feel
+\series default
+”\SpecialChar \menuseparator
+“
+\series bold
+颜色
+\series default
+”来设置背景颜色，或者插入以下代码达到目的：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+%前提是要导入color宏包
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+definecolor{shadecolor}{cmyk}{0.5,0,1,0.5}
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+例如:
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setlength{
+\backslash
+fboxsep}{2cm}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+definecolor{shadecolor}{cmyk}{0.5,0,1,0.5}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Shaded
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+width "50col%"
+special "none"
+height "2in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\color white
+this is a test!
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setlength{
+\backslash
+fboxsep}{3pt}
+\backslash
+definecolor{shadecolor}{gray}{0.85}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
 迷你页面(MiniPage)
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:迷你页面(MiniPage)"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -4192,27 +4915,27 @@ simple frame，page breaks:和2类似，只不过可以换页
 \end_layout
 
 \begin_layout Enumerate
-Oval,thin：圆矩形，有比较薄的边框
+Oval,thin：圆矩形，有比较薄的边框，边框厚度为0.4pt
 \end_layout
 
 \begin_layout Enumerate
-Oval,thick：圆矩形，有比较厚的边框
+Oval,thick：圆矩形，有比较厚的边框，边框厚度为0.8pt
 \end_layout
 
 \begin_layout Enumerate
-drop shadow:背景有投影而是实心黑色的盒子
+drop shadow:背景有投影而是实心黑色的盒子，阴影厚度为4pt
 \end_layout
 
 \begin_layout Enumerate
-shaded background:背景有阴影的，类似于本帮助文档中的grayBox
+shaded background:背景是全红色的，而且使用整个列的宽度，类似于本帮助文档中的grayBox
 \end_layout
 
 \begin_layout Enumerate
-double frame:双层边框
+double frame:双层边框，
 \end_layout
 
 \begin_layout Standard
-一些外观效果：
+要使用这些炫彩的外观，在LateX序言中需要导入fancybox宏包，下面是一些外观效果：
 \end_layout
 
 \begin_layout Standard
@@ -4465,6 +5188,13 @@ This is english
 
 \begin_layout Subsubsection
 文本框（Parbox）
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:文本框（Parbox）"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -4490,7 +5220,7 @@ Box”\SpecialChar \menuseparator
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
@@ -4524,6 +5254,1561 @@ status open
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Parbox的垂直对齐方式前面已经讲过，这里举一个简单的例子：
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Box Boxed
+position "b"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 1
+width "40col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status collapsed
+
+\begin_layout Plain Layout
+this is a test! this is a test! this is a test! this is a test! this is
+ a test! this is a test! this is a test! this is a test! this is a test!
+ this is a test! this is a test! this is a test! this is a test! this is
+ a test! this is a test! this is a test! this is a test! this is a test!
+ this is a test! this is a test! 
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Box Ovalbox
+position "b"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 1
+width "40col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status collapsed
+
+\begin_layout Plain Layout
+this is a test! this is a test! this is a test! this is a test! this is
+ a test! this is a test! this is a test! this is a test! this is a test!
+ this is a test! this is a test! this is a test! this is a test! this is
+ a test! this is a test! this is a test! this is a test! this is a test!
+ this is a test! this is a test! 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+有颜色的Box
+\end_layout
+
+\begin_layout Standard
+前面我们讨论过当使用shaded background的box时，可以设置box的背景填充颜色，但是如果对于普通的box该如何设置内容的背景颜色，这时候我们可以
+使用
+\backslash
+colorbox命令。
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+colorbox{color}{内容...}
+\end_layout
+
+\begin_layout Standard
+%color的预设值有black, blue, cyan, green, magenta, red, white, and yellow.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+比如:
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+colorbox{red}{
+\end_layout
+
+\end_inset
+
+女士们，先生们，请注意！
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+如果要想使用框架的colorbox，可以使用命令
+\backslash
+fcolorbox:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+fcolorbox{frame color}{box color}{内容...}
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+例如：
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+fboxrule 0.1cm 
+\backslash
+fboxsep 0.5cm
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+fcolorbox{black}{cyan}{
+\end_layout
+
+\end_inset
+
+女士们，先生们，请注意！
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+fboxrule 0.4pt 
+\backslash
+fboxsep 3pt
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+如果想进一步调整边框厚度以及边框和内容的距离，请参照
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:自定义box"
+
+\end_inset
+
+。
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+请注意:在colorbox和fcolorbox中文字不能断行！如果想要在其中插入段落或者更复杂的内容，请在它们内部插入minipage,或者parbox.
+\end_layout
+
+\begin_layout Standard
+测试：
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+fcolorbox{black}{cyan}{
+\end_layout
+
+\end_inset
+
+这是一个测试！这是一个测试！这是一个测试！这是一个测试！这是一个测试！这是一个测试！这是一个测试！这是一个测试！这是一个测试！这是一个测试！这是一个测试！这是一
+个测试!
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+显然断行有问题！因此我们在colorbox内部插入minipage和parbox：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+definecolor{lightgrey}{gray}{0.9}
+\backslash
+colorbox{lightgrey}{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status collapsed
+
+\begin_layout Enumerate
+这是在clolorbox内部的一个Minipage，背景为灰色
+\end_layout
+
+\begin_layout Enumerate
+有一个
+\begin_inset Formula $4\times4$
+\end_inset
+
+的表格
+\end_layout
+
+\begin_layout Plain Layout
+断行示例:这是一个测试，这是一个测试，这是一个测试，这是一个测试，这是一个测试，这是一个测试，这是一个测试，这是一个测试，这是一个测试，这是一个测试。
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="4">
+<features>
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+11
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+12
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+13
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+14
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+15
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+16
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+definecolor{lightyellow}{rgb}{1,1,0.5}
+\backslash
+fcolorbox{black}{lightyellow}{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 1
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+断行示例:这是一个在fcolorbox里面的一个parbox(frameless).
+\end_layout
+
+\begin_layout Plain Layout
+断行示例:这是一个测试，这是一个测试，这是一个测试，这是一个测试，这是一个测试，这是一个测试，这是一个测试，这是一个测试，这是一个测试
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="4">
+<features>
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+00
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+010
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+01101
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+11010
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+自定义有颜色的box
+\end_layout
+
+\begin_layout Standard
+如果不使用LyX中自带的Box而要如何定义一个有着类似外观而且可以换行的自定义box呢？本帮助文档所使用的grayBox就是一个例子，首先看看grayBox
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotemark[1]
+\end_layout
+
+\end_inset
+
+环境是如何定义的：
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+%grayBox,needs shadecolor, 
+\backslash
+boxwidth and the framed package 
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+newenvironment{grayBox}
+\begin_inset Formula $\quad$
+\end_inset
+
+%新环境定义的开始
+\end_layout
+
+\begin_layout Standard
+{
+\backslash
+def
+\backslash
+FrameCommand{
+\begin_inset Formula $\quad$
+\end_inset
+
+%定义边框命令
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+fboxsep=
+\backslash
+FrameSep
+\begin_inset Formula $\quad$
+\end_inset
+
+%使box和frame与内容距离相等，请看
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:自定义box"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+fboxrule=
+\backslash
+FrameRule 
+\begin_inset Formula $\quad$
+\end_inset
+
+%使box和frame的边框厚度相等
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+fcolorbox{white}{shadecolor}} 
+\begin_inset Formula $\quad$
+\end_inset
+
+%使用了fcolorbox,关于fcolorbox的详细请看上节
+\end_layout
+
+\begin_layout Standard
+%FrameCommand定义结束，以下开始定义命令MakeFramed
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+MakeFramed
+\begin_inset Formula $\quad$
+\end_inset
+
+%开始构建frame
+\end_layout
+
+\begin_layout Standard
+{
+\backslash
+setlength{
+\backslash
+boxwidth}{
+\backslash
+textwidth}
+\begin_inset Formula $\quad$
+\end_inset
+
+%设置box的宽度和文本宽度一样
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+addtolength{
+\backslash
+boxwidth}{-2
+\backslash
+FrameSep} 
+\begin_inset Formula $\quad$
+\end_inset
+
+%调整box的宽度
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+addtolength{
+\backslash
+boxwidth}{-2
+\backslash
+FrameRule} 
+\begin_inset Formula $\quad$
+\end_inset
+
+%同样调整box的宽度
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+setlength{
+\backslash
+hsize}{
+\backslash
+boxwidth} 
+\backslash
+FrameRestore}} 
+\begin_inset Formula $\quad$
+\end_inset
+
+%设置整个宽度和box的宽度一样
+\end_layout
+
+\begin_layout Standard
+{
+\backslash
+endMakeFramed}
+\begin_inset Formula $\quad$
+\end_inset
+
+%定义
+\backslash
+endMakeFramed结束
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotemark[1]{此例来自于latex community，
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://www.latex-community.org/
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+比如，我们可以从此grayBox修改为一个yellowBox(以示区别)，比如：
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+newenvironment{yellowBox}
+\end_layout
+
+\begin_layout Standard
+{
+\backslash
+def
+\backslash
+FrameCommand{
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+fboxsep=
+\backslash
+FrameSep
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+fboxrule=
+\backslash
+FrameRule 
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+fcolorbox{white}{lightyellow}} 
+\begin_inset Formula $\quad$
+\end_inset
+
+边框颜色默认，内容背景色为浅黄色
+\end_layout
+
+\begin_layout Standard
+%FrameCommand
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+MakeFramed
+\end_layout
+
+\begin_layout Standard
+{
+\backslash
+setlength{
+\backslash
+boxwidth}{
+\backslash
+textwidth}
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+addtolength{
+\backslash
+boxwidth}{-2
+\backslash
+FrameSep} 
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+addtolength{
+\backslash
+boxwidth}{-2
+\backslash
+FrameRule} 
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+setlength{
+\backslash
+hsize}{
+\backslash
+boxwidth} 
+\backslash
+FrameRestore}} 
+\end_layout
+
+\begin_layout Standard
+{
+\backslash
+endMakeFramed}
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+效果如下:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+newenvironment{yellowBox}
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+def
+\backslash
+FrameCommand{
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+fboxsep=
+\backslash
+FrameSep
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+fboxrule=
+\backslash
+FrameRule 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+fcolorbox{white}{lightyellow}}
+\end_layout
+
+\begin_layout Plain Layout
+
+%FrameCommand
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+MakeFramed
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+setlength{
+\backslash
+boxwidth}{
+\backslash
+textwidth}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addtolength{
+\backslash
+boxwidth}{-2
+\backslash
+FrameSep} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addtolength{
+\backslash
+boxwidth}{-2
+\backslash
+FrameRule} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+setlength{
+\backslash
+hsize}{
+\backslash
+boxwidth} 
+\backslash
+FrameRestore}} 
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+endMakeFramed}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{yellowBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+我们以grayBox为例，自己修改的一个背景为浅黄色的box，当然你可以根据自己的喜好修改边框颜色和厚度，以及内容与边框的距离。
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{yellowBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+如果要修改边此box的框大小和厚度，就要在box之前插入以下命令(和box的
+\backslash
+fboxrule以及
+\backslash
+fboxsep命令类似)：
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+setlength{
+\backslash
+FrameRule}{value}
+\begin_inset Formula $\qquad$
+\end_inset
+
+%修改边框的厚度为value，默认值为0.4pt
+\end_layout
+
+\begin_layout Standard
+
+\backslash
+setlength{
+\backslash
+FrameSep}{value}
+\begin_inset Formula $\qquad$
+\end_inset
+
+%修改边框和内容的距离为value，默认值为9pt
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{grayBox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+例如：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+newenvironment{yellowBoxWithFrame}
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+def
+\backslash
+FrameCommand{
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+fboxsep=
+\backslash
+FrameSep
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+fboxrule=
+\backslash
+FrameRule 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+fcolorbox{black}{lightyellow}}
+\end_layout
+
+\begin_layout Plain Layout
+
+%FrameCommand
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+MakeFramed
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+setlength{
+\backslash
+boxwidth}{
+\backslash
+textwidth}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addtolength{
+\backslash
+boxwidth}{-2
+\backslash
+FrameSep} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addtolength{
+\backslash
+boxwidth}{-2
+\backslash
+FrameRule} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+setlength{
+\backslash
+hsize}{
+\backslash
+boxwidth} 
+\backslash
+FrameRestore}} 
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+endMakeFramed}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+FrameSep 1cm 
+\backslash
+FrameRule 0.1cm
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{yellowBoxWithFrame}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+此box有边框，而且边框厚度为0.1cm，边框与内容的距离为1cm
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{yellowBoxWithFrame}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+FrameSep 9pt 
+\backslash
+FrameRule 0.4pt
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newenvironment{yellowBoxWithFrame2}
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+def
+\backslash
+FrameCommand{
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+fboxsep=
+\backslash
+FrameSep
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+fboxrule=
+\backslash
+FrameRule 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+fcolorbox{black}{lightyellow}}
+\end_layout
+
+\begin_layout Plain Layout
+
+%FrameCommand
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+MakeFramed
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+setlength{
+\backslash
+boxwidth}{
+\backslash
+textwidth}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addtolength{
+\backslash
+boxwidth}{-10
+\backslash
+FrameSep} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addtolength{
+\backslash
+boxwidth}{-5
+\backslash
+FrameRule} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+setlength{
+\backslash
+hsize}{
+\backslash
+boxwidth} 
+\backslash
+FrameRestore}} 
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+endMakeFramed}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+此外，我们还可以改变此边框的所占的列宽
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{yellowBoxWithFrame2}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+这个box和上面一个类似，只不过是一个所占列宽改变了。换行测试：这是一个自定义box，这是一个自定义box，这是一个自定义box，这是一个自定义box，这是一个
+自定义box，这是一个自定义box，这是一个自定义box.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{yellowBoxWithFrame2}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+注意：此类Box永远居中！
 \end_layout
 
 \begin_layout Standard
