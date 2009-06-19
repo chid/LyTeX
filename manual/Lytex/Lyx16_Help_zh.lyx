@@ -13,7 +13,7 @@
 {\usepackage{color}}{}
 \usepackage[german,english]{babel}
                                  
-\setCJKmainfont[BoldFont=SimHei]{SimSun}%设置中文主字体
+\setCJKmainfont[BoldFont=SimHei,Mapping=tex-text]{SimSun}%设置中文主字体
 \setCJKsansfont{SimHei}         
 \setCJKmonofont{NSimSun}  
 
@@ -135,7 +135,7 @@
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -271,10 +271,22 @@ type "mailto:"
 \begin_inset Newline newline
 \end_inset
 
+ollydbg 
+\begin_inset CommandInset href
+LatexCommand href
+target "ollydbg@ctex.org"
+type "mailto:"
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
 zoho 
 \begin_inset CommandInset href
 LatexCommand href
-target "username@domain"
+target "zoho@ctex.org"
 type "mailto:"
 
 \end_inset
@@ -377,7 +389,7 @@ TeXworks（版本r303）：
 status collapsed
 
 \begin_layout Plain Layout
-LateX的介绍
+TeXworks的介绍
 \end_layout
 
 \end_inset
@@ -401,7 +413,7 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-LateX的介绍
+LyX的介绍
 \end_layout
 
 \end_inset
@@ -603,6 +615,192 @@ status collapsed
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsection
+导入和导出中文 tex 文档
+\end_layout
+
+\begin_layout Standard
+这个小节介绍中文 tex 文档导入和导出时的基本方法。主要目的是避免乱码的出现。
+\end_layout
+
+\begin_layout Subsubsection
+导入中文 tex 文档
+\end_layout
+
+\begin_layout Standard
+如果你要在 LyX 中导入用 CJK 宏包撰写的中文 tex 文档，你可以点击
+\series bold
+“文件
+\series default
+\SpecialChar \menuseparator
+
+\series bold
+导入
+\series default
+\SpecialChar \menuseparator
+
+\series bold
+LaTeX (plain)”
+\series default
+，然后选择所要导入的文档。
+\end_layout
+
+\begin_layout Standard
+如果是 UTF-8 编码的文档，直接导入就可以了。在文档导入之后，你需要删除 LyX 文档开头的 
+\backslash
+begin{CJK}{UTF8}{} 和结尾的 
+\backslash
+end{CJK} 字符串，然后在
+\series bold
+“文档\SpecialChar \menuseparator
+首选项\SpecialChar \menuseparator
+语言”
+\series default
+处，将
+\series bold
+“语言”
+\series default
+项选为
+\series bold
+“Chinese (simplified)”
+\series default
+，将
+\series bold
+“Encoding”
+\series default
+项选为
+\series bold
+“Unicode (CJK) (utf8)”
+\series default
+。 
+\end_layout
+
+\begin_layout Standard
+对于 GBK 编码的文档（大部分用 CJK 撰写的文档都使用这个编码），在导入之前，你需要临时在 tex 文档的导言区中加入如下一行以确保正确地导入：
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+usepackage[GBK]{inputenc}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+在文档导入之后，你需要删除 LyX 文档开头的 
+\backslash
+begin{CJK}{GBK}{} 和结尾的 
+\backslash
+end{CJK}，然后在
+\series bold
+“文档\SpecialChar \menuseparator
+首选项\SpecialChar \menuseparator
+语言”
+\series default
+处，将语言选为
+\series bold
+“Chinese (simplified)”
+\series default
+，将
+\series bold
+“Encoding”
+\series default
+项选为
+\series bold
+“Chinese (simplified) (GBK)”
+\series default
+。
+\end_layout
+
+\begin_layout Subsubsection
+导出中文 tex 文档
+\end_layout
+
+\begin_layout Standard
+在 LyX 中完成了中文文档的撰写，你经常需要导出 lyx 文档为 tex 文档。此时可能碰到的问题就是文档导出后用文本编辑器打开是乱码。这个问题是由于不同的编
+辑器默认的文本编码不同造成，所以在这里我们提供一种设置方法，使得中文 lyx 文档导出后在 WinEdt 编辑器和 TeXworks 编辑器中打开均能正确显示。
+\end_layout
+
+\begin_layout Standard
+对于 GBK 编码的 lyx 文档，可以在
+\series bold
+“文档\SpecialChar \menuseparator
+首选项\SpecialChar \menuseparator
+LaTeX序”
+\series default
+中，加入如下一行以让 TeXworks 使用 GBK 编码显示文档（这种方法应该只对简体中文的 Windows 系统有效。）：
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "showstringspaces=false"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+% 
+\lang chinese-simplified
+!TEX encoding = System
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+对于 UTF-8 编码的 lyx 文档，可以在
+\series bold
+“文档\SpecialChar \menuseparator
+首选项\SpecialChar \menuseparator
+LaTeX序”
+\series default
+中，加入如下一行以让 WinEdt 使用 UTF-8 编码显示文档（这种方法对 WinEdt 最新的 5.5 版本才有效，CTeX 套装 2.7 包含
+ WinEdt 5.5。）：
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+使用自定义的 grayBox 环境时编译出错，所以此处使用 LyX 支持的 Program Listings 环境。
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+% !Mode:: 
+"
+\lang chinese-simplified
+TeX:UTF-8
+"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+从 LyTeX 1.6gamma 版本开始，其中的所有中文模板已经设置好了文本编码。
 \end_layout
 
 \begin_layout Standard
