@@ -329,7 +329,8 @@ LatexCommand tableofcontents
 \end_layout
 
 \begin_layout Standard
-LyteX是一个结合了LyX而且配置了其他组件的一个移动Tex套件，最新版本的LyteX由以下组件构成:
+LyteX是一个结合了LyX而且配置了其他组件的一个移动Tex套件，您可以把它作为一款绿色软件使用，或者可以放入优盘随身携带使用。最新版本的LyteX由以下组件
+构成:
 \end_layout
 
 \begin_layout Itemize
@@ -425,6 +426,32 @@ Lyx是一个强大的所见即所得的tex编辑器，可以在windows以及linu
 
 \begin_layout Section
 安装LyTeX
+\end_layout
+
+\begin_layout Standard
+可以从如下地点查阅Lytex的最新安装包和信息
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "Ctex中文论坛"
+target "http://bbs.ctex.org/viewthread.php?tid=46857&extra=&page=1"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "Lytex位于 Google code的主页 "
+target "http://code.google.com/p/lytex/"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -565,10 +592,10 @@ ChineseSimp
 
 ，选择你所需要的简体中文模版
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
-每一个模版打开后都会有一些建议和提示，根据所需要求来选择不同的中文模版
+每一个模版打开后都会有一些建议和提示，根据所需要求来选择不同的中文模版，同时根据提示采用不同的编译按钮编译对于的文档
 \end_layout
 
 \end_inset
@@ -688,6 +715,7 @@ status open
 
 \begin_layout Plain Layout
 
+
 \backslash
 usepackage[GBK]{inputenc}
 \end_layout
@@ -750,9 +778,7 @@ status open
 
 \begin_layout Plain Layout
 
-% 
-\lang chinese-simplified
-!TEX encoding = System
+% !TEX encoding = System
 \end_layout
 
 \end_inset
@@ -787,11 +813,8 @@ inline false
 status open
 
 \begin_layout Plain Layout
-% !Mode:: 
-"
-\lang chinese-simplified
-TeX:UTF-8
-"
+
+% !Mode:: "TeX:UTF-8"
 \end_layout
 
 \end_inset
@@ -1428,7 +1451,9 @@ end{grayBox}
 \end_layout
 
 \begin_layout Standard
-这样生成后的pdf中，类似table 1.1就会自动变成表 1.1。
+注意，上面的
+\backslash
+renewcommand的命令的作用，是用中文替换了默认的英文，所以这样生成后的pdf中，类似table 1.1就会自动变成表 1.1。
 \end_layout
 
 \begin_layout Subsection
@@ -1539,14 +1564,14 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-对于如何自定义浮动项的排版，我们会在
+对于如何自定义浮动项的排版，我们会在第
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Lyx内容排版"
 
 \end_inset
 
-中讲到。
+章中讲到。
 \end_layout
 
 \begin_layout Standard
@@ -1678,7 +1703,7 @@ status collapsed
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -2124,7 +2149,7 @@ status collapsed
 \end_layout
 
 \begin_layout Subsection
-文献
+参考文献
 \end_layout
 
 \begin_layout Standard
@@ -2159,7 +2184,7 @@ citep*用于打印完整引用）
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -2450,7 +2475,7 @@ eX代码而自动引入AMS和esint包，在要编辑数学有关模版(或者文
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -2596,7 +2621,7 @@ pdf输出中应该被编译(激活分支编译)，这样就很方便使用一份
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -2672,12 +2697,12 @@ name "sec:Lyx内容排版"
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="10" columns="3">
+<lyxtabular version="3" rows="11" columns="3">
 <features>
 <column alignment="center" valignment="top" width="0">
 <column alignment="center" valignment="top" width="0">
@@ -2944,7 +2969,7 @@ Ctrl+Z
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2953,11 +2978,40 @@ Ctrl+return
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 换行(在数学环境下也可用)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+高
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Alt+C
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+状态栏提示不同的状态切换环境
 \end_layout
 
 \end_inset
@@ -3015,7 +3069,7 @@ begin{grayBox}插入已自定义的环境。
 \begin_inset Quotes erd
 \end_inset
 
-就可以立刻打开数学输入支持环境,“Ctrl+Enter
+就可以立刻打开数学输入支持环境,在此情“Ctrl+Enter
 \begin_inset Quotes erd
 \end_inset
 
@@ -3055,7 +3109,7 @@ begin{grayBox}插入已自定义的环境。
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -3129,7 +3183,7 @@ name "sub:文章段落排版"
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -9313,7 +9367,7 @@ LyX1.6中还不支持复杂数学公式的脚本，比如很长的公式，会�
 
 \begin_layout Standard
 \begin_inset FormulaMacro
-\newcommand{\rootpartOne}[3]{-\hspace{3pt}\frac{#2}{3#1}+\sqrt[3]{-\frac{27#1^{2}-9#1#2#3+2#2^{3}}{54#1^{3}}+\sqrt{\left(\frac{27#1^{2}-9#1#2#3+2#2^{3}}{54#1^{3}}\right)^{2}+\left(\frac{3#1#3-#2^{2}}{9#1^{2}}\right)^{3}}}}
+\renewcommand{\rootpartOne}[3]{-\hspace{3pt}\frac{#2}{3#1}+\sqrt[3]{-\frac{27#1^{2}-9#1#2#3+2#2^{3}}{54#1^{3}}+\sqrt{\left(\frac{27#1^{2}-9#1#2#3+2#2^{3}}{54#1^{3}}\right)^{2}+\left(\frac{3#1#3-#2^{2}}{9#1^{2}}\right)^{3}}}}
 \end_inset
 
 
@@ -9321,7 +9375,7 @@ LyX1.6中还不支持复杂数学公式的脚本，比如很长的公式，会�
 
 \begin_layout Standard
 \begin_inset FormulaMacro
-\newcommand{\rootpartTwo}[3]{+\hspace{3pt}\sqrt[3]{-\frac{27#1^{2}-9#1#2#3+2#2^{3}}{54#1^{3}}-\sqrt{\left(\frac{27#1^{2}-9#1#2#3+2#2^{3}}{54#1^{3}}\right)^{2}+\left(\frac{3#1#3-#2^{2}}{9#1^{2}}\right)^{3}}}}
+\renewcommand{\rootpartTwo}[3]{+\hspace{3pt}\sqrt[3]{-\frac{27#1^{2}-9#1#2#3+2#2^{3}}{54#1^{3}}-\sqrt{\left(\frac{27#1^{2}-9#1#2#3+2#2^{3}}{54#1^{3}}\right)^{2}+\left(\frac{3#1#3-#2^{2}}{9#1^{2}}\right)^{3}}}}
 \end_inset
 
 
@@ -9362,6 +9416,22 @@ x^{3}=px^{2}+qx+r\end{equation}
 
 \begin_layout Section
 其他排版技巧
+\end_layout
+
+\begin_layout Subsection
+主控文档和子文档
+\end_layout
+
+\begin_layout Subsection
+对Lyx文档进行版本管理
+\end_layout
+
+\begin_layout Subsection
+修订和批注
+\end_layout
+
+\begin_layout Subsection
+导入参考文献数据库以及交叉索引
 \end_layout
 
 \end_body
