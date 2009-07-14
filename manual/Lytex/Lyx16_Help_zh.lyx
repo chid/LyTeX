@@ -3069,7 +3069,7 @@ begin{grayBox}插入已自定义的环境。
 \begin_inset Quotes erd
 \end_inset
 
-就可以立刻打开数学输入支持环境,在此情“Ctrl+Enter
+就可以立刻打开数学输入支持环境,“Ctrl+Enter
 \begin_inset Quotes erd
 \end_inset
 
@@ -9367,7 +9367,7 @@ LyX1.6中还不支持复杂数学公式的脚本，比如很长的公式，会�
 
 \begin_layout Standard
 \begin_inset FormulaMacro
-\renewcommand{\rootpartOne}[3]{-\hspace{3pt}\frac{#2}{3#1}+\sqrt[3]{-\frac{27#1^{2}-9#1#2#3+2#2^{3}}{54#1^{3}}+\sqrt{\left(\frac{27#1^{2}-9#1#2#3+2#2^{3}}{54#1^{3}}\right)^{2}+\left(\frac{3#1#3-#2^{2}}{9#1^{2}}\right)^{3}}}}
+\newcommand{\rootpartOne}[3]{-\hspace{3pt}\frac{#2}{3#1}+\sqrt[3]{-\frac{27#1^{2}-9#1#2#3+2#2^{3}}{54#1^{3}}+\sqrt{\left(\frac{27#1^{2}-9#1#2#3+2#2^{3}}{54#1^{3}}\right)^{2}+\left(\frac{3#1#3-#2^{2}}{9#1^{2}}\right)^{3}}}}
 \end_inset
 
 
@@ -9375,7 +9375,7 @@ LyX1.6中还不支持复杂数学公式的脚本，比如很长的公式，会�
 
 \begin_layout Standard
 \begin_inset FormulaMacro
-\renewcommand{\rootpartTwo}[3]{+\hspace{3pt}\sqrt[3]{-\frac{27#1^{2}-9#1#2#3+2#2^{3}}{54#1^{3}}-\sqrt{\left(\frac{27#1^{2}-9#1#2#3+2#2^{3}}{54#1^{3}}\right)^{2}+\left(\frac{3#1#3-#2^{2}}{9#1^{2}}\right)^{3}}}}
+\newcommand{\rootpartTwo}[3]{+\hspace{3pt}\sqrt[3]{-\frac{27#1^{2}-9#1#2#3+2#2^{3}}{54#1^{3}}-\sqrt{\left(\frac{27#1^{2}-9#1#2#3+2#2^{3}}{54#1^{3}}\right)^{2}+\left(\frac{3#1#3-#2^{2}}{9#1^{2}}\right)^{3}}}}
 \end_inset
 
 
