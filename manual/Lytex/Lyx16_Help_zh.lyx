@@ -1703,7 +1703,7 @@ status collapsed
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -2184,7 +2184,7 @@ citep*用于打印完整引用）
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -2475,7 +2475,7 @@ eX代码而自动引入AMS和esint包，在要编辑数学有关模版(或者文
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -3109,7 +3109,7 @@ begin{grayBox}插入已自定义的环境。
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -3252,8 +3252,11 @@ reference "par:浮动项的设置"
 \series default
 ”，插入算法伪代码（请尽量不要插入任何其他具体编程语言的算法如C或者Ruby），由于LyX默认提供的算法功能太弱，建议使用algorithmic宏包，在序言中加
 入以下代码:
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -3513,7 +3516,7 @@ textbf{假值}}
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -3864,8 +3867,11 @@ end{algorithmic}
 
 \begin_layout Standard
 所插入的相应TeX源代码：
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -3963,7 +3969,7 @@ end{algorithmic}
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -3985,8 +3991,11 @@ begin{algorithmic}[1]的“
 \end_inset
 
 ”表示每隔一行便显示行号，为了使标题algorithm显示成中文，在整个算法的前面插入如下代码:
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -4008,7 +4017,7 @@ floatname{algorithm}{算法}
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -4057,8 +4066,11 @@ center
 
 \begin_layout Standard
 在浮动图内还可以继续插入浮动子图，而且每个浮动子图都会被阿拉伯数字和小写英文自动编号。如果想使用改变浮动图的编号 ，可以在LateX序言中插入以下代码:
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -4094,7 +4106,7 @@ numberwithin{figure}{subsection}
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -4166,8 +4178,11 @@ caption(标题)：
 
 \begin_layout Standard
 由于长表格默认位置是据中，要改变其位置，我们可以通过在长表格的前面插入以下TeX代码来达到目的：
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -4253,7 +4268,7 @@ LTright
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -4279,7 +4294,7 @@ end{grayBox}
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -4474,7 +4489,7 @@ width "30col%"
 special "none"
 height "2in"
 height_special "totalheight"
-status collapsed
+status open
 
 \begin_layout Plain Layout
 this is a test!
@@ -4497,7 +4512,7 @@ width "30col%"
 special "none"
 height "2in"
 height_special "totalheight"
-status collapsed
+status open
 
 \begin_layout Plain Layout
 this is a test!
@@ -4520,7 +4535,7 @@ width "30col%"
 special "none"
 height "2in"
 height_special "totalheight"
-status collapsed
+status open
 
 \begin_layout Plain Layout
 this is a test!
@@ -4543,7 +4558,7 @@ width "30col%"
 special "none"
 height "2in"
 height_special "totalheight"
-status collapsed
+status open
 
 \begin_layout Plain Layout
 this is a test!
@@ -4593,8 +4608,11 @@ reference "sub:文本框（Parbox）"
 
 \begin_layout Standard
 我们可以通过以下插入代码来改变box边框的厚度：
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -4622,7 +4640,7 @@ fboxrule}{value}
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -4638,8 +4656,11 @@ end{grayBox}
 
 \begin_layout Standard
 要返回默认值，插入以下代码：
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -4667,7 +4688,7 @@ fboxrule}{0.3pt}
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -4684,7 +4705,7 @@ end{grayBox}
 \begin_layout Standard
 例如：
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -4724,7 +4745,7 @@ fboxrule}{3pt}
 
 
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -4746,8 +4767,11 @@ fboxrule}{0.3pt}
 
 \begin_layout Standard
 可以通过插入以下代码达到目的：
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -4775,7 +4799,7 @@ fboxsep}{value}
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -4791,8 +4815,11 @@ end{grayBox}
 
 \begin_layout Standard
 要返回默认值，插入以下代码：
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -4820,7 +4847,7 @@ fboxsep}{3pt}
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -4899,8 +4926,11 @@ fboxsep}{3pt}
 
 \begin_layout Standard
 当box使用阴影外观时，可以插入以下代码控制阴影的厚度或者大小:
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -4928,7 +4958,7 @@ shadowsize}{value}
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -5030,7 +5060,7 @@ Look & Feel
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -5056,7 +5086,7 @@ definecolor{shadecolor}{cmyk}{0.5,0,1,0.5}
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -5575,8 +5605,11 @@ this is a test! this is a test! this is a test! this is a test! this is
 使用
 \backslash
 colorbox命令。
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -5602,7 +5635,7 @@ colorbox{color}{内容...}
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -5619,7 +5652,7 @@ end{grayBox}
 \begin_layout Standard
 比如:
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -5652,7 +5685,7 @@ fcolorbox:
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -5674,7 +5707,7 @@ fcolorbox{frame color}{box color}{内容...}
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -5691,7 +5724,7 @@ end{grayBox}
 \begin_layout Standard
 例如：
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -5706,7 +5739,7 @@ fboxsep 0.5cm
 
 
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -5730,7 +5763,7 @@ status open
 
 
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -5766,7 +5799,7 @@ reference "sub:自定义box"
 \begin_layout Standard
 测试：
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -5780,7 +5813,7 @@ fcolorbox{black}{cyan}{
 这是一个测试！这是一个测试！这是一个测试！这是一个测试！这是一个测试！这是一个测试！这是一个测试！这是一个测试！这是一个测试！这是一个测试！这是一个测试！这是一
 个测试!
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -5798,7 +5831,7 @@ status open
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -6151,8 +6184,11 @@ footnotemark[1]
 \end_inset
 
 环境是如何定义的：
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -6321,7 +6357,7 @@ endMakeFramed结束
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -6375,8 +6411,11 @@ status open
 
 \begin_layout Standard
 比如，我们可以从此grayBox修改为一个yellowBox(以示区别)，比如：
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -6490,7 +6529,7 @@ endMakeFramed}
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -6625,7 +6664,7 @@ endMakeFramed}
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -6645,7 +6684,7 @@ begin{yellowBox}
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -6665,8 +6704,11 @@ end{yellowBox}
 fboxrule以及
 \backslash
 fboxsep命令类似)：
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -6706,7 +6748,7 @@ FrameSep}{value}
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -7022,8 +7064,11 @@ endMakeFramed}
 
 \begin_layout Standard
 此外，我们还可以改变此边框的所占的列宽
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -7045,7 +7090,7 @@ begin{yellowBoxWithFrame2}
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -7109,7 +7154,7 @@ end{yellowBoxWithFrame2}
 placement h
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -7158,7 +7203,7 @@ status collapsed
 placement h
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
