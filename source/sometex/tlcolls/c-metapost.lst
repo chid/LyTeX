@@ -1,0 +1,37 @@
+
+name collection-metapost
+category Collection
+revision 10475
+shortdesc MetaPost (and Metafont) drawing packages
+depend automata
+depend bbcard
+depend blockdraw_mp
+depend bpolynomial
+depend cmarrows
+depend dviincl
+depend emp
+depend epsincl
+depend expressg
+depend exteps
+depend featpost
+depend feynmf
+depend hatching
+depend latexmp
+depend metago
+depend metaobj
+depend metaplot
+depend metapost
+depend metauml
+depend mfpic
+depend mfpic4ode
+depend mp3d
+depend mpattern
+depend piechartmp
+depend roex
+depend slideshow
+depend splines
+depend textpath
+depend bin-metapost
+depend collection-basic
+containersize 397
+containermd5 2fe10baa4f6edb60a9dddd01966306ce

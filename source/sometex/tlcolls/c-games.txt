@@ -1,0 +1,28 @@
+name collection-games
+category Collection
+revision 11320
+shortdesc Games typesetting (chess, etc)
+longdesc Setups for typesetting various board games, including chess
+depend backgammon
+depend bridge
+depend cchess
+depend chess
+depend chess-problem-diagrams
+depend chessboard
+depend chessfss
+depend egameps
+depend go
+depend hexgame
+depend jeopardy
+depend othello
+depend psgo
+depend sgame
+depend skak
+depend skaknew
+depend sudoku
+depend sudokubundle
+depend xq
+depend xskak
+depend collection-latex
+containersize 364
+containermd5 85b21ae44c082a071894539b3eb1960d

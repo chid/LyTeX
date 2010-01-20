@@ -1,0 +1,28 @@
+
+name collection-langcyrillic
+category Collection
+revision 10938
+shortdesc Cyrillic
+longdesc Fonts and macro packages to typeset Cyrillic texts.
+#depend cmcyr
+#depend cmcyralt
+#depend cyrillic
+#depend cyrplain
+#depend disser
+#depend eskd
+#depend eskdx
+#depend gost
+#depend lcyw
+#depend lh
+#depend lhcyr
+depend ruhyphen
+#depend t2
+#depend timescyr
+depend ukrhyph
+#depend bin-cyrillic
+#depend hyphen-bulgarian
+#depend hyphen-russian
+#depend hyphen-ukrainian
+#depend collection-basic
+containersize 344
+containermd5 fc35723f26efe86811ddb521472fc201

@@ -1,0 +1,28 @@
+
+name collection-langgreek
+category Collection
+revision 9915
+shortdesc Greek
+longdesc Fonts and support for typesetting Greek
+#depend betababel
+#depend cbfonts
+#depend gfsbaskerville
+#depend gfsporson
+#depend greek-inputenc
+#depend greekdates
+#depend greektex
+#depend grverb
+#depend ibycus-babel
+#depend ibygrk
+#depend kdgreek
+#depend kerkis
+#depend levy
+#depend lgreek
+#depend teubner
+#depend xgreek
+#depend yannisgr
+depend hyphen-greek
+depend hyphen-ancientgreek
+#depend collection-basic
+containersize 358
+containermd5 443c29ad14a6a8c9b7d2c22aea741a54

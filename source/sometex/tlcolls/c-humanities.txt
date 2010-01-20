@@ -1,0 +1,40 @@
+name collection-humanities
+category Collection
+revision 10862
+shortdesc Humanities packages
+longdesc Packages for law, linguistics, the social sciences, the
+longdesc humanities, etc.
+depend alnumsec
+depend arydshln
+depend bibleref
+depend covington
+depend dramatist
+depend ecltree
+depend ednotes
+depend gb4e
+depend gmverse
+depend jura
+depend juraabbrev
+depend juramisc
+depend jurarsp
+depend ledmac
+depend lexikon
+depend lineno
+depend linguex
+depend liturg
+depend parallel
+depend parrun
+depend plari
+depend play
+depend poemscol
+depend qobitree
+depend qtree
+depend rtklage
+depend screenplay
+depend sides
+depend stage
+depend tree-dvips
+depend verse
+depend xyling
+containersize 428
+containermd5 54887171c22fa64002c1c625a035f0ac

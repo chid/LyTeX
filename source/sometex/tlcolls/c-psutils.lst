@@ -1,0 +1,14 @@
+name collection-psutils
+category Collection
+revision 6905
+shortdesc Extra font utilities
+longdesc Manipulating OpenType, TrueType, PostScript Type 1, etc.,
+longdesc files.
+depend dvipsconfig
+depend bin-getafm
+depend bin-lcdftypetools
+depend bin-pstools
+depend bin-psutils
+depend bin-t1utils
+containersize 308
+containermd5 eb7dec7a6716bfea1ef39211c52b8293

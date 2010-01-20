@@ -1,0 +1,43 @@
+
+name collection-binextra
+category Collection
+revision 11289
+shortdesc TeX auxiliary programs
+longdesc Various useful, but non-essential, support programs. Includes
+longdesc programs and macros for DVI file manipulation, literate
+longdesc programming, patgen, etc.
+depend collection-basic
+depend a2ping
+depend bin-bibtex8
+depend bin-ctie
+depend bin-cweb
+depend bin-detex
+depend bin-dtl
+depend bin-dvi2tty
+depend bin-dvicopy
+depend bin-dvidvi
+depend bin-dviljk
+depend bin-dvipos
+depend bin-lacheck
+depend bin-patgen
+depend bin-pdftools
+depend bin-seetexk
+depend bin-texdoc
+depend bin-texware
+depend bin-tie
+depend bin-tpic2pdftex
+depend bin-web
+depend cweb
+depend dviasm
+depend hyphenex
+depend latex2man
+depend latexmk
+depend mkind-english
+depend mkjobtexmf
+depend pdfcrop
+depend synctex
+depend texcount
+depend xindy
+containersize 492
+containermd5 7980d7cca07dee549c10d0fa86dcf130
+

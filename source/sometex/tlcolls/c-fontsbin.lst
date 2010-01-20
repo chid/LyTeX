@@ -1,0 +1,15 @@
+name collection-fontbin
+category Collection
+revision 5228
+shortdesc TeX font-related programs
+longdesc Programs for conversion between font formats, testing fonts
+longdesc (virtual fonts stuff, .gf and .pk manipulation, mft, fontinst,
+longdesc etc.)
+depend fontinst
+depend mft
+depend bin-afm2pl
+depend bin-fontware
+depend bin-ps2pkm
+depend collection-basic
+containersize 344
+containermd5 440c9221cd1369c80fc5f042a6e5e514

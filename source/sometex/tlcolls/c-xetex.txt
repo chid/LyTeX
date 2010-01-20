@@ -1,0 +1,33 @@
+
+name collection-xetex
+category Collection
+revision 10663
+shortdesc XeTeX packages
+longdesc Packages for XeTeX, the Unicode/OpenType-enabled TeX by
+longdesc Jonathan Kew, http://scripts.sil.org/xetex.
+
+depend arabxetex
+depend euenc
+depend bidi
+depend fontspec
+depend fontwrap
+depend harvardkyoto
+depend mathspec
+depend philokalia
+depend polyglossia
+depend xecjk
+depend xecyr
+depend xelibertine
+depend xepersian
+depend xetex
+depend xetex.win32
+depend xetex-def
+depend xetex-pstricks
+depend xetexconfig
+depend xetexfontinfo
+depend xltxtra
+depend xunicode
+depend collection-basic
+
+containersize 413
+containermd5 a00b5420ef8247c04012eaba9b3da7fd

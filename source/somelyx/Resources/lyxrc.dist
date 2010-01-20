@@ -1,0 +1,8 @@
+
+\screen_font_roman "Times New Roman"
+\screen_font_sans "Arial"
+\screen_font_typewriter "Courier New"
+\preview_scale_factor 1.0
+\format "pdf" "pdf" "PDF (ps2pdf)" "P" "pdfview" "" "document,vector"
+\format "pdf2" "pdf" "PDF (pdflatex)" "F" "pdfview" "" "document,vector"
+\format "pdf3" "pdf" "PDF (dvipdfm)" "m" "pdfview" "" "document,vector"

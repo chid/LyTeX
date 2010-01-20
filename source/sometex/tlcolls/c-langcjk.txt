@@ -1,0 +1,29 @@
+﻿
+name collection-langcjk
+category Collection
+revision 15132
+shortdesc Chinese, Japanese, Korean
+relocated 1
+longdesc CJK (Chinese, Japanese, Korean) macros, fonts, documentation,
+longdesc also Thai since there is some overlap in the fonts.
+#depend arphic
+#depend c90
+depend cjk
+depend cjkpunct
+#depend cjkutils
+#depend cjkutils.win32
+#depend cns
+depend ctex
+#depend dnp
+#depend garuda-c90
+#depend hyphen-chinese
+#depend norasi-c90
+#depend thailatex
+#depend uhc
+#depend wadalab
+depend zhmetrics
+depend zhspacing
+#depend collection-basic
+#depend collection-documentation-chinese
+containersize 456
+containermd5 c1fd38e51bf60d6c1fc60a6627cc7614

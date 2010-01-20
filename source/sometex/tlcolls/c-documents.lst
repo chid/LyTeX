@@ -1,0 +1,281 @@
+name collection-documentation-base
+category Collection
+revision 6912
+shortdesc TeX Live documentation
+depend texlive-common
+depend texlive-en
+containersize 226
+containermd5 eed2cfabc609ab0e6348bbf15f070acb
+
+name collection-documentation-bulgarian
+category Collection
+revision 8282
+shortdesc Bulgarian documentation
+depend lshort-bulgarian
+depend collection-documentation-base
+containersize 223
+containermd5 39f8cc60a1bb7243da8429f27b02554d
+
+name collection-documentation-chinese
+category Collection
+revision 9732
+shortdesc Chinese documentation
+depend texlive-zh-cn
+depend lnotes
+depend lshort-chinese
+depend collection-documentation-base
+containersize 238
+containermd5 8cabf11b05cafaa06c3bc1fa7dc91161
+
+name collection-documentation-czechslovak
+category Collection
+revision 8282
+shortdesc Czechslovak documentation
+depend lshort-slovak
+depend texlive-cz
+depend collection-documentation-base
+containersize 235
+containermd5 a78d7368bd6a560ba8ae43d5ce299416
+
+name collection-documentation-dutch
+category Collection
+revision 8282
+shortdesc Dutch documentation
+depend lkort
+depend lshort-dutch
+depend ntg
+depend collection-documentation-base
+containersize 229
+containermd5 bb24c778e8463111aea3448186d8df77
+
+name collection-documentation-english
+category Collection
+revision 10657
+shortdesc English documentation
+depend AroBend
+depend FAQ-en
+depend MemoirChapStyles
+depend Type1fonts
+depend amslatex-primer
+depend compact
+depend components-of-TeX
+depend comprehensive
+depend dtxtut
+depend firststeps
+depend free-math-font-survey
+depend gentle
+depend guide-to-latex
+depend help
+depend impatient
+depend intro-scientific
+depend knuth
+depend l2tabu-english
+depend latex2e-help-texinfo
+depend latex-course
+depend latex-graphics-companion
+depend latex-web-companion
+depend lshort-english
+depend math-into-latex
+depend mathmode
+depend metafont-for-beginners
+depend metafp
+depend metapost-examples
+depend pdf-forms-tutorial-en
+depend pstricks-tutorial
+depend tamethebeast
+depend tds
+depend tex-refs
+depend texbytopic
+depend tlc2
+depend truetype
+depend visualfaq
+depend webguide
+depend wp-conv
+depend xetexref
+depend collection-documentation-base
+containersize 552
+containermd5 5df6618655b84603a8970e8df3450290
+
+name collection-documentation-finnish
+category Collection
+revision 8282
+shortdesc Finnish documentation
+depend lshort-finnish
+depend collection-documentation-base
+containersize 221
+containermd5 0f0ff84a9d6818d22e5d7528830388ea
+
+name collection-documentation-french
+category Collection
+revision 8282
+shortdesc French documentation
+depend epslatex-fr
+depend impatient-fr
+depend l2tabu-french
+depend lshort-french
+depend texlive-fr
+depend collection-documentation-base
+containersize 255
+containermd5 91b29c53781c3504af8ab6dd93c31784
+
+name collection-documentation-german
+category Collection
+revision 9401
+shortdesc German documentation
+depend kopka
+depend l2picfaq
+depend l2tabu
+depend latex-tipps-und-tricks
+depend lshort-german
+depend pdf-forms-tutorial-de
+depend templates-fenn
+depend templates-sommer
+depend texlive-de
+depend voss-de
+depend collection-documentation-base
+containersize 306
+containermd5 3be893ec18ebd4876fc4c1446565bfe7
+
+name collection-documentation-greek
+category Collection
+revision 8282
+shortdesc Greek documentation
+depend gentle-gr
+depend collection-documentation-base
+containersize 222
+containermd5 c85a9a6eb59b07381772d1682980bc24
+
+name collection-documentation-italian
+category Collection
+revision 8282
+shortdesc Italian documentation
+depend amsldoc-it
+depend amsmath-it
+depend amsthdoc-it
+depend fancyhdr-it
+depend l2tabu-it
+depend lshort-italian
+depend psfrag-italian
+depend collection-documentation-base
+containersize 260
+containermd5 eedbbd0999bfa03f59646406c3536e23
+
+name collection-documentation-japanese
+category Collection
+revision 8282
+shortdesc Japanese documentation
+depend lshort-japanese
+depend collection-documentation-base
+containersize 222
+containermd5 d062255c2c893917fb7766634b3a5fd1
+
+name collection-documentation-korean
+category Collection
+revision 8282
+shortdesc Korean documentation
+depend lshort-korean
+depend collection-documentation-base
+containersize 221
+containermd5 9167e1f8ff98af945e37dd88285d4a5a
+
+name collection-documentation-mongolian
+category Collection
+revision 8282
+shortdesc Mongolian documentation
+depend lshort-mongolian
+depend collection-documentation-base
+containersize 225
+containermd5 ce9a38418464909f42eaba9b2f22537d
+
+name collection-documentation-polish
+category Collection
+revision 8282
+shortdesc Polish documentation
+depend guides-pl
+depend lshort-polish
+depend tex-virtual-academy-pl
+depend texlive-pl
+depend collection-documentation-base
+containersize 255
+containermd5 9e687796bf06933d19705bee990941d6
+
+name collection-documentation-portuguese
+category Collection
+revision 8282
+shortdesc Portuguese documentation
+depend beamer-tut-pt
+depend cursolatex
+depend lshort-portuguese
+depend xypic-tut-pt
+depend collection-documentation-base
+containersize 253
+containermd5 86709ba2b84df2f549e03cc21d273bec
+
+name collection-documentation-russian
+category Collection
+revision 8282
+shortdesc Russian documentation
+depend lshort-russian
+depend mpman-ru
+depend texlive-ru
+depend collection-documentation-base
+containersize 236
+containermd5 6d7e9eca804f837b3acaec4bab57896c
+
+name collection-documentation-slovenian
+category Collection
+revision 8282
+shortdesc Slovenian documentation
+depend lshort-slovenian
+depend collection-documentation-base
+containersize 224
+containermd5 1446edb517f95c4775056f27813537b8
+
+name collection-documentation-spanish
+category Collection
+revision 8282
+shortdesc Spanish documentation
+depend es-tex-faq
+depend l2tabu-spanish
+depend lshort-spanish
+depend collection-documentation-base
+containersize 238
+containermd5 1d784141af02132c1f373d55ef048720
+
+name collection-documentation-thai
+category Collection
+revision 8282
+shortdesc Thai documentation
+depend lshort-thai
+depend collection-documentation-base
+containersize 219
+containermd5 73493e48deddc0c746c3514214993492
+
+name collection-documentation-turkish
+category Collection
+revision 8282
+shortdesc Turkish documentation
+depend lshort-turkish
+depend collection-documentation-base
+containersize 222
+containermd5 8b6f42441ea11134f6b37054fb71ec17
+
+name collection-documentation-ukrainian
+category Collection
+revision 8282
+shortdesc Ukrainian documentation
+depend lshort-ukr
+depend collection-documentation-base
+containersize 224
+containermd5 131a7f9bdd022a678a10fc7f59afa024
+
+name collection-documentation-vietnamese
+category Collection
+revision 8282
+shortdesc Vietnamese documentation
+depend amsldoc-vn
+depend lshort-vietnamese
+depend ntheorem-vn
+depend collection-documentation-base
+containersize 241
+containermd5 f730b5947e42200a33198c558778c1e0

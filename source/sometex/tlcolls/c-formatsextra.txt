@@ -1,0 +1,24 @@
+name collection-formatsextra
+category Collection
+revision 5228
+shortdesc Extra formats
+longdesc A collection of TeX `formats', ie large-scale macro packages
+longdesc designed to be dumped into .fmt file
+depend alatex
+depend edmac
+depend eplain
+depend mltex
+depend physe
+depend phyzzx
+depend psizzl
+depend startex
+depend texsis
+depend ytex
+depend bin-eplain
+depend bin-mltex
+depend bin-physe
+depend bin-phyzzx
+depend bin-texsis
+depend collection-basic
+containersize 349
+containermd5 52f13a2cd32a666974cf66836f0f5bb3

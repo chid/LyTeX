@@ -1,0 +1,18 @@
+
+name collection-langgerman
+category Collection
+revision 11207
+shortdesc German
+longdesc Essential German
+depend dehyph-exptl
+#depend german
+#depend germbib
+#depend kalender
+#depend mkind-german
+#depend r_und_s
+#depend uhrzeit
+#depend umlaute
+depend hyphen-german
+#depend collection-basic
+containersize 281
+containermd5 d8a740cdd5b8b73a1982454fb940e3b5

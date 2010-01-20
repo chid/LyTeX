@@ -1,0 +1,9 @@
+name collection-texinfo
+category Collection
+revision 8222
+shortdesc GNU Texinfo
+longdesc Programs and macros for the GNU Texinfo documentation system.
+depend texinfo
+depend collection-basic
+containersize 259
+containermd5 60e184115260347d067d7aef4878bfff

@@ -1,0 +1,23 @@
+
+name collection-langother
+category Collection
+revision 11171
+shortdesc Other hyphenation files
+longdesc Hyphenation patterns for languages with no other support.
+depend hyphen-coptic
+#depend hyphen-esperanto
+#depend hyphen-estonian
+#depend hyphen-icelandic
+#depend hyphen-indonesian
+#depend hyphen-interlingua
+#depend hyphen-irish
+#depend hyphen-lithuanian
+#depend hyphen-romanian
+#depend hyphen-serbian
+#depend hyphen-slovenian
+#depend hyphen-turkish
+#depend hyphen-uppersorbian
+#depend hyphen-welsh
+#depend collection-basic
+containersize 351
+containermd5 a1dc566974d0941bc0a516af7b8955b5
