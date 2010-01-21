@@ -5,7 +5,7 @@ rem set  texname=%~n0
 rem :: echo %texname%
 
 set mainver=1.6s
-set mainbin=LyTeX-%mainver%-pre2.exe
+set mainbin=LyTeX-%mainver%-bin.exe
 
 set Path=%~dp0somebin;%Path%
 set downdir=%~dp0down

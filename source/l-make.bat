@@ -583,8 +583,8 @@ xcopy /e/i/y sometex\basic-bin %outdir%\bin\win32
 
 rem editor
 
-if not exist %~dp0LyTeX\TeXworks mkdir %~dp0LyTeX\TeXworks
-xcopy /e/i/y %~dp0sometex\basic-tw %~dp0LyTeX\TeXworks
+if not exist %outdir%\tlpkg\texworks mkdir %outdir%\tlpkg\texworks
+xcopy /e/i/y %~dp0sometex\basic-tw %outdir%\tlpkg\texworks
 
 rem texmf-local 
 
