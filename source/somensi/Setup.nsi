@@ -138,10 +138,10 @@ SectionIn 1
 
 CreateShortCut "$DESKTOP\LyX.lnk" "$EXEDIR\LyX!.exe"
 CreateShortCut "$DESKTOP\TeXworks.lnk" "$EXEDIR\TeXworks!.exe"
-;${If} $LANGUAGE == "2052"
-;${orIf} $RealLang == "1028"
-;    CreateShortCut "$DESKTOP\LyTeX.lnk" "$EXEDIR\Other\chinese\lytex.pdf"
-;${EndIf}
+${If} $LANGUAGE == "2052"
+${orIf} $RealLang == "1028"
+    CreateShortCut "$DESKTOP\LyTeX.lnk" "$EXEDIR\Manual\chinese\lytex.pdf"
+${EndIf}
 SectionEnd
 
 LangString PortableSuite ${LANG_ENGLISH} " Portable Suite"
@@ -156,10 +156,10 @@ CreateShortCut "$SMPROGRAMS\LyTeX$(PortableSuite)\LyX.lnk" "$EXEDIR\LyX!.exe"
 CreateShortCut "$SMPROGRAMS\LyTeX$(PortableSuite)\TeXworks.lnk" "$EXEDIR\TeXworks!.exe"
 CreateShortCut "$SMPROGRAMS\LyTeX$(PortableSuite)\Setup.lnk" "$EXEDIR\Setup.exe"
 CreateShortCut "$SMPROGRAMS\LyTeX$(PortableSuite)\About.lnk" "$EXEDIR\About.htm"
-;${If} $LANGUAGE == "2052" ; 2052 for Simplified Chinese
-;${orIf} $RealLang == "1028" ; 1028 for Traditional Chinese
-;    CreateShortCut "$SMPROGRAMS\LyTeX$(PortableSuite)\LyTeX.lnk" "$EXEDIR\Other\chinese\lytex.pdf"
-;${EndIf}
+${If} $LANGUAGE == "2052" ; 2052 for Simplified Chinese
+${orIf} $RealLang == "1028" ; 1028 for Traditional Chinese
+    CreateShortCut "$SMPROGRAMS\LyTeX$(PortableSuite)\LyTeX.lnk" "$EXEDIR\Manual\chinese\lytex.pdf"
+${EndIf}
 SectionEnd
 
 LangString SectionC ${LANG_ENGLISH} "Open .lyx file using LyX"
@@ -202,7 +202,7 @@ SectionIn 2
 
 Delete "$DESKTOP\LyX.lnk"
 Delete "$DESKTOP\TeXworks.lnk"
-;Delete "$DESKTOP\LyTeX.lnk"
+Delete "$DESKTOP\LyTeX.lnk"
 
 RMDir /r "$SMPROGRAMS\LyTeX$(PortableSuite)"
 DeleteRegValue HKCU "Software\Classes\.lyx" ""

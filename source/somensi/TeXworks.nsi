@@ -64,20 +64,23 @@ ${If} $%buildtex% == "texlive"
     Exec '"$EXEDIR\TeXLive\tlpkg\texworks\texworks.exe" $1'
 
 ${Else} ## miktex
-    
-    # this way takes effect now
-    System::Call 'kernel32::SetEnvironmentVariable(t, t) i("Path", "$EXEDIR\MiKTeX\miktex\bin;")'
-    System::Free 0
 
     # clear other texmf.cnf & fontconfig variables such as context-minimal's or texlive's
-    System::Call 'kernel32::SetEnvironmentVariable(t, t) i("TEXMFCNF", "")'
-    System::Call 'kernel32::SetEnvironmentVariable(t, t) i("TEXMFMAIN", "")'
-    System::Call 'kernel32::SetEnvironmentVariable(t, t) i("TEXMFDIST", "")'
-    System::Call 'kernel32::SetEnvironmentVariable(t, t) i("TEXMF", "")'
-    System::Call 'kernel32::SetEnvironmentVariable(t, t) i("FONTCONFIG_FILE", "")'
-    System::Call 'kernel32::SetEnvironmentVariable(t, t) i("FONTCONFIG_PATH", "")'
-    System::Call 'kernel32::SetEnvironmentVariable(t, t) i("FC_CACHEDIR", "")'
+    ;System::Call 'kernel32::SetEnvironmentVariable(t, t) i("TEXMFCNF", "")'
+    ;System::Call 'kernel32::SetEnvironmentVariable(t, t) i("TEXMFMAIN", "")'
+    ;System::Call 'kernel32::SetEnvironmentVariable(t, t) i("TEXMFDIST", "")'
+    # when enabling the following, xelatex can not find the minion pro font!
+    ;System::Call 'kernel32::SetEnvironmentVariable(t, t) i("TEXMF", "")'
+    ;System::Call 'kernel32::SetEnvironmentVariable(t, t) i("FONTCONFIG_FILE", "")'
+    ;System::Call 'kernel32::SetEnvironmentVariable(t, t) i("FONTCONFIG_PATH", "")'
+    ;System::Call 'kernel32::SetEnvironmentVariable(t, t) i("FC_CACHEDIR", "")'
 
+    # this way takes effect now
+    ReadEnvStr $R0 "PATH"
+    StrCpy $R0 "$EXEDIR\MiKTeX\miktex\bin;$R0"
+    System::Call 'kernel32::SetEnvironmentVariable(t, t) i("Path", R0)'
+    System::Free 0
+    
     ${GetParameters} $1
     Exec '"$EXEDIR\MiKTeX\texmf\miktex\bin\texworks.exe" $1'
     
