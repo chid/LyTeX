@@ -68,7 +68,7 @@ rem --------------------------------------------------
 
 :: ===================================================
 
-if %buildtex%==texlive goto tidylive else goto tidymik
+if "%buildtex%"=="texlive" ( goto tidylive ) else ( goto tidymik )
 
 ::==================== MiKTeX ========================
 :tidymik
@@ -138,5 +138,5 @@ goto tidyend
 ::==================== The End ======================== 
 :tidyend
 
-pause
+::pause
 

@@ -127,7 +127,7 @@ copy %~dp0somebin\update.bat %~dp0LyTeX\Common\update
 
 if not exist %~dp0LyTeX\Common\download mkdir %~dp0LyTeX\Common\download
 
-if %buildtex%==texlive goto makelive else goto makemik
+if "%buildtex%"=="texlive" ( goto makelive ) else ( goto makemik )
 
 ::==================== MiKTeX ========================
 :makemik
@@ -144,9 +144,6 @@ echo Extracting MiKTeX...
 if not exist %~dp0LyTeX\MiKTeX\texmf md %~dp0LyTeX\MiKTeX\texmf
 
 7z x -y -o%~dp0LyTeX\MiKTeX\texmf %downdir%\%mkbin%
-
-rmdir /s /q %texdir%\texmf\doc
-rmdir /s /q %texdir%\texmf\source
 
 xcopy /e/i/y sometex\basic-mik %texdir%
 move /y %texdir%\About.htm %~dp0LyTeX
@@ -171,6 +168,14 @@ xcopy /e/i/y %~dp0sometex\basic-tw\configuration %texdir%\texmf-local\TeXworks\c
 
 if not exist %texdir%\texmf-local\TUG  mkdir %texdir%\texmf-local\TUG
 xcopy /e/i/y %~dp0sometex\basic-tw\TUG %texdir%\texmf-local\TUG
+
+echo.
+echo Updating MiKTeX...
+%texdir%\texmf\miktex\bin\mpm.exe --verbose --update
+%texdir%\texmf\miktex\bin\mpm.exe --verbose --install-some=sometex\basic-pkg\miktex.pkg
+
+rmdir /s /q %texdir%\texmf\doc
+rmdir /s /q %texdir%\texmf\source
 
 ::pause
 

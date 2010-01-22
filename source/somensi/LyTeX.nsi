@@ -3,7 +3,7 @@ Caption "LyTeX 1.6"
 Icon "LyTeX.ico"
 OutFile "..\LyTeX-1.6s-bin.exe"
 
-VIProductVersion "1.6.5.3"
+VIProductVersion "1.6.5.4"
 VIAddVersionKey  "FileDescription" "LyTeX: Portable TeX Suite"
 VIAddVersionKey  "LegalCopyright" "zoho@ctex.org"
 VIAddVersionKey  "FileVersion" "1.6sigma"

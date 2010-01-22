@@ -18,7 +18,7 @@ if not exist %downdir%\%lyxname% (
 wget -nv -N -P %downdir% %lyxpath%/%lyxname%
 )
 
-if %buildtex%==texlive goto downlive else goto downmik
+if "%buildtex%"=="texlive" ( goto downlive ) else ( goto downmik )
 
 ::==================== MiKTeX ========================
 :downmik
@@ -73,13 +73,13 @@ find /n "name collection-basic" texlive.tlpdb
 
 if not exist texlive mkdir texlive
 
-set cdir=%~dp0sometex\tlcolls
+set cdir=%~dp0sometex\basic-pkg
 
 for /r %cdir% %%a in (*.txt) do (
     echo handling %%a...
     set colout=%%a
     set colout=!colout:.txt=!
-    set colout=!colout:sometex\tlcolls=texlive!
+    set colout=!colout:sometex\basic-pkg=texlive!
     echo output directory is !colout!
     ::pause
     if not exist !colout! mkdir !colout!
@@ -192,6 +192,6 @@ goto downend
 ::==================== The End ========================
 :downend
 
-::pause
+pause
 
 
