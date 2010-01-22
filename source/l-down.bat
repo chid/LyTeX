@@ -18,8 +18,7 @@ if not exist %downdir%\%lyxname% (
 wget -nv -N -P %downdir% %lyxpath%/%lyxname%
 )
 
-goto downmik
-::goto downlive
+if %buildtex%==texlive goto downlive else goto downmik
 
 ::==================== MiKTeX ========================
 :downmik
@@ -80,7 +79,7 @@ for /r %cdir% %%a in (*.txt) do (
     echo handling %%a...
     set colout=%%a
     set colout=!colout:.txt=!
-    set colout=!colout:tlcolls=texlive!
+    set colout=!colout:sometex\tlcolls=texlive!
     echo output directory is !colout!
     ::pause
     if not exist !colout! mkdir !colout!
@@ -193,6 +192,6 @@ goto downend
 ::==================== The End ========================
 :downend
 
-pause
+::pause
 
 

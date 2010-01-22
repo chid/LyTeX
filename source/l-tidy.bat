@@ -68,8 +68,7 @@ rem --------------------------------------------------
 
 :: ===================================================
 
-goto tidymik
-::goto tidylive
+if %buildtex%==texlive goto tidylive else goto tidymik
 
 ::==================== MiKTeX ========================
 :tidymik
@@ -122,19 +121,16 @@ del /q texmf-var\ls-R
 rmdir /s /q texmf-var\web2c
 rmdir /s /q temp
 
-::del /q share\texmf-local\README 
-
 bin\win32\texhash.exe
 
 rem ------------------------------------------
 
-cd ..\TeXworks
+cd ..\TexLive\tlpkg\texworks
 
 rmdir /s /q  templates
 xcopy /e/i/y %~dp0sometex\basic-tw .
 
 rmdir /s /q  completion
-rmdir /s /q  configuration
 rmdir /s /q  translations
 
 goto tidyend
@@ -142,5 +138,5 @@ goto tidyend
 ::==================== The End ======================== 
 :tidyend
 
-::pause
+pause
 

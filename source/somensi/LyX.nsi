@@ -23,6 +23,7 @@ RequestExecutionLevel user
 ; http://dreams8.com/thread-7469-1-1.html
 
 Var LYXVER ; lyx version name
+Var TEXBIN ; tex binary paths
 
 LoadLanguageFile "${NSISDIR}\Contrib\Language files\English.nlf"
 LoadLanguageFile "${NSISDIR}\Contrib\Language files\SimpChinese.nlf"
@@ -52,6 +53,12 @@ FunctionEnd
 
 Section
 
+    ${If} $%buildtex% == "texlive"
+        StrCpy $TEXBIN "$EXEDIR\TeXLive\bin\win32"
+    ${Else} ## miktex
+        StrCpy $TEXBIN "$EXEDIR\MiKTeX\texmf\miktex\bin"
+    ${EndIf}
+
     # clear other texmf.cnf & fontconfig variables such as context-minimal's or texlive's
     System::Call 'kernel32::SetEnvironmentVariable(t, t) i("TEXMFCNF", "")'
     System::Call 'kernel32::SetEnvironmentVariable(t, t) i("TEXMFMAIN", "")'
@@ -65,7 +72,7 @@ Section
     
     # set path variable
     ReadEnvStr $R0 "PATH"
-    StrCpy $R0 "$EXEDIR\MiKTeX\texmf\miktex\bin;$EXEDIR\LyX\ghostscript;$EXEDIR\LyX\python;$EXEDIR\LyX\imagemagick;$R0"
+    StrCpy $R0 "$TEXBIN;$EXEDIR\LyX\ghostscript;$EXEDIR\LyX\python;$EXEDIR\LyX\imagemagick;$R0"
     System::Call 'kernel32::SetEnvironmentVariable(t, t) i("Path", R0)'
     ;ReadEnvStr $R1 "PATH"
     ;MessageBox MB_OK $R1
@@ -122,7 +129,7 @@ Section
     FileOpen $0 "$EXEDIR\LyX\local\preferences" a
     IfErrors 0 +2
     MessageBox MB_OK "Error while creating file $EXEDIR\LyX\local\preferences!"
-    FileWrite $0 "\path_prefix $\"$EXEDIR\LyX\bin;$EXEDIR\MiKTeX\texmf\miktex\bin;$EXEDIR\LyX\ghostscript;$EXEDIR\LyX\python;$EXEDIR\LyX\imagemagick;$EXEDIR\LyX\fop$\"$\r$\n"
+    FileWrite $0 "\path_prefix $\"$EXEDIR\LyX\bin;$TEXBIN;$EXEDIR\LyX\ghostscript;$EXEDIR\LyX\python;$EXEDIR\LyX\imagemagick;$EXEDIR\LyX\fop$\"$\r$\n"
     FileWrite $0 "\format $\"pdf4$\" $\"pdf$\" $\"PDF (xelatex)$\"  $\"$\"   $\"$\"   $\"$\"   $\"document,vector$\"$\r$\n"
     FileWrite $0 "\converter $\"pdflatex$\" $\"pdf4$\" $\"xelatex $$$$i$\" $\"latex$\"$\r$\n"
     # Added in LyTeX 1.6gamma for simpler convert
@@ -155,7 +162,7 @@ Section
             ${WordFind} $R2 "$\"" "+1" $R4 ; remove double quotation marks
             ;MessageBox MB_OK $R4
             # default path
-            StrCpy $R8 $EXEDIR\LyX\bin;$EXEDIR\MiKTeX\texmf\miktex\bin;$EXEDIR\LyX\ghostscript;$EXEDIR\LyX\python;$EXEDIR\LyX\imagemagick;$EXEDIR\LyX\fop;
+            StrCpy $R8 $EXEDIR\LyX\bin;$TEXBIN;$EXEDIR\LyX\ghostscript;$EXEDIR\LyX\python;$EXEDIR\LyX\imagemagick;$EXEDIR\LyX\fop;
             loop2:
             ClearErrors
             ${WordFind} $R4 ";" "+1" $R5 ; find first path in the string
@@ -179,6 +186,8 @@ Section
                 ${WordFind} $R5 "LyX\imagemagick" "#" $R6
                 StrCmp $R6 $R5 0 loop2
                 ${WordFind} $R5 "TeXLive\bin" "#" $R6
+                StrCmp $R6 $R5 0 loop2
+                ${WordFind} $R5 "miktex\bin" "#" $R6
                 StrCmp $R6 $R5 0 loop2
                 ${WordFind} $R5 "LyX\fop" "#" $R6
                 StrCmp $R6 $R5 0 loop2
@@ -234,7 +243,7 @@ Section
     
     runit:
     
-/*  Depleted since version 1.6gamma
+/*  Depleted since version 1.6g
 
     # append, will create an empty one if file not exist
     FileOpen $R0 "$EXEDIR\LyX\lyx.usb" a

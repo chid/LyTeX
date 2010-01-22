@@ -5,6 +5,8 @@ set downdir=%~dp0download
 
 set Path=%~dp0somebin;%Path%
 
+if not exist %~dp0LyTeX mkdir %~dp0LyTeX
+
 ::==================== LyX ========================
 :makelyx
 
@@ -125,8 +127,7 @@ copy %~dp0somebin\update.bat %~dp0LyTeX\Common\update
 
 if not exist %~dp0LyTeX\Common\download mkdir %~dp0LyTeX\Common\download
 
-goto makemik
-::goto makelive
+if %buildtex%==texlive goto makelive else goto makemik
 
 ::==================== MiKTeX ========================
 :makemik
@@ -552,7 +553,7 @@ del /q %outdir%\tl-portable.bat
 :addons
 
 xcopy /e/i/y sometex\basic-live %outdir%
-move /y %outdir%\About.htm %~dp0LyTeX\Manual
+move /y %outdir%\About.htm %~dp0LyTeX
 
 set tlpdb=%outdir%\tlpkg\texlive.tlpdb
 set objdir=%outdir%\tlpkg\tlpobj
@@ -593,6 +594,8 @@ if not exist %outdir%\texmf-local mkdir %outdir%\texmf-local
 xcopy /e/i/y sometex\basic-tex %outdir%
 xcopy /e/i/y sometex\basic-cct %outdir%
 xcopy /e/i/y sometex\basic-cjk %outdir%
+
+%outdir%\bin\win32\texhash.exe
 
 ::pause
 

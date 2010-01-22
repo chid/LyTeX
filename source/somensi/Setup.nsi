@@ -42,8 +42,8 @@ LangString SetupTeX ${LANG_SIMPCHINESE} "改变安装版或绿色版类型"
 LangString UpdateLyX ${LANG_ENGLISH} "Update to latest LyX from internet"
 LangString UpdateLyX ${LANG_SIMPCHINESE} "在线升级 LyX 到最新版本"
 
-LangString UpdateTeX ${LANG_ENGLISH} "Manage or update MiKTeX packages"
-LangString UpdateTeX ${LANG_SIMPCHINESE} "升级或管理 MiKTeX 宏包"
+LangString UpdateTeX ${LANG_ENGLISH} "Manage or update TeX programs and packages"
+LangString UpdateTeX ${LANG_SIMPCHINESE} "升级或管理 TeX 程序和宏包"
 
 Function customPage
 
@@ -70,7 +70,11 @@ Function customPage
    !insertmacro INSTALLOPTIONS_READ $R3 "Setup.ini" "Field 4" "State"
    ;MessageBox MB_OK "$R3"
    StrCmp $R3 "1" 0 default
+   ${If} $%buildtex% == "texlive"
+   Exec '"$EXEDIR\TeXLive\texshell.bat" texmgr'
+   ${Else} ## miktex
    Exec '"$EXEDIR\MiKTeX\texshell.bat" texmgr'
+   ${EndIf}
    Quit
    # Setup TeX
    default:

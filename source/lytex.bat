@@ -10,7 +10,8 @@ set mainbin=LyTeX-%mainver%-bin.exe
 set Path=%~dp0somebin;%Path%
 set downdir=%~dp0down
 
-::if exist %~dp0lyxidea.txt goto buildnsi
+:: buildtex=miktex or buildtex=texlive
+set buildtex=miktex
 
 :maketidy
 
