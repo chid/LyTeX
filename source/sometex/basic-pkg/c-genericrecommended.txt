@@ -1,7 +1,0 @@
-name collection-genericrecommended
-depend epsf
-depend fontname
-depend genmisc
-depend multido
-depend tex-ps
-depend collection-basic

@@ -1,9 +1,4 @@
-
 name collection-latexextra
-category Collection
-revision 11450
-shortdesc LaTeX supplementary packages
-longdesc A large collection of add-on packages for LaTeX.
 depend AkkTeX
 depend ESIEEcv
 depend GuIT
@@ -178,7 +173,7 @@ depend extract
 depend facsimile
 depend fancynum
 depend fancytooltips
-depend fax
+#depend fax
 depend figsize
 depend filecontents
 depend fink
@@ -214,10 +209,11 @@ depend gauss
 depend gcard
 depend gcite
 depend genmpage
-depend geomsty
+#depend geomsty
 depend ginpenc
 depend gloss
 depend glossaries
+depend glossaries.win32
 depend gmdoc
 depend gmeometric
 depend gmiflink
@@ -244,8 +240,8 @@ depend image-gallery
 depend inlinedef
 depend interactiveworkbook
 depend inversepath
-depend invoice
-depend ipa
+#depend invoice
+#depend ipa
 depend iso
 depend iso10303
 depend isodate
@@ -285,5 +281,3 @@ depend ltablex
 depend ltabptch
 depend ltxdockit
 depend ltxindex
-containersize 2876
-containermd5 1d85719595855779f3a8a628e17f8e74

@@ -1,12 +1,12 @@
+name tlcore
+depend tlgs.win32
+depend tlperl.win32
+
+name collection-texworks
+depend texworks
+depend texworks.win32
+
 name collection-basic
-category Collection
-revision 15576
-shortdesc Essential programs and files
-relocated 1
-longdesc These files are regarded as basic for any TeX system, covering
-longdesc plain TeX macros, Computer Modern fonts, and configuration for
-longdesc common drivers; no LaTeX.
-#depend collection-documentation-base
 depend amsfonts
 depend apalike
 depend bibtex
@@ -59,5 +59,4 @@ depend texlive.infra
 depend texlive.infra.win32
 depend xdvi
 depend xdvi.win32
-containersize 584
-containermd5 4c3c2007406ed2f81235255f4a36542d
+

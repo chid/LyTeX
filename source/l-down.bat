@@ -71,117 +71,33 @@ find /n "name collection-basic" texlive.tlpdb
 
 ::pause
 
-if not exist texlive mkdir texlive
+if not exist download\texlive mkdir download\texlive
 
-set cdir=%~dp0sometex\basic-pkg
+set texout=%~dp0download\texlive
+echo.
+echo Output directory is %texout%
+echo.
 
-for /r %cdir% %%a in (*.txt) do (
-    echo handling %%a...
-    set colout=%%a
-    set colout=!colout:.txt=!
-    set colout=!colout:sometex\basic-pkg=texlive!
-    echo output directory is !colout!
-    ::pause
-    if not exist !colout! mkdir !colout!
-    set downlist=
-    for /f "tokens=1*" %%i in (%%a) do (
-        if %%i == depend (
-            for /f "tokens=1* delims=-" %%u in ("%%j") do (
-                if %%u equ bin (
-                    set downlist=!downlist!%%j.tar.x?,%%j.win32.tar.x?,
-                    ) else if %%u neq collection (
-                    set downlist=!downlist!%%j.tar.x?,
-                )
-                
-            )
-        ) 
-    )
-    for /f "tokens=2 delims=-" %%e in ("!colout!") do set collname=%%e
-    echo !collname!
-    rem downlist should NOT end with comma!
-    set downlist=!downlist!collection-!collname!.tar.x?
-    :: echo !downlist!
-    wget -r -nv -np -nd -N -P !colout! -A !downlist! %tlnet%
-    echo.
-)
+set coldir=%~dp0somedef
 
 :: Since string variables in dos script have length limitation,
 :: We have to handle c-latexextra downloadding as two part.
 :: http://support.microsoft.com/kb/830473/en-us/
 
-set colout=%~dp0texlive\c-latexextra
-echo output directory is !colout!
-
-set downlist=
-for /f "tokens=1*" %%i in (%cdir%\c-latexextra.a-l) do (
-    if %%i == depend (
-        for /f "tokens=1* delims=-" %%u in ("%%j") do (
-            if %%u equ bin (
-                set downlist=!downlist!%%j.tar.x?,%%j.win32.tar.x?,
-                ) else if %%u neq collection (
-                set downlist=!downlist!%%j.tar.x?,
-            )
-            
-        )
-    ) 
+for /r %coldir% %%a in (*.txt) do (
+    echo handling %%a...
+    set downlist=
+    for /f "tokens=1*" %%i in (%%a) do (
+        if %%i == depend (
+            set downlist=!downlist!%%j.tar.x?,
+        ) 
+    )
+    rem downlist should NOT end with comma!
+    set downlist=!downlist!collection-basic.tar.x?
+    :: echo !downlist!
+    wget -r -nv -np -nd -N -P !texout! -A !downlist! %tlnet%
+    echo.
 )
-set downlist=!downlist!collection-latexextra.tar.x?
-wget -r -nv -np -nd -N -P !colout! -A !downlist! %tlnet%
-echo.
-
-set downlist=
-for /f "tokens=1*" %%i in (%cdir%\c-latexextra.m-z) do (
-    if %%i == depend (
-        for /f "tokens=1* delims=-" %%u in ("%%j") do (
-            if %%u equ bin (
-                set downlist=!downlist!%%j.tar.x?,%%j.win32.tar.x?,
-                ) else if %%u neq collection (
-                set downlist=!downlist!%%j.tar.x?,
-            )
-            
-        )
-    ) 
-)
-set downlist=!downlist!collection-latexextra.tar.x?
-wget -r -nv -np -nd -N -P !colout! -A !downlist! %tlnet%
-echo.
-
-rem some latexextra packages include win32 files
-
-set downlist=glossaries.win32.tar.x?,pax.win32.tar.x?,perltex.win32.tar.x?,ppower4.win32.tar.x?,vpe.win32.tar.x?
-wget -r -nv -np -nd -N -P !colout! -A !downlist! %tlnet%
-echo.
-
-:::: we havn't downloaded this package yet
-::wget -r -nv -np -nd -N -P %~dp0texlive\c-basicbin -A texlive.infra.win32.tar.x? %tlnet%
-
-
-:: texlive core packages    
-set colout=%~dp0texlive\tlcore
-if not exist %colout% mkdir %colout%
-echo output directory is %colout%
-set downlist=tlperl.win32.tar.x?,tlgs.win32.tar.x?
-wget -r -nv -np -nd -N -P %colout% -A %downlist% %tlnet%
-
-:: some extra binary
-set colout=%~dp0texlive\c-binextra
-if not exist %colout% mkdir %colout%
-echo output directory is %colout%
-set downlist=pdftools.tar.x?,pdftools.win32.tar.x?
-wget -r -nv -np -nd -N -P %colout% -A %downlist% %tlnet%
-
-:: some extra fonts
-set colout=%~dp0texlive\c-fontsextra
-echo output directory is %colout%
-set downlist=antt.tar.x?,bera.tar.x?,cmbright.tar.x?,eco.tar.x?,fourier.tar.x?,mnsymbol.tar.x?
-wget -r -nv -np -nd -N -P %colout% -A %downlist% %tlnet%
-
-:: texworks editor
-set colout=%~dp0texlive\c-texworks
-if not exist %colout% mkdir %colout%
-echo output directory is %colout%
-set downlist=texworks.tar.x?,texworks.win32.tar.x?
-wget -r -nv -np -nd -N -P %colout% -A %downlist% %tlnet%
 
 endlocal
 

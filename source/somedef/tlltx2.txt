@@ -1,9 +1,4 @@
-
 name collection-latexextra
-category Collection
-revision 11450
-shortdesc LaTeX supplementary packages
-longdesc A large collection of add-on packages for LaTeX.
 depend mailing
 depend makebarcode
 depend makebox
@@ -87,6 +82,7 @@ depend patchcmd
 depend pauldoc
 depend pawpict
 depend pax
+depend pax.win32
 depend pbox
 depend pbsheet
 depend pdfcprot
@@ -96,6 +92,7 @@ depend pdfsync
 depend pdfwin
 depend pecha
 depend perltex
+depend perltex.win32
 depend permute
 depend petiteannonce
 depend philex
@@ -110,6 +107,7 @@ depend polynomial
 depend polytable
 depend postcards
 depend ppower4
+depend ppower4.win32
 depend ppr-prv
 depend preprint
 depend prettyref
@@ -141,7 +139,7 @@ depend regcount
 depend register
 depend relenc
 depend repeatindex
-depend resume
+#depend resume
 depend rlepsf
 depend rmpage
 depend robustcommand
@@ -286,6 +284,7 @@ depend vita
 depend vmargin
 depend volumes
 depend vpe
+depend vpe.win32
 depend vrsion
 depend vwcol
 depend wallpaper
@@ -312,6 +311,3 @@ depend yplan
 depend zed-csp
 depend ziffer
 depend zwgetfdate
-depend collection-latex
-containersize 2876
-containermd5 1d85719595855779f3a8a628e17f8e74
