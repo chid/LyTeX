@@ -101,6 +101,13 @@ goto tidyend
 ::==================== TeXLive ========================
 :tidylive
 
+:: texlive is too large for including these manuals.
+cd ..\Manual
+del /q chinese\lnotes.pdf
+del /q english\lshort.pdf
+
+rem ------------------------------------------------
+
 cd ..\TeXLive
 
 rmdir /s /q texmf\fonts\pk

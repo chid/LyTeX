@@ -6,6 +6,7 @@ rem :: echo %texname%
 
 set mainver=1.6s
 set mainbin=LyTeX-%mainver%-bin.exe
+::set mainsrc=LyTeX-%mainver%-src.zip
 
 set Path=%~dp0somebin;%Path%
 set downdir=%~dp0down
@@ -21,12 +22,12 @@ call l-tidy.bat
 
 :buildnsi
 
-::if not exist %~dp0done\%lytexbin% (
 call "%~dp0nsis\makensis.exe" %~dp0somensi\LyX.nsi
 call "%~dp0nsis\makensis.exe" %~dp0somensi\TeXworks.nsi
 call "%~dp0nsis\makensis.exe" %~dp0somensi\Setup.nsi
 call "%~dp0nsis\makensis.exe" %~dp0somensi\LyTeX.nsi
-::)
+
+::7z a -tzip %mainsrc% source -xr!.svn
 
 echo All are done!
 
