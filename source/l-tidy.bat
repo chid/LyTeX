@@ -92,7 +92,7 @@ del /q texmf-var\fonts\cache\*
 rmdir /s /q temp
 
 rem TeXworks
-xcopy /e/i/y %~dp0sometex\basic-tw\TUG texmf-local\TUG
+xcopy /e/i/y %~dp0texworks\TUG texmf-local\TUG
 
 texmf\miktex\bin\texhash.exe
 
@@ -135,7 +135,7 @@ rem ------------------------------------------
 cd ..\TexLive\tlpkg\texworks
 
 rmdir /s /q  templates
-xcopy /e/i/y %~dp0sometex\basic-tw .
+xcopy /e/i/y %~dp0texworks .
 
 rmdir /s /q  completion
 rmdir /s /q  translations

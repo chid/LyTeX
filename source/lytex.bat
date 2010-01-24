@@ -27,10 +27,10 @@ call "%~dp0nsis\makensis.exe" %~dp0somensi\TeXworks.nsi
 call "%~dp0nsis\makensis.exe" %~dp0somensi\Setup.nsi
 call "%~dp0nsis\makensis.exe" %~dp0somensi\LyTeX.nsi
 
-if exist trunk (
-cd trunk
-7z a -tzip %~dp0%mainsrc% source -xr!.svn
+if exist source (
+7z a -tzip %mainsrc% source -xr!.svn
 )
+
 echo All are done!
 
 ::pause

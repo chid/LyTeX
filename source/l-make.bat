@@ -164,10 +164,10 @@ rem editor
 
 if not exist %texdir%\texmf-local\TeXworks mkdir %texdir%\texmf-local\TeXworks
 if not exist %texdir%\texmf-local\TeXworks\configuration mkdir %texdir%\texmf-local\TeXworks\configuration
-xcopy /e/i/y %~dp0sometex\basic-tw\configuration %texdir%\texmf-local\TeXworks\configuration
+xcopy /e/i/y %~dp0texworks\configuration %texdir%\texmf-local\TeXworks\configuration
 
 if not exist %texdir%\texmf-local\TUG  mkdir %texdir%\texmf-local\TUG
-xcopy /e/i/y %~dp0sometex\basic-tw\TUG %texdir%\texmf-local\TUG
+xcopy /e/i/y %~dp0texworks\TUG %texdir%\texmf-local\TUG
 
 echo.
 echo Updating MiKTeX...
@@ -225,7 +225,7 @@ xcopy /e/i/y "%outdir%\vtex"       "%outdir%\texmf-dist\vtex"  && rmdir /s /q "%
 
 xcopy /e/i/y "%outdir%\texmf-dist\tlpkg"  "%outdir%\tlpkg"  && rmdir /s /q "%outdir%\texmf-dist\tlpkg"
 
-pause
+::pause
 
 :cleartl
 
@@ -294,7 +294,7 @@ xcopy /e/i/y sometex\basic-bin %outdir%\bin\win32
 rem editor
 
 if not exist %outdir%\tlpkg\texworks mkdir %outdir%\tlpkg\texworks
-xcopy /e/i/y %~dp0sometex\basic-tw %outdir%\tlpkg\texworks
+xcopy /e/i/y %~dp0texworks %outdir%\tlpkg\texworks
 
 rem texmf-local 
 
