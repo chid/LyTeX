@@ -84,7 +84,7 @@ set coldir=%~dp0somedef
 :: We have to handle c-latexextra downloadding as two part.
 :: http://support.microsoft.com/kb/830473/en-us/
 
-for /r %coldir% %%a in (*.txt) do (
+for /r %coldir% %%a in (tl*.def) do (
     echo handling %%a...
     set downlist=
     for /f "tokens=1,2*" %%i in (%%a) do (

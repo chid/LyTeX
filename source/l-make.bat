@@ -172,7 +172,7 @@ xcopy /e/i/y %~dp0texworks\TUG %texdir%\texmf-local\TUG
 echo.
 echo Updating MiKTeX...
 %texdir%\texmf\miktex\bin\mpm.exe --verbose --update
-%texdir%\texmf\miktex\bin\mpm.exe --verbose --install-some=somedef\miktex.pkg
+%texdir%\texmf\miktex\bin\mpm.exe --verbose --install-some=somedef\miktex.def
 
 rmdir /s /q %texdir%\texmf\doc
 rmdir /s /q %texdir%\texmf\source
