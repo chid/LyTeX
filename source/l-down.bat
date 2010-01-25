@@ -87,7 +87,7 @@ set coldir=%~dp0somedef
 for /r %coldir% %%a in (*.txt) do (
     echo handling %%a...
     set downlist=
-    for /f "tokens=1*" %%i in (%%a) do (
+    for /f "tokens=1,2*" %%i in (%%a) do (
         if %%i == depend (
             set downlist=!downlist!%%j.tar.x?,
         ) 

@@ -123,7 +123,7 @@ echo Copying LyX update files...
 copy %~dp0somebin\wget.exe %~dp0LyTeX\Common\update
 copy %~dp0somebin\7z.dll %~dp0LyTeX\Common\update
 copy %~dp0somebin\7z.exe %~dp0LyTeX\Common\update
-copy %~dp0somebin\update.bat %~dp0LyTeX\Common\update
+copy %~dp0somebat\update.bat %~dp0LyTeX\Common\update
 
 if not exist %~dp0LyTeX\Common\download mkdir %~dp0LyTeX\Common\download
 
