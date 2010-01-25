@@ -2,20 +2,12 @@
 ::set PROMPT=# $G
 set PROMPT=# 
 
-set name=MiKTeX
-::set name=TeXLive
-
-cd LyTeX
-
 rem ------------------------------------------
 
-cd LyX
-::echo %cd%
+del /q LyTeX\LyX\lyx.usb
+del /q LyTeX\LyX\temp.usb
 
-del /q lyx.usb
-del /q temp.usb
-
-del /q Uninstall-LyX.exe
+del /q LyTeX\LyX\Uninstall-LyX.exe
 
 rem rmdir /s /q Resources\doc\ca
 rem rmdir /s /q Resources\doc\cs
@@ -56,15 +48,14 @@ rem     )
 rem )
 rem cd ..\..
 
-del /q python\Lib\*.pyc
+del /q LyTeX\LyX\python\Lib\*.pyc
 
-rmdir /s /q local
-xcopy /e/i/y %~dp0somelyx .
+rmdir /s /q LyTeX\LyX\local
+xcopy /e/i/y somelyx LyTeX\LyX
 
 rem --------------------------------------------------
 
-::cd ..\Common
-::rmdir /s /q  download
+del /q  LyTeX\Common\download\*
 
 :: ===================================================
 
@@ -73,28 +64,25 @@ if "%buildtex%"=="texlive" ( goto tidylive ) else ( goto tidymik )
 ::==================== MiKTeX ========================
 :tidymik
 
-cd ..\MiKTeX
+rmdir /s /q LyTeX\MiKTeX\texmf\doc
+rmdir /s /q LyTeX\MiKTeX\texmf\source
 
-rmdir /s /q texmf\doc
-rmdir /s /q texmf\source
+rmdir /s /q LyTeX\MiKTeX\texmf\fonts\pk
+rmdir /s /q LyTeX\MiKTeX\texmf-local\fonts\pk
+::rmdir /s /q texmf-var\fonts\pk
 
-rmdir /s /q texmf\fonts\pk
-rmdir /s /q texmf-local\fonts\pk
-::rmdir /s /q texmf-dist\fonts\pk
-rmdir /s /q texmf-var\fonts\pk
-
-del /q texmf\fonts\cache\*
-del /q texmf-local\fonts\cache\*
-::del /q texmf-dist\fonts\cache\*
-del /q texmf-var\fonts\cache\*
+del /q LyTeX\MiKTeX\texmf\fonts\cache\*
+del /q LyTeX\MiKTeX\texmf-local\fonts\cache\*
+::del /q texmf-var\fonts\cache\*
 
 ::rmdir /s /q texmf-var\web2c
-rmdir /s /q temp
+::rmdir /s /q temp
 
-rem TeXworks
-xcopy /e/i/y %~dp0texworks\TUG texmf-local\TUG
+rem ---------------- TeXworks -------------------------
 
-texmf\miktex\bin\texhash.exe
+xcopy /e/i/y texworks\TUG LyTeX\MiKTeX\texmf-local\TUG
+
+LyTeX\MiKTeX\texmf\miktex\bin\texhash.exe
 
 goto tidyend
 
@@ -102,43 +90,39 @@ goto tidyend
 :tidylive
 
 :: texlive is too large for including these manuals.
-cd ..\Manual
-del /q chinese\lnotes.pdf
-del /q english\lshort.pdf
+
+del /q LyTeX\Manual\chinese\lnotes.pdf
+del /q LyTeX\Manual\english\lshort.pdf
 
 rem ------------------------------------------------
 
-cd ..\TeXLive
+rmdir /s /q LyTeX\TeXLive\texmf\fonts\pk
+rmdir /s /q LyTeX\TeXLive\texmf-local\fonts\pk
+rmdir /s /q LyTeX\TeXLive\texmf-dist\fonts\pk
+rmdir /s /q LyTeX\TeXLive\texmf-var\fonts\pk
 
-rmdir /s /q texmf\fonts\pk
-rmdir /s /q texmf-local\fonts\pk
-rmdir /s /q texmf-dist\fonts\pk
-rmdir /s /q texmf-var\fonts\pk
+del /q LyTeX\TeXLive\texmf\fonts\cache\*
+del /q LyTeX\TeXLive\texmf-local\fonts\cache\*
+del /q LyTeX\TeXLive\texmf-dist\fonts\cache\*
+del /q LyTeX\TeXLive\texmf-var\fonts\cache\*
 
-del /q texmf\fonts\cache\*
-del /q texmf-local\fonts\cache\*
-del /q texmf-dist\fonts\cache\*
-del /q texmf-var\fonts\cache\*
+del /q LyTeX\TeXLive\texmf\ls-R
+del /q LyTeX\TeXLive\texmf-local\ls-R
+del /q LyTeX\TeXLive\texmf-dist\ls-R
+del /q LyTeX\TeXLive\texmf-var\ls-R
 
-del /q texmf\ls-R
-del /q texmf-local\ls-R
-del /q texmf-dist\ls-R
-del /q texmf-var\ls-R
+rmdir /s /q LyTeX\TeXLive\texmf-var\web2c
+rmdir /s /q LyTeX\TeXLive\temp
 
-rmdir /s /q texmf-var\web2c
-rmdir /s /q temp
+rem ----------------- TeXworks ------------------------
 
-bin\win32\texhash.exe
+rmdir /s /q  LyTeX\TexLive\tlpkg\texworks\templates
+xcopy /e/i/y texworks LyTeX\TexLive\tlpkg\texworks
 
-rem ------------------------------------------
+rmdir /s /q  LyTeX\TexLive\tlpkg\texworks\completion
+rmdir /s /q  LyTeX\TexLive\tlpkg\texworks\translations
 
-cd ..\TexLive\tlpkg\texworks
-
-rmdir /s /q  templates
-xcopy /e/i/y %~dp0texworks .
-
-rmdir /s /q  completion
-rmdir /s /q  translations
+LyTeX\TeXLive\bin\win32\texhash.exe
 
 goto tidyend
 
