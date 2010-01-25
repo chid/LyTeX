@@ -1,6 +1,6 @@
 name collection-binextra
-depend pdftools
-depend pdftools.win32
+depend pdftools 0
+depend pdftools.win32 0
 
 name collection-bibtexextra
 depend aichej
@@ -52,19 +52,19 @@ depend mnsymbol
 name collection-formatsextra
 depend alatex
 depend edmac
-depend eplain
-depend mltex
-depend physe
-depend phyzzx
+#depend eplain 0
+#depend eplain.win32 0
+#depend mltex 0 
+#depend mltex.win32 0
+#depend physe 0
+#depend physe.win32 0
+#depend phyzzx 0
+#depend phyzzx.win32 0
 depend psizzl
 depend startex
-depend texsis
+#depend texsis 0
+#depend texsis.win32 0
 depend ytex
-depend bin-eplain
-depend bin-mltex
-depend bin-physe
-depend bin-phyzzx
-depend bin-texsis
 
 name collection-genericextra
 depend abbr
@@ -92,7 +92,8 @@ depend xlop
 
 name collection-mathextra
 depend 12many
-depend amstex
+#depend amstex 0
+#depend amstex.win32 0
 depend boldtensors
 depend ccfonts
 depend commath
@@ -121,7 +122,6 @@ depend tensor
 depend turnstile
 depend venn
 depend yhmath
-depend bin-amstex
 
 name collection-plainextra
 depend fixpdfmag

@@ -101,7 +101,7 @@ for /r %coldir% %%a in (tl*.def) do (
 
 endlocal
 
-::pause
+pause
 
 goto downend
 

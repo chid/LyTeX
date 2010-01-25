@@ -31,8 +31,8 @@ depend zapfchan
 depend zapfding
 
 name collection-fontutils
-depend ttfutils
-depend ttfutils.win32
+depend ttfutils 0
+depend ttfutils.win32 0
 
 name collection-games
 depend backgammon
@@ -102,8 +102,8 @@ name collection-langcjk
 #depend c90
 depend cjk
 depend cjkpunct
-#depend cjkutils
-#depend cjkutils.win32
+#depend cjkutils 0
+#depend cjkutils.win32 0
 #depend cns
 depend ctex
 #depend dnp
@@ -149,7 +149,7 @@ depend dehyph-exptl
 #depend r_und_s
 #depend uhrzeit
 #depend umlaute
-depend hyphen-german
+depend hyphen-german 0
 #depend collection-basic
 
 name collection-langgreek
@@ -170,12 +170,11 @@ name collection-langgreek
 #depend teubner
 #depend xgreek
 #depend yannisgr
-depend hyphen-greek
-depend hyphen-ancientgreek
-#depend collection-basic
+depend hyphen-greek 0
+depend hyphen-ancientgreek 0
 
 name collection-langother
-depend hyphen-coptic
+depend hyphen-coptic 0
 #depend hyphen-esperanto
 #depend hyphen-estonian
 #depend hyphen-icelandic
@@ -204,8 +203,8 @@ depend geometry
 depend graphics
 depend hyperref
 depend latex
-depend latex-bin
-depend latex-bin.win32
+depend latex-bin 0
+depend latex-bin.win32 0
 depend latex-fonts
 depend latexconfig
 depend ltxmisc
@@ -217,8 +216,6 @@ depend pslatex
 depend psnfss
 depend pspicture
 depend tools
-depend bin-latex
-depend collection-basic
 
 name collection-latexrecommended
 depend anysize
@@ -256,7 +253,8 @@ depend rotating
 depend seminar
 depend setspace
 depend subfig
-depend thumbpdf
+depend thumbpdf 0
+depend thumbpdf.win32 0
 depend xcolor
 depend xkeyval
 
@@ -301,7 +299,7 @@ depend pinlabel
 depend pmgraph
 depend randbild
 depend swimgraf
-depend texdraw
+#depend texdraw 0
 depend tikz-inet
 depend tufte-latex
 depend xypic
@@ -363,7 +361,6 @@ depend pstricks
 depend pstricks-add
 depend uml
 depend vaucanson-g
-depend collection-basic
 
 name collection-publishers
 depend ANUfinalexam
@@ -432,7 +429,6 @@ depend uwthesis
 depend vancouver
 depend vxu
 depend york-thesis
-depend collection-latex
 
 name collection-science
 depend SIstyle
@@ -492,15 +488,15 @@ depend mathspec
 depend philokalia
 depend polyglossia
 depend xecjk
-depend xecyr
+depend xecyr 0
+depend xecyr.win32 0
 depend xelibertine
 depend xepersian
-depend xetex
-depend xetex.win32
+depend xetex 0
+depend xetex.win32 0
 depend xetex-def
 depend xetex-pstricks
 depend xetexconfig
 depend xetexfontinfo
 depend xltxtra
 depend xunicode
-depend collection-basic

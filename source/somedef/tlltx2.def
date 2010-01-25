@@ -81,8 +81,8 @@ depend patch
 depend patchcmd
 depend pauldoc
 depend pawpict
-depend pax
-depend pax.win32
+#depend pax 0
+#depend pax.win32 0
 depend pbox
 depend pbsheet
 depend pdfcprot
@@ -91,8 +91,8 @@ depend pdfslide
 depend pdfsync
 depend pdfwin
 depend pecha
-depend perltex
-depend perltex.win32
+#depend perltex 0
+#depend perltex.win32 0
 depend permute
 depend petiteannonce
 depend philex
@@ -106,8 +106,8 @@ depend polynom
 depend polynomial
 depend polytable
 depend postcards
-depend ppower4
-depend ppower4.win32
+depend ppower4 0
+depend ppower4.win32 0
 depend ppr-prv
 depend preprint
 depend prettyref
@@ -187,7 +187,8 @@ depend smflatex
 depend snapshot
 depend soul
 depend sparklines
-depend splitindex
+#depend splitindex 0
+#depend splitindex.win32 0
 depend spotcolor
 depend sprite
 depend srcltx
@@ -209,7 +210,8 @@ depend substr
 depend supertabular
 depend svgcolor
 depend svn
-depend svn-multi
+#depend svn-multi 0
+#depend svn-multi.win32 0
 depend svninfo
 depend syntax
 depend syntrace
@@ -283,8 +285,8 @@ depend vhistory
 depend vita
 depend vmargin
 depend volumes
-depend vpe
-depend vpe.win32
+#depend vpe 0
+#depend vpe.win32 0
 depend vrsion
 depend vwcol
 depend wallpaper

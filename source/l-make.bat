@@ -196,36 +196,57 @@ echo Now starting to extract TeXLive packages...
 echo ===========================================
 
 set indir=download\texlive
-echo.
-echo handing %indir% directory...
-echo.
-for /r %indir% %%a in (*.xz) do (
-    echo tar -Jxf %%a
-    tar -C%outdir% -Jxf %%a
+
+rem echo.
+rem echo handing %indir% directory...
+rem echo.
+rem for /r %indir% %%a in (*.xz) do (
+rem     echo tar -Jxf %%a
+rem     tar -C%outdir% -Jxf %%a
+rem )
+
+if not exist %outdir%\texmf-dist mkdir %outdir%\texmf-dist
+
+set coldir=%~dp0somedef
+
+for /r %coldir% %%a in (tl*.def) do (
+    echo handling %%a for extracting...
+    for /f "tokens=1,2*" %%i in (%%a) do (
+        if %%i == depend (
+            echo tar -Jxf %%j.tar.xz
+            if "%%k" == "0" (
+                tar -C%outdir% -Jxf %indir%\%%j.tar.xz
+            ) else (
+                tar -C%outdir%\texmf-dist -Jxf %indir%\%%j.tar.xz
+            )            
+        ) 
+    )
 )
 
-::pause
+pause
 
 :movedist
 
 rem since texlive 2009, some packages support relocation
-xcopy /e/i/y "%outdir%\bibtex"     "%outdir%\texmf-dist\bibtex" && rmdir /s /q "%outdir%\bibtex"
-xcopy /e/i/y "%outdir%\doc"        "%outdir%\texmf-dist\doc" && rmdir /s /q "%outdir%\doc"
-xcopy /e/i/y "%outdir%\dvips"      "%outdir%\texmf-dist\dvips"  && rmdir /s /q "%outdir%\dvips"
-xcopy /e/i/y "%outdir%\fonts"      "%outdir%\texmf-dist\fonts" && rmdir /s /q "%outdir%\fonts"
-xcopy /e/i/y "%outdir%\makeindex"  "%outdir%\texmf-dist\makeindex"  && rmdir /s /q "%outdir%\makeindex"
-xcopy /e/i/y "%outdir%\metafont"   "%outdir%\texmf-dist\metafont"  && rmdir /s /q "%outdir%\metafont"
-xcopy /e/i/y "%outdir%\metapost"   "%outdir%\texmf-dist\metapost"  && rmdir /s /q "%outdir%\metapost"
-xcopy /e/i/y "%outdir%\mft"        "%outdir%\texmf-dist\mft"  && rmdir /s /q "%outdir%\mft"
-xcopy /e/i/y "%outdir%\omega"      "%outdir%\texmf-dist\omega" && rmdir /s /q "%outdir%\omega"
-xcopy /e/i/y "%outdir%\scripts"    "%outdir%\texmf-dist\scripts"  && rmdir /s /q "%outdir%\scripts"
-xcopy /e/i/y "%outdir%\source"     "%outdir%\texmf-dist\source"  && rmdir /s /q "%outdir%\source"
-xcopy /e/i/y "%outdir%\tex"        "%outdir%\texmf-dist\tex"  && rmdir /s /q "%outdir%\tex"
-xcopy /e/i/y "%outdir%\vtex"       "%outdir%\texmf-dist\vtex"  && rmdir /s /q "%outdir%\vtex"
+rem xcopy /e/i/y "%outdir%\bibtex"     "%outdir%\texmf-dist\bibtex" && rmdir /s /q "%outdir%\bibtex"
+rem xcopy /e/i/y "%outdir%\doc"        "%outdir%\texmf-dist\doc" && rmdir /s /q "%outdir%\doc"
+rem xcopy /e/i/y "%outdir%\dvips"      "%outdir%\texmf-dist\dvips"  && rmdir /s /q "%outdir%\dvips"
+rem xcopy /e/i/y "%outdir%\fonts"      "%outdir%\texmf-dist\fonts" && rmdir /s /q "%outdir%\fonts"
+rem xcopy /e/i/y "%outdir%\makeindex"  "%outdir%\texmf-dist\makeindex"  && rmdir /s /q "%outdir%\makeindex"
+rem xcopy /e/i/y "%outdir%\metafont"   "%outdir%\texmf-dist\metafont"  && rmdir /s /q "%outdir%\metafont"
+rem xcopy /e/i/y "%outdir%\metapost"   "%outdir%\texmf-dist\metapost"  && rmdir /s /q "%outdir%\metapost"
+rem xcopy /e/i/y "%outdir%\mft"        "%outdir%\texmf-dist\mft"  && rmdir /s /q "%outdir%\mft"
+rem xcopy /e/i/y "%outdir%\omega"      "%outdir%\texmf-dist\omega" && rmdir /s /q "%outdir%\omega"
+rem xcopy /e/i/y "%outdir%\scripts"    "%outdir%\texmf-dist\scripts"  && rmdir /s /q "%outdir%\scripts"
+rem xcopy /e/i/y "%outdir%\source"     "%outdir%\texmf-dist\source"  && rmdir /s /q "%outdir%\source"
+rem xcopy /e/i/y "%outdir%\tex"        "%outdir%\texmf-dist\tex"  && rmdir /s /q "%outdir%\tex"
+rem xcopy /e/i/y "%outdir%\vtex"       "%outdir%\texmf-dist\vtex"  && rmdir /s /q "%outdir%\vtex"
+
+xcopy /e/i/y "%outdir%\texmf-dist\texmf-dist"  "%outdir%\texmf-dist"  && rmdir /s /q "%outdir%\texmf-dist\texmf-dist"
 
 xcopy /e/i/y "%outdir%\texmf-dist\tlpkg"  "%outdir%\tlpkg"  && rmdir /s /q "%outdir%\texmf-dist\tlpkg"
 
-::pause
+pause
 
 :cleartl
 

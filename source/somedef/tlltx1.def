@@ -212,8 +212,8 @@ depend genmpage
 #depend geomsty
 depend ginpenc
 depend gloss
-depend glossaries
-depend glossaries.win32
+#depend glossaries 0
+#depend glossaries.win32 0
 depend gmdoc
 depend gmeometric
 depend gmiflink
