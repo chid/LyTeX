@@ -183,7 +183,6 @@ depend slantsc
 depend slashbox
 depend smalltableof
 depend smartref
-depend smflatex
 depend snapshot
 depend soul
 depend sparklines

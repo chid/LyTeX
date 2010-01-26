@@ -223,7 +223,7 @@ for /r %coldir% %%a in (tl*.def) do (
     )
 )
 
-pause
+::pause
 
 :movedist
 
@@ -246,7 +246,7 @@ xcopy /e/i/y "%outdir%\texmf-dist\texmf-dist"  "%outdir%\texmf-dist"  && rmdir /
 
 xcopy /e/i/y "%outdir%\texmf-dist\tlpkg"  "%outdir%\tlpkg"  && rmdir /s /q "%outdir%\texmf-dist\tlpkg"
 
-pause
+::pause
 
 :cleartl
 

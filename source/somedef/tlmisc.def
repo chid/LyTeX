@@ -127,10 +127,9 @@ name collection-plainextra
 depend fixpdfmag
 depend fontch
 depend hyplain
-depend jsmisc
+#depend js-misc
 depend mkpattern
 depend newsletr
-depend plgraph
 depend resumemac
 depend timetable
 depend treetex

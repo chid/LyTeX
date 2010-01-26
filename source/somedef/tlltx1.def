@@ -1,7 +1,6 @@
 name collection-latexextra
 depend AkkTeX
 depend ESIEEcv
-depend GuIT
 depend HA-prosper
 depend Tabbing
 depend a0poster
@@ -95,7 +94,6 @@ depend currvita
 depend cursor
 depend cv
 depend cweb-latex
-depend cwpuzzle
 depend dashbox
 depend dashrule
 depend datatool
@@ -165,7 +163,6 @@ depend everypage
 depend exam
 depend examdesign
 depend examplep
-depend exceltex
 depend exercise
 depend expdlist
 depend export

@@ -35,8 +35,6 @@ depend ttfutils 0
 depend ttfutils.win32 0
 
 name collection-games
-depend backgammon
-depend bridge
 depend cchess
 depend chess
 depend chess-problem-diagrams
@@ -58,7 +56,7 @@ depend xskak
 
 name collection-genericrecommended
 depend epsf
-depend fontname
+depend fontname 0
 depend genmisc
 depend multido
 depend tex-ps
@@ -115,8 +113,6 @@ depend ctex
 #depend wadalab
 depend zhmetrics
 depend zhspacing
-#depend collection-basic
-#depend collection-documentation-chinese
 
 name collection-langcyrillic
 #depend cmcyr
@@ -267,8 +263,8 @@ depend musixlyr
 depend musixps
 #depend musixtex
 depend songbook
-depend bin-musixflx
-depend collection-latex
+#depend musixflx 0
+#depend musixflx.win32 0
 
 name collection-pictures
 depend autoarea
@@ -281,7 +277,8 @@ depend doc-pictex
 depend dottex
 depend dratex
 depend eepic
-depend epspdf
+depend epspdf 0
+depend epspdf.win32 0
 depend epspdfconversion
 depend gnuplottex
 depend miniplot
@@ -356,7 +353,8 @@ depend pst-soroban
 depend pst-text
 depend pst-uml
 depend pst-vue3d
-depend pst2pdf
+depend pst2pdf 0
+depend pst2pdf.win32 0
 depend pstricks
 depend pstricks-add
 depend uml
@@ -488,9 +486,9 @@ depend mathspec
 depend philokalia
 depend polyglossia
 depend xecjk
+depend xecolour
 depend xecyr 0
 depend xecyr.win32 0
-depend xelibertine
 depend xepersian
 depend xetex 0
 depend xetex.win32 0
