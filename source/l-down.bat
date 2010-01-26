@@ -46,31 +46,6 @@ set tlnet=ftp://ftp.ctex.org/mirrors/CTAN/systems/texlive/tlnet/archive
 
 setlocal enabledelayedexpansion
 
-goto downcoll
-
-:allcolls
-
-del collects.txt 2>nul
-
-for /f "tokens=1,2*" %%i in (texlive.tlpdb) do (
-    if %%i == name (
-        for /f "tokens=1* delims=-" %%a in ("%%j") do (
-            if %%a == collection (
-            echo %%a %%b
-            echo %%a %%b >>collects.txt
-            )
-        )
-    ) 
-)
-
-:findcoll
-
-find /n "name collection-basic" texlive.tlpdb
-
-:downcoll
-
-::pause
-
 if not exist download\texlive mkdir download\texlive
 
 set texout=%~dp0download\texlive
@@ -101,7 +76,7 @@ for /r %coldir% %%a in (tl*.def) do (
 
 endlocal
 
-pause
+::pause
 
 goto downend
 

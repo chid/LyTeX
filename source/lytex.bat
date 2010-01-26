@@ -16,8 +16,8 @@ set buildtex=miktex
 
 :maketidy
 
-if not exist %~dp0lyxidea.txt call l-down.bat
-if not exist %~dp0lyxidea.txt call l-make.bat
+if not exist source call l-down.bat
+if not exist source call l-make.bat
 call l-tidy.bat
 
 :buildnsi
