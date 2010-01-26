@@ -13,7 +13,7 @@ if not exist %downdir%\texlive.tlpdb (
 
 setlocal enabledelayedexpansion
 
-del somelst\tlreloc0.txt somelst\tlreloc1.txt 2>nul
+del somedef\tlreloc0.lst somedef\tlreloc1.lst 2>nul
 
 echo.
 echo finding relocated=0 and relocated=1 ...
@@ -27,17 +27,17 @@ for /f "tokens=1,2*" %%i in (%downdir%\texlive.tlpdb) do (
     if %%i == relocated (
         if %%j == 1 (
             set reloc=1
-        echo depend !pkg!>>somelst\tlreloc1.txt
+        echo depend !pkg!>>somelst\tlreloc1.lst
         )
     )
     if %%i == containersize (
         if !reloc! == 0 (
             for  /f "tokens=1,2* delims=." %%a in ("!pkg!") do (
-                if "%%b" == "" echo depend !pkg!>>somelst\tlreloc0.txt
-                if "%%b" == "win32" echo depend !pkg!>>somelst\tlreloc0.txt
+                if "%%b" == "" echo depend !pkg!>>somedef\tlreloc0.lst
+                if "%%b" == "win32" echo depend !pkg!>>somedef\tlreloc0.lst
                 if "%%b" == "infra" (
-                    if "%%c" == "" echo depend !pkg!>>somelst\tlreloc0.txt
-                    if "%%c" == "win32" echo depend !pkg!>>somelst\tlreloc0.txt
+                    if "%%c" == "" echo depend !pkg!>>somedef\tlreloc0.lst
+                    if "%%c" == "win32" echo depend !pkg!>>somedef\tlreloc0.lst
                 )
             )
         )    
