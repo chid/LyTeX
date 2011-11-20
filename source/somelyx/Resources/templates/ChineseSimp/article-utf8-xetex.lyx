@@ -1,5 +1,5 @@
-#LyX 1.6.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 345
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
 \begin_document
 \begin_header
 \textclass article
@@ -10,31 +10,40 @@
 % set typesetting program for TeXworks
 % !TEX program = XeLaTeX
 
-\usepackage[CJKtextspaces,CJKnumber]{xeCJK}                                      
-\setCJKmainfont[BoldFont=SimHei]{SimSun}
-\setCJKsansfont{SimHei}         
-\setCJKmonofont{NSimSun}  
-
-\setCJKfamilyfont{song}{SimSun}
-\setCJKfamilyfont{hei}{SimHei}
+\usepackage[cm-default]{fontspec}
+\usepackage{xunicode}
+\usepackage{xltxtra}
+\setmainfont[BoldFont=SimHei]{SimSun}
+\setsansfont[BoldFont=SimHei]{KaiTi_GB2312}
+\setmonofont{NSimSun}
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip = 0pt plus 1pt
 \end_preamble
 \use_default_options false
+\maintain_unincluded_children false
 \language chinese-simplified
+\language_package default
 \inputencoding utf8-plain
+\fontencoding default
 \font_roman default
 \font_sans default
 \font_typewriter default
 \font_default_family default
+\use_non_tex_fonts false
 \font_sc false
 \font_osf false
 \font_sf_scale 100
 \font_tt_scale 100
 
 \graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
 \paperfontsize default
 \spacing single
 \use_hyperref true
-\pdf_title "LyTeX xeCJK template"
+\pdf_title "LyTeX XeTeX template"
 \pdf_author "zoho@ctex"
 \pdf_subject "latex"
 \pdf_bookmarks true
@@ -51,27 +60,37 @@
 \use_geometry false
 \use_amsmath 0
 \use_esint 0
+\use_mhchem 1
+\use_mathdots 1
 \cite_engine basic
 \use_bibtopic false
+\use_indices false
 \paperorientation portrait
+\suppress_date false
+\use_refstyle 0
+\index 索引
+\shortcut idx
+\color #008000
+\end_index
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation indent
-\defskip medskip
+\paragraph_indentation default
 \quotes_language english
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
 \tracking_changes false
 \output_changes false
-\author "" 
-\author "" 
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
 \end_header
 
 \begin_body
 
 \begin_layout Title
-XeCJK 模板文件
+XeTeX 模板文件
 \end_layout
 
 \begin_layout Author
@@ -87,8 +106,10 @@ lytex
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula \[
-\int_{a}^{b}f(x)=\log x\]
+\begin_inset Formula 
+\[
+\int_{a}^{b}f(x)=\log x
+\]
 
 \end_inset
 
@@ -100,7 +121,7 @@ lytex
 \end_layout
 
 \begin_layout Standard
-按Ctrl+L就可以插入latex代码。比如我们可以这样来改变xeCJK字体：
+按Ctrl+L就可以插入latex代码。比如我们可以这样来改变 xetex 字体：
 \begin_inset ERT
 status open
 
@@ -108,12 +129,12 @@ status open
 
 
 \backslash
-CJKfamily{hei}
+setmainfont{SimHei}
 \end_layout
 
 \end_inset
 
- 现在是黑体。
+现在是黑体。
 \end_layout
 
 \end_body

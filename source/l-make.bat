@@ -10,7 +10,7 @@ if not exist %~dp0LyTeX mkdir %~dp0LyTeX
 ::==================== LyX ========================
 :makelyx
 
-set lyxver=1.6.5
+set lyxver=2.0.1
 set lyxname=LyX-%lyxver%-1-Installer.exe
 
 :lyxinst
@@ -28,25 +28,26 @@ echo Extracting LyX...
 ::move /y %~dp0LyTeX\LyX\$_OUTDIR\Resources %~dp0LyTeX\LyX
 if not exist %~dp0LyTeX\LyX\Resources mkdir %~dp0LyTeX\LyX\Resources
 xcopy /e/i/y %~dp0LyTeX\LyX\$_OUTDIR\Resources %~dp0LyTeX\LyX\Resources
+xcopy /e/i/y %~dp0LyTeX\LyX\$_OUTDIR\Python %~dp0LyTeX\LyX\Python
 
 rmdir /s /q %~dp0LyTeX\LyX\$_OUTDIR
 rmdir /s /q %~dp0LyTeX\LyX\$PLUGINSDIR
 rmdir /s /q %~dp0LyTeX\LyX\$[33]
-rmdir /s /q %~dp0LyTeX\LyX\aiksaurus\$PLUGINSDIR
+::::rmdir /s /q %~dp0LyTeX\LyX\aiksaurus\$PLUGINSDIR
 
-copy %~dp0LyTeX\LyX\bin\Microsoft.VC90.CRT.manifest %~dp0LyTeX\LyX\ghostscript
-copy %~dp0LyTeX\LyX\bin\msvcp90.dll %~dp0LyTeX\LyX\ghostscript
-copy %~dp0LyTeX\LyX\bin\msvcr90.dll %~dp0LyTeX\LyX\ghostscript
+::::copy %~dp0LyTeX\LyX\bin\Microsoft.VC90.CRT.manifest %~dp0LyTeX\LyX\ghostscript
+copy %~dp0LyTeX\LyX\bin\msvcp100.dll %~dp0LyTeX\LyX\ghostscript
+copy %~dp0LyTeX\LyX\bin\msvcr100.dll %~dp0LyTeX\LyX\ghostscript
 rem there is an aspelldata.exe file in this directory
 rmdir /s /q %~dp0LyTeX\LyX\ghostscript\$PLUGINSDIR
 
-copy %~dp0LyTeX\LyX\bin\Microsoft.VC90.CRT.manifest %~dp0LyTeX\LyX\python
-copy %~dp0LyTeX\LyX\bin\msvcp90.dll %~dp0LyTeX\LyX\python
-copy %~dp0LyTeX\LyX\bin\msvcr90.dll %~dp0LyTeX\LyX\python
+::::copy %~dp0LyTeX\LyX\bin\Microsoft.VC90.CRT.manifest %~dp0LyTeX\LyX\python
+copy %~dp0LyTeX\LyX\bin\msvcp100.dll %~dp0LyTeX\LyX\Python
+copy %~dp0LyTeX\LyX\bin\msvcr100.dll %~dp0LyTeX\LyX\Python
 rem LyX-Installer doesn't put msvcrt in this directiory
-copy %~dp0LyTeX\LyX\bin\Microsoft.VC90.CRT.manifest %~dp0LyTeX\LyX\imagemagick
-copy %~dp0LyTeX\LyX\bin\msvcp90.dll %~dp0LyTeX\LyX\imagemagick
-copy %~dp0LyTeX\LyX\bin\msvcr90.dll %~dp0LyTeX\LyX\imagemagick
+::::copy %~dp0LyTeX\LyX\bin\Microsoft.VC90.CRT.manifest %~dp0LyTeX\LyX\imagemagick
+copy %~dp0LyTeX\LyX\bin\msvcp100.dll %~dp0LyTeX\LyX\imagemagick
+copy %~dp0LyTeX\LyX\bin\msvcr100.dll %~dp0LyTeX\LyX\imagemagick
 rem LyX-Installer doesn't put these two files in this directiory
 
 xcopy /e/i/y %~dp0somelyx %~dp0LyTeX\LyX
@@ -164,7 +165,7 @@ rem editor
 
 if not exist %texdir%\texmf-local\TeXworks mkdir %texdir%\texmf-local\TeXworks
 if not exist %texdir%\texmf-local\TeXworks\configuration mkdir %texdir%\texmf-local\TeXworks\configuration
-xcopy /e/i/y %~dp0texworks\configuration %texdir%\texmf-local\TeXworks\configuration
+xcopy /e/i/y %~dp0texworks\configuration %texdir%\texmf-local\TeXworks\0.4\configuration
 
 if not exist %texdir%\texmf-local\TUG  mkdir %texdir%\texmf-local\TUG
 xcopy /e/i/y %~dp0texworks\TUG %texdir%\texmf-local\TUG
@@ -173,6 +174,10 @@ echo.
 echo Updating MiKTeX...
 %texdir%\texmf\miktex\bin\mpm.exe --verbose --update
 %texdir%\texmf\miktex\bin\mpm.exe --verbose --install-some=somedef\miktex.def
+
+echo.
+echo Updating finished. Press return to continue...
+pause
 
 rmdir /s /q %texdir%\texmf\doc
 rmdir /s /q %texdir%\texmf\source

@@ -112,23 +112,25 @@ echo.
 
 :: when Resources folder exists in LyX directory, move command does nothing!
 move /y %downdir%\LyX\$_OUTDIR\Resources %downdir%\LyX
+xcopy /e/i/y %downdir%\LyX\$_OUTDIR\Python %downdir%\LyX\Python
+
 rmdir /s /q %downdir%\LyX\$_OUTDIR
 rmdir /s /q %downdir%\LyX\$PLUGINSDIR
 rmdir /s /q %downdir%\LyX\$[33]
-rmdir /s /q %downdir%\LyX\aiksaurus\$PLUGINSDIR
+::::rmdir /s /q %downdir%\LyX\aiksaurus\$PLUGINSDIR
 
-copy /y %downdir%\LyX\bin\Microsoft.VC90.CRT.manifest %downdir%\LyX\ghostscript
-copy /y %downdir%\LyX\bin\msvcp90.dll %downdir%\LyX\ghostscript
-copy /y %downdir%\LyX\bin\msvcr90.dll %downdir%\LyX\ghostscript
+::::copy /y %downdir%\LyX\bin\Microsoft.VC90.CRT.manifest %downdir%\LyX\ghostscript
+copy /y %downdir%\LyX\bin\msvcp100.dll %downdir%\LyX\ghostscript
+copy /y %downdir%\LyX\bin\msvcr100.dll %downdir%\LyX\ghostscript
 rmdir /s /q %downdir%\LyX\ghostscript\$PLUGINSDIR
 
-copy /y %downdir%\LyX\bin\Microsoft.VC90.CRT.manifest %downdir%\LyX\python
-copy /y %downdir%\LyX\bin\msvcp90.dll %downdir%\LyX\python
-copy /y %downdir%\LyX\bin\msvcr90.dll %downdir%\LyX\python
+::::copy /y %downdir%\LyX\bin\Microsoft.VC90.CRT.manifest %downdir%\LyX\python
+copy /y %downdir%\LyX\bin\msvcp100.dll %downdir%\LyX\Python
+copy /y %downdir%\LyX\bin\msvcr100.dll %downdir%\LyX\Python
 rem LyX-Installer doesn't put msvcrt in this directiory
-copy /y %downdir%\LyX\bin\Microsoft.VC90.CRT.manifest %downdir%\LyX\imagemagick
-copy /y %downdir%\LyX\bin\msvcp90.dll %downdir%\LyX\imagemagick
-copy /y %downdir%\LyX\bin\msvcr90.dll %downdir%\LyX\imagemagick
+::::copy /y %downdir%\LyX\bin\Microsoft.VC90.CRT.manifest %downdir%\LyX\imagemagick
+copy /y %downdir%\LyX\bin\msvcp100.dll %downdir%\LyX\imagemagick
+copy /y %downdir%\LyX\bin\msvcr100.dll %downdir%\LyX\imagemagick
 
 rem LyX-Installer doesn't put these pdfopen.exe and System.dll in this directiory
 copy /y %lyxdir%\bin\pdfopen.exe %downdir%\LyX\bin
@@ -145,12 +147,12 @@ echo.
 echo Removing old LyX files...
 echo.
 
-rmdir /s /q %lyxdir%\aiksaurus
+::::rmdir /s /q %lyxdir%\aiksaurus
 rmdir /s /q %lyxdir%\bin
 rmdir /s /q %lyxdir%\ghostscript
 rmdir /s /q %lyxdir%\imagemagick
 rmdir /s /q %lyxdir%\local
-rmdir /s /q %lyxdir%\python
+rmdir /s /q %lyxdir%\Python
 rmdir /s /q %lyxdir%\Resources
 del /q %lyxdir%\lyx.usb
 
@@ -159,12 +161,12 @@ del /q %lyxdir%\lyx.usb
 echo Moving new LyX files to LyX directory...
 echo.
 
-move /y %downdir%\LyX\aiksaurus %lytexdir%\LyX
+::::move /y %downdir%\LyX\aiksaurus %lytexdir%\LyX
 move /y %downdir%\LyX\bin %lytexdir%\LyX
 move /y %downdir%\LyX\ghostscript %lytexdir%\LyX
 move /y %downdir%\LyX\imagemagick %lytexdir%\LyX
 move /y %downdir%\LyX\local %lytexdir%\LyX
-move /y %downdir%\LyX\python %lytexdir%\LyX
+move /y %downdir%\LyX\Python %lytexdir%\LyX
 move /y %downdir%\LyX\Resources %lytexdir%\LyX
 
 rmdir /s /q %downdir%\LyX

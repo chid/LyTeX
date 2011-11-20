@@ -1,12 +1,12 @@
 Name "LyTeX Suite"
-Caption "LyTeX 1.6"
+Caption "LyTeX 2.0"
 Icon "LyTeX.ico"
-OutFile "..\LyTeX-1.6t-bin.exe"
+OutFile "..\LyTeX-2.0a-bin.exe"
 
-VIProductVersion "1.6.5.5"
+VIProductVersion "2.0.1.0"
 VIAddVersionKey  "FileDescription" "LyTeX: Portable TeX Suite"
-VIAddVersionKey  "LegalCopyright" "zoho@ctex.org"
-VIAddVersionKey  "FileVersion" "1.6theta"
+VIAddVersionKey  "LegalCopyright" "zoho@bbs.ctex.org"
+VIAddVersionKey  "FileVersion" "2.0alpha"
 
 !include "LogicLib.nsh"
 

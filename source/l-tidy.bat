@@ -48,7 +48,7 @@ rem     )
 rem )
 rem cd ..\..
 
-del /q LyTeX\LyX\python\Lib\*.pyc
+del /q LyTeX\LyX\Python\Lib\*.pyc
 
 rmdir /s /q LyTeX\LyX\local
 xcopy /e/i/y somelyx LyTeX\LyX

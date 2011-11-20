@@ -292,10 +292,10 @@ Section
 
     # run lyx launcher
     ${GetParameters} $1
-    IfFileExists "$EXEDIR\LyX\bin\LyXLauncher.exe" 0 +3
-    Exec '"$EXEDIR\LyX\bin\LyXLauncher.exe" $1'
+    IfFileExists "$EXEDIR\LyX\bin\LyX.exe" 0 +3
+    Exec '"$EXEDIR\LyX\bin\LyX.exe" $1'
     Goto done
-    MessageBox MB_OK "Error: Could not find $EXEDIR\LyX\bin\LyXLauncher.exe!"
+    MessageBox MB_OK "Error: Could not find $EXEDIR\LyX\bin\LyX.exe!"
     done:
 
 SectionEnd

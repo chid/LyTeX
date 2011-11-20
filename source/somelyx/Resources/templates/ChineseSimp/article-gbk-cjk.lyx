@@ -1,29 +1,36 @@
-#LyX 1.6.3 created this file. For more info see http://www.lyx.org/
-\lyxformat 345
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
 \begin_document
 \begin_header
-\textclass ctexart
+\textclass article
 \begin_preamble
 % please do NOT remove these lines!
-% set file encoding for WinEdt
-% !Mode:: "TeX:UTF-8"
+% set file encoding for TeXworks
+% !TEX encoding = System
 % set typesetting program for TeXworks
 % !TEX program = LaTeXify
 \end_preamble
-\options UTF8,winfonts
 \use_default_options false
+\maintain_unincluded_children false
 \language chinese-simplified
-\inputencoding utf8
-\font_roman lmodern
+\language_package default
+\inputencoding GBK
+\fontencoding default
+\font_roman default
 \font_sans default
 \font_typewriter default
 \font_default_family default
+\use_non_tex_fonts false
 \font_sc false
 \font_osf false
 \font_sf_scale 100
 \font_tt_scale 100
 
 \graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
 \paperfontsize default
 \spacing single
 \use_hyperref false
@@ -31,27 +38,37 @@
 \use_geometry false
 \use_amsmath 0
 \use_esint 0
+\use_mhchem 1
+\use_mathdots 1
 \cite_engine basic
 \use_bibtopic false
+\use_indices false
 \paperorientation portrait
+\suppress_date false
+\use_refstyle 0
+\index 索引
+\shortcut idx
+\color #008000
+\end_index
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation indent
-\defskip medskip
+\paragraph_indentation default
 \quotes_language english
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
 \tracking_changes false
 \output_changes false
-\author "" 
-\author "" 
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
 \end_header
 
 \begin_body
 
 \begin_layout Title
-CTEX 模板文件
+CJK 模板文件
 \end_layout
 
 \begin_layout Author
@@ -63,12 +80,14 @@ lytex
 \end_layout
 
 \begin_layout Standard
-这个模板是 UTF-8 编码的，推荐用 dvipdfmx 编译。hello lyx! 数学公式：
+这个模板是 GBK 编码的，推荐用 dvipdfmx 编译。hello lyx! 数学公式：
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula \[
-\int_{a}^{b}f(x)=\log x\]
+\begin_inset Formula 
+\[
+\int_{a}^{b}f(x)=\log x
+\]
 
 \end_inset
 
@@ -80,7 +99,7 @@ lytex
 \end_layout
 
 \begin_layout Standard
-按Ctrl+L就可以插入latex代码。比如我们可以这样来改变ctex字体：
+按Ctrl+L就可以插入latex代码。比如我们可以这样来改变CJK字体：
 \begin_inset ERT
 status open
 
@@ -88,12 +107,16 @@ status open
 
 
 \backslash
-heiti
+CJKfamily{hei}
 \end_layout
 
 \end_inset
 
 现在是黑体。
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \end_body

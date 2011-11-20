@@ -7,7 +7,7 @@ set Path=%~dp0somebin;%Path%
 ::==================== LyX ========================
 :downlyx
 
-set lyxver=1.6.5
+set lyxver=2.0.1
 set lyxpath=ftp://ftp.lyx.org/pub/lyx/bin/%lyxver%
 set lyxname=LyX-%lyxver%-1-Installer.exe
 
